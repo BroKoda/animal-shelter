@@ -1,0 +1,26 @@
+@import '../global';
+
+.animal-page-container {
+  position: relative;
+
+  strong {
+    font-weight: 700;
+  }
+
+  .animal-image {
+    width: 100%;
+    aspect-ratio: 1/1;
+    object-position: center;
+    object-fit: cover;
+    display: block;
+    border-radius: 25px;
+  }
+
+  .animal-name, .animal-size, .animal-color, .animal-birth, .animal-arrival, .animal-description-title {
+    font-size: $bigger-font-size;
+  }
+
+  .button {
+    width: 100%;
+  }
+}

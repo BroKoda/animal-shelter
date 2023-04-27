@@ -5,6 +5,8 @@ $black: #1D1936;
 $white: #FFFFFF;
 
 $base-font-size: 15px;
+$smaller-font-size: 13px;
+$bigger-font-size: 17px;
 
 @mixin xs {@media (max-width: 575px) { @content; }}
 @mixin sm {@media (min-width: 576px) and (max-width: 767px) { @content; }}

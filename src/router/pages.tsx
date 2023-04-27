@@ -3,6 +3,7 @@ import Home from '../pages/Home/Home'
 import PageNotFound from '../pages/PageNotFound/PageNotFound'
 import Login from '../pages/Login/Login'
 import Registration from '../pages/Registration/Registration'
+import AnimalPage from '../pages/AnimalPage/AnimalPage'
 
 export interface Page {
   title: string
@@ -30,5 +31,10 @@ export const pages: Page[] = [
     title: 'Regisztráció',
     path: '/regisztracio',
     element: <Registration/>
+  },
+  {
+    title: 'Adatlap',
+    path: '/adatlap',
+    element: <AnimalPage/>
   }
 ]
