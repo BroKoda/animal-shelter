@@ -1,0 +1,14 @@
+$darkPurple: #7868E6;
+$purple: #B8B5FF;
+$gray: #EDEEF7;
+$black: #1D1936;
+$white: #FFFFFF;
+
+$base-font-size: 15px;
+
+@mixin xs {@media (max-width: 575px) { @content; }}
+@mixin sm {@media (min-width: 576px) and (max-width: 767px) { @content; }}
+@mixin md {@media (min-width: 768px) and (max-width: 991px) { @content; }}
+@mixin lg {@media (min-width: 992px) and (max-width: 1199px) { @content; }}
+@mixin xl {@media (min-width: 1200px) and (max-width: 1399px) { @content; }}
+@mixin xxl {@media (min-width: 1400px) { @content; }}

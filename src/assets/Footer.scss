@@ -1,0 +1,18 @@
+@import 'global';
+
+.footer-container {
+  background-color: $gray;
+
+  p {
+    font-size: 14px;
+  }
+
+  .social-links-container {
+    i {
+      padding: 10px;
+      background-color: $darkPurple;
+      color: $white;
+      border-radius: 50%;
+    }
+  }
+}

@@ -1,0 +1,73 @@
+@import 'global';
+
+body {
+  min-height: 100vh;
+  color: $black;
+  font-size: $base-font-size;
+  font-family: 'Montserrat', sans-serif;
+  overflow-x: hidden;
+
+  p {
+    margin-bottom: 0;
+  }
+
+  .button {
+    border-radius: 20px;
+    border: none;
+    padding: 5px 15px;
+    font-weight: 500;
+    cursor: pointer
+  }
+
+  .call-to-action-button {
+    background-color: $darkPurple;
+    color: $white
+  }
+
+  .secondary-button {
+    background-color: $gray;
+    color: $black
+  }
+
+  .header-container {
+    height: 80px;
+    position: relative;
+    border-bottom: 1px solid $gray;
+    margin-bottom: 20px;
+
+    img {
+      display: block;
+      height: 50px;
+      width: auto;
+    }
+  }
+
+  .menu-container {
+    position: relative;
+
+    .menu-item {
+      border-radius: 10px;
+      padding: 5px 10px;
+      text-decoration: none;
+      transition: 0.5s ease-out;
+      margin-bottom: 10px;
+      color: $black;
+
+      i {
+        background-color: $gray;
+        padding: 12px;
+        border-radius: 50%;
+        margin-right: 10px;
+        font-size: 18px;
+      }
+
+      &:hover {
+        background-color: $gray;
+      }
+    }
+  }
+}
+
+#root {
+  height: 100%;
+}

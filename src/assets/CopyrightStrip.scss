@@ -1,0 +1,12 @@
+@import 'global';
+
+.copyright-strip-container {
+  position: relative;
+  background-color: $darkPurple;
+  padding: 5px;
+
+  p {
+    color: $white;
+    font-size: 12px;
+  }
+}
