@@ -1,7 +1,7 @@
 import React from 'react'
 import '../assets/BaseLayout.scss'
-import '../assets/Footer.scss'
-import '../assets/CopyrightStrip.scss'
+import '../assets/components/Footer.scss'
+import '../assets/components/CopyrightStrip.scss'
 import { Link } from 'react-router-dom'
 import Footer from '../components/Footer/Footer'
 import CopyrightStrip from '../components/CopyrightStrip/CopyrightStrip'
@@ -22,35 +22,37 @@ const BaseLayout = ({ children }: BaseLayoutProps): JSX.Element => {
                   <img src={'./mancs.png'} alt={'Mancs logo'}/>
                 </div>
                 <div className='col-6 align-self-center text-end'>
-                  <button className='button secondary-button me-2'>
-                    Regisztráció
-                  </button>
-                  <button className='button call-to-action-button'>
-                    Bejelentkezés
-                  </button>
+                  <Link to={'/regisztracio'}>
+                    <button className='button secondary-button me-2'>
+                      Regisztráció
+                    </button>
+                  </Link>
+                  <Link to={'/bejelentkezes'}>
+                    <button className='button call-to-action-button'>
+                      Bejelentkezés
+                    </button>
+                  </Link>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div className='container body-container'>
+      <div className='container body-container my-3'>
         <div className='row'>
           <div className='col-3'>
             <div className='container menu-container px-0'>
               <div className='row'>
                 <div className='col-12'>
-                  <Link to={'/'} style={{ textDecoration: 'none' }}>
+                  <Link to={'/'}>
                     <div className='menu-item'>
                       <i className="fa-solid fa-house"></i>
-                      {/*<img src={'/'} alt={'Home page icon'}/>*/}
                       <span>Home page</span>
                     </div>
                   </Link>
-                  <Link to={'/'} style={{ textDecoration: 'none' }}>
+                  <Link to={'/'}>
                     <div className='menu-item'>
                       <i className="fa-solid fa-house"></i>
-                      {/*<img src={'/'} alt={'Home page icon'}/>*/}
                       <span>Random</span>
                     </div>
                   </Link>

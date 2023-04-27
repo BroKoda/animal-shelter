@@ -1,6 +1,8 @@
 import React from 'react'
 import Home from '../pages/Home/Home'
 import PageNotFound from '../pages/PageNotFound/PageNotFound'
+import Login from '../pages/Login/Login'
+import Registration from '../pages/Registration/Registration'
 
 export interface Page {
   title: string
@@ -15,8 +17,18 @@ export const pages: Page[] = [
     element: <PageNotFound/>
   },
   {
-    title: 'Home',
+    title: 'Főoldal',
     path: '/',
     element: <Home/>
+  },
+  {
+    title: 'Bejelentkezés',
+    path: '/bejelentkezes',
+    element: <Login/>
+  },
+  {
+    title: 'Regisztráció',
+    path: '/regisztracio',
+    element: <Registration/>
   }
 ]

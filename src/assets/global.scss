@@ -1,14 +1,81 @@
-$darkPurple: #7868E6;
-$purple: #B8B5FF;
-$gray: #EDEEF7;
-$black: #1D1936;
-$white: #FFFFFF;
+@import 'variables-mixins.scss';
 
-$base-font-size: 15px;
+body {
+  min-height: 100vh;
+  color: $black;
+  font-size: $base-font-size;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+  overflow-x: hidden;
 
-@mixin xs {@media (max-width: 575px) { @content; }}
-@mixin sm {@media (min-width: 576px) and (max-width: 767px) { @content; }}
-@mixin md {@media (min-width: 768px) and (max-width: 991px) { @content; }}
-@mixin lg {@media (min-width: 992px) and (max-width: 1199px) { @content; }}
-@mixin xl {@media (min-width: 1200px) and (max-width: 1399px) { @content; }}
-@mixin xxl {@media (min-width: 1400px) { @content; }}
+  a {
+    text-decoration: none;
+  }
+
+  p {
+    margin-bottom: 0;
+  }
+
+  h2 {
+    font-size: 25px;
+    font-weight: 300;
+  }
+
+  .button {
+    border-radius: 20px;
+    border: none;
+    padding: 5px 15px;
+    font-weight: 500;
+    cursor: pointer
+  }
+
+  .call-to-action-button {
+    background-color: $darkPurple;
+    color: $white;
+    font-weight: 300;
+  }
+
+  .secondary-button {
+    background-color: $gray;
+    color: $black;
+    font-weight: 300;
+  }
+
+  .box-shadow {
+    box-shadow: 5px 5px 20px -5px rgba(29,25,54,0.2);
+    -webkit-box-shadow: 5px 5px 20px -5px rgba(29,25,54,0.2);
+    -moz-box-shadow: 5px 5px 20px -5px rgba(29,25,54,0.2);
+  }
+
+  form {
+    input.form-control {
+      background-color: transparent;
+      border-top: none;
+      border-right: none;
+      border-left: none;
+      border-bottom: 1px solid $purple;
+      border-radius: 0;
+      color: $darkPurple;
+      font-weight: 300;
+      padding: 5px 0;
+      font-size: $base-font-size;
+
+      &::placeholder {
+        opacity: 0.4;
+        color: $darkPurple;
+      }
+
+      &:focus {
+        border-bottom: 1px solid $darkPurple;
+        background-color: transparent;
+        outline: none;
+        box-shadow: none;
+      }
+    }
+  }
+}
+
+
+#root {
+  height: 100%;
+}
