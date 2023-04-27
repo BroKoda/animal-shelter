@@ -38,7 +38,7 @@ const BaseLayout = ({ children }: BaseLayoutProps): JSX.Element => {
           </div>
         </div>
       </div>
-      <div className='container body-container my-3'>
+      <div className='container body-container mt-3 mb-5'>
         <div className='row'>
           <div className='col-3'>
             <div className='container menu-container px-0'>
