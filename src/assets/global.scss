@@ -23,6 +23,11 @@ body {
     font-weight: 300;
   }
 
+  h4 {
+    font-size: 23px;
+    font-weight: 500;
+  }
+
   .button {
     border-radius: 20px;
     border: none;
@@ -50,21 +55,50 @@ body {
   }
 
   form {
-    input.form-control {
+    .form-control-container {
+      position: relative;
+      display: flex;
+      flex-direction: row;
+      flex: none;
+      margin-bottom: 20px;
+
+      .form-icon-container {
+        width: 35px;
+        height: 35px;
+        display: inline-flex;
+        margin-right: 15px;
+        border-radius: 50%;
+        background-color: $darkPurple;
+        align-items: center;
+        justify-content: center;
+        flex: none;
+
+        i {
+          color: white;
+          font-size: 16px;
+        }
+      }
+
+      .form-control {
+        display: inline-flex;
+        border-bottom: 1px solid $darkPurple;
+      }
+    }
+    .form-control {
       background-color: transparent;
       border-top: none;
       border-right: none;
       border-left: none;
       border-bottom: 1px solid $purple;
       border-radius: 0;
-      color: $darkPurple;
+      color: $black;
       font-weight: 300;
       padding: 5px 0;
       font-size: $base-font-size;
 
       &::placeholder {
         opacity: 0.4;
-        color: $darkPurple;
+        color: $black;
       }
 
       &:focus {

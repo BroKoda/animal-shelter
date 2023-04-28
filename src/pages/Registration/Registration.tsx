@@ -10,7 +10,7 @@ const Login = (): JSX.Element => {
           <div className="container login-box py-4 px-4">
             <div className="row">
               <div className="col-12">
-                <h2>Belépés</h2>
+                <h2>Regisztráció</h2>
                 <form className='mt-4 mb-5'>
                   <div className="mb-3">
                     <input type="text" className="form-control" placeholder='Vezetéknév' id="registrationLastName"/>

@@ -13,7 +13,8 @@
 }
 
 .menu-container {
-  position: relative;
+  position: sticky;
+  top: 20px;
 
   .menu-item {
     border-radius: 10px;
@@ -23,12 +24,19 @@
     margin-bottom: 10px;
     color: $black;
 
-    i {
-      background-color: $gray;
-      padding: 12px;
-      border-radius: 50%;
+    .menu-item-icon-container {
+      width: 42px;
+      height: 43px;
+      display: inline-flex;
       margin-right: 10px;
-      font-size: 18px;
+      border-radius: 50%;
+      background-color: $gray;
+      align-items: center;
+      justify-content: center;
+
+      i {
+        font-size: 18px;
+      }
     }
 
     &:hover {

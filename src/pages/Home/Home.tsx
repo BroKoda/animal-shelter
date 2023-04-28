@@ -7,7 +7,7 @@ const Home = (): JSX.Element => {
     <BaseLayout>
       <div className='container'>
         <div className='row'>
-          <div className='col-12'>
+          <div className='col-12 mb-4'>
             <h1>Home</h1>
           </div>
         </div>

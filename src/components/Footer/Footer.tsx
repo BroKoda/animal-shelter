@@ -6,7 +6,7 @@ const Footer = ():JSX.Element => {
     <div className='container-fluid footer-container'>
       <div className='row'>
         <div className='col-12'>
-          <div className='container py-4'>
+          <div className='container py-5'>
             <div className='row'>
               <div className='col-4'>
                 <h5>Mancs állatvédő egyesület</h5>
