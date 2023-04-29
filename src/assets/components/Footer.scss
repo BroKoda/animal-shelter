@@ -7,6 +7,16 @@
     font-size: 14px;
   }
 
+  .footer-description {
+    font-size: $smaller-font-size;
+  }
+
+  .useful-links {
+    a {
+      display: block;
+    }
+  }
+
   .social-links-container {
     i {
       padding: 10px;

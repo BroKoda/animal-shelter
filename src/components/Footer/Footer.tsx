@@ -8,14 +8,28 @@ const Footer = ():JSX.Element => {
         <div className='col-12'>
           <div className='container py-5'>
             <div className='row'>
-              <div className='col-4'>
-                <h5>Mancs állatvédő egyesület</h5>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Donec hendrerit lacus id faucibus suscipit. Pellentesque.</p>
-              </div>
               <div className='col-5'>
+                <h5>Mancs állatvédő egyesület</h5>
+                <p className='footer-description'>Tevékenységeink és céljaink magába foglalják az egyhagyott, kidobott,
+                  megtalált kölyök és felnőtt állatok mentését, gondozását, nevelését és legfőképp gazdához jutását.
+                  Hisszuk, hogy minden állatnak van megfelelő gazdája, mi segítünk megtalálni!</p>
+              </div>
+              <div className='col-4 useful-links'>
+                <h5>Hasznos linkek</h5>
                 <Link to={'/'}>
-                  asdasd
+                  Főoldal
+                </Link>
+                <Link to={'/'}>
+                  Lakóink
+                </Link>
+                <Link to={'/'}>
+                  Jelentkezz önkéntesnek!
+                </Link>
+                <Link to={'/'}>
+                  Támogass minket!
+                </Link>
+                <Link to={'/'}>
+                  Kapcsolat
                 </Link>
               </div>
               <div className='col-3 social-links-container'>
