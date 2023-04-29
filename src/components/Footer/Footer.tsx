@@ -13,13 +13,17 @@ const Footer = ():JSX.Element => {
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                   Donec hendrerit lacus id faucibus suscipit. Pellentesque.</p>
               </div>
-              <div className='col-4'>
-                <h5>Kapcsolat</h5>
-                <p>24420 Magyarkanizsa</p>
-                <p>Szerbia</p>
+              <div className='col-5'>
+                <Link to={'/'}>
+                  asdasd
+                </Link>
               </div>
-              <div className='col-4 social-links-container'>
-                <h5>Kövess minket</h5>
+              <div className='col-3 social-links-container'>
+                <h5>Kapcsolat</h5>
+                <p>Beogradska 3-5<br />
+                  24420 Magyarkanizsa<br />
+                  Szerbia</p>
+                <h5 className='mt-4'>Kövess minket</h5>
                 <Link to={'/facebook'} style={{ textDecoration: 'none' }}>
                   <i className='fa-brands fa-facebook'></i>
                 </Link>

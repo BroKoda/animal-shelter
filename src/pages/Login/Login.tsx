@@ -12,10 +12,16 @@ const Login = (): JSX.Element => {
               <div className="col-12">
                 <h2>Belépés</h2>
                 <form className='mt-4 mb-5'>
-                  <div className="mb-3">
+                  <div className="form-control-container">
+                    <div className="form-icon-container">
+                      <i className="fa-solid fa-at"></i>
+                    </div>
                     <input type="email" className="form-control" placeholder='Email' id="loginEmail"/>
                   </div>
-                  <div className="mb-3">
+                  <div className="form-control-container">
+                    <div className="form-icon-container">
+                      <i className="fa-solid fa-lock"></i>
+                    </div>
                     <input type="password" className="form-control" placeholder='Jelszó' id="loginPassword"/>
                   </div>
                 </form>

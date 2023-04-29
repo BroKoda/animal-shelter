@@ -12,19 +12,34 @@ const Login = (): JSX.Element => {
               <div className="col-12">
                 <h2>Regisztráció</h2>
                 <form className='mt-4 mb-5'>
-                  <div className="mb-3">
+                  <div className="form-control-container">
+                    <div className="form-icon-container">
+                      <i className="fa-solid fa-user"></i>
+                    </div>
                     <input type="text" className="form-control" placeholder='Vezetéknév' id="registrationLastName"/>
                   </div>
-                  <div className="mb-3">
+                  <div className="form-control-container">
+                    <div className="form-icon-container">
+                      <i className="fa-solid fa-user"></i>
+                    </div>
                     <input type="text" className="form-control" placeholder='Keresztnév' id="registrationFirstName"/>
                   </div>
-                  <div className="mb-3">
+                  <div className="form-control-container">
+                    <div className="form-icon-container">
+                      <i className="fa-solid fa-at"></i>
+                    </div>
                     <input type="email" className="form-control" placeholder='Email' id="registrationEmail"/>
                   </div>
-                  <div className="mb-3">
+                  <div className="form-control-container">
+                    <div className="form-icon-container">
+                      <i className="fa-solid fa-lock"></i>
+                    </div>
                     <input type="password" className="form-control" placeholder='Jelszó' id="registrationPassword"/>
                   </div>
-                  <div className="mb-3">
+                  <div className="form-control-container">
+                    <div className="form-icon-container">
+                      <i className="fa-solid fa-lock"></i>
+                    </div>
                     <input type="password" className="form-control" placeholder='Jelszó mégegyszer' id="registrationPasswordRe"/>
                   </div>
                 </form>

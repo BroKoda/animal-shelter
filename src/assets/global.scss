@@ -11,6 +11,7 @@ body {
 
   a {
     text-decoration: none;
+    color: $darkPurple;
   }
 
   p {
@@ -82,30 +83,28 @@ body {
       .form-control {
         display: inline-flex;
         border-bottom: 1px solid $darkPurple;
-      }
-    }
-    .form-control {
-      background-color: transparent;
-      border-top: none;
-      border-right: none;
-      border-left: none;
-      border-bottom: 1px solid $purple;
-      border-radius: 0;
-      color: $black;
-      font-weight: 300;
-      padding: 5px 0;
-      font-size: $base-font-size;
-
-      &::placeholder {
-        opacity: 0.4;
-        color: $black;
-      }
-
-      &:focus {
-        border-bottom: 1px solid $darkPurple;
         background-color: transparent;
-        outline: none;
-        box-shadow: none;
+        border-top: none;
+        border-right: none;
+        border-left: none;
+        border-bottom: 1px solid $purple;
+        border-radius: 0;
+        color: $black;
+        font-weight: 300;
+        padding: 5px 0;
+        font-size: $base-font-size;
+
+        &::placeholder {
+          opacity: 0.4;
+          color: $black;
+        }
+
+        &:focus {
+          border-bottom: 1px solid $darkPurple;
+          background-color: transparent;
+          outline: none;
+          box-shadow: none;
+        }
       }
     }
   }
