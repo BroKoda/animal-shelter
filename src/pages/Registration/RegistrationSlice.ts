@@ -2,7 +2,8 @@ import { RegistrationState, UserToCreate } from './RegistrationState'
 import { LoadingStatus } from '../../components/LoadingStatus/LoadingStatus'
 import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { RootState } from '../../app/store'
-import { createUserWithEmailAndPassword, getAuth } from 'firebase/auth'
+import { createUserWithEmailAndPassword, updateProfile } from 'firebase/auth'
+import { auth } from '../../firebase'
 
 const initialState: RegistrationState = {
   userToCreate: {},
@@ -11,8 +12,11 @@ const initialState: RegistrationState = {
 
 export const registerUser = createAsyncThunk('registerUser', async ({ email, password }: UserToCreate) => {
   if (email != null && password != null) {
-    const response = await createUserWithEmailAndPassword(getAuth(), email, password)
-    return response
+    const { user } = await createUserWithEmailAndPassword(auth, email, password)
+    await updateProfile(user, { displayName: 'Konrad' })
+    return user;
+    // const response = await createUserWithEmailAndPassword(getAuth(), email, password)
+    // return response
   }
 })
 

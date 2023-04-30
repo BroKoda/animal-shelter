@@ -5,6 +5,7 @@ import Login from '../pages/Login/Login'
 import Registration from '../pages/Registration/Registration'
 import AnimalPage from '../pages/AnimalPage/AnimalPage'
 import Contact from '../pages/Contact/Contact'
+import AddNewAnimal from '../pages/AddNewAnimal/AddNewAnimal'
 
 export interface Page {
   title: string
@@ -37,6 +38,11 @@ export const pages: Page[] = [
     title: 'Adatlap',
     path: '/adatlap',
     element: <AnimalPage/>
+  },
+  {
+    title: 'Új lakó hozzáadása',
+    path: '/lako-hozzaadas',
+    element: <AddNewAnimal/>
   },
   {
     title: 'Kapcsolat',

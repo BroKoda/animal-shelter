@@ -9,11 +9,10 @@
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/store.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/global.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/global.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Login/Login.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Login/Login.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Registration/Registration.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Registration/Registration.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/Registration/RegistrationSlice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Registration/RegistrationSlice.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Registration/RegistrationState.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Registration/RegistrationState.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/router/pages.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/router/pages.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,7 +68,7 @@
       <updated>1682103125786</updated>
       <workItem from="1682103130661" duration="970000" />
       <workItem from="1682106565861" duration="121000" />
-      <workItem from="1682106786184" duration="39021000" />
+      <workItem from="1682106786184" duration="48101000" />
     </task>
     <servers />
   </component>

@@ -94,6 +94,11 @@ body {
         padding: 5px 0;
         font-size: $base-font-size;
 
+        &::file-selector-button {
+          background-color: transparent !important;
+          border: none;
+        }
+
         &::placeholder {
           opacity: 0.4;
           color: $black;
