@@ -2,7 +2,7 @@ import { AddNewAnimalState, Animal } from './AddNewAnimalState'
 import { LoadingStatus } from '../../components/LoadingStatus/LoadingStatus'
 import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { RootState } from '../../app/store'
-import { addDoc, collection, serverTimestamp } from 'firebase/firestore'
+import { addDoc, collection } from 'firebase/firestore'
 import { db } from '../../firebase'
 
 const initialState: AddNewAnimalState = {
@@ -14,8 +14,7 @@ export const addNewAnimal = createAsyncThunk('addNewAnimal', async (animal: Anim
   if (animal != null) {
     try {
       await addDoc(collection(db, 'animals'), {
-        animal: animal,
-        timestamp: serverTimestamp()
+        animal: animal
       })
       console.log('Successfully added!')
     } catch (e) {

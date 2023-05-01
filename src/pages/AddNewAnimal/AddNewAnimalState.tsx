@@ -6,6 +6,7 @@ export interface AddNewAnimalState {
 }
 
 export interface Animal {
+  id?: string
   name?: string
   color?: string
   size?: string

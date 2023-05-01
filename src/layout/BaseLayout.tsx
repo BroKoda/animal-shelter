@@ -54,7 +54,7 @@ const BaseLayout = ({ children }: BaseLayoutProps): JSX.Element => {
                       <span>Home page</span>
                     </div>
                   </Link>
-                  <Link to={'/'}>
+                  <Link to={'/lakoink'}>
                     <div className="menu-item">
                       <div className="menu-item-icon-container">
                         <i className="fa-solid fa-paw"></i>

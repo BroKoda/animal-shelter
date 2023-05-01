@@ -2,12 +2,14 @@ import { Action, configureStore, ThunkAction } from '@reduxjs/toolkit'
 import loginReducer from '../pages/Login/LoginSlice'
 import registrationReducer from '../pages/Registration/RegistrationSlice'
 import addNewAnimalReducer from '../pages/AddNewAnimal/AddNewAnimalSlice'
+import residentsReducer from '../pages/Residents/ResidentsSlice'
 
 export const store = configureStore({
   reducer: {
     login: loginReducer,
     registration: registrationReducer,
-    newAnimal: addNewAnimalReducer
+    newAnimal: addNewAnimalReducer,
+    residents: residentsReducer
   }
 })
 

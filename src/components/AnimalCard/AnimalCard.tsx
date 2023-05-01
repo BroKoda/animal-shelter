@@ -1,8 +1,13 @@
 import React from 'react'
 import '../../assets/components/AnimalCard.scss'
 import { Link } from 'react-router-dom'
+import { Animal } from '../../pages/AddNewAnimal/AddNewAnimalState'
 
-const AnimalCard = (): JSX.Element => {
+interface AnimalCardProps {
+  resident: Animal
+}
+
+const AnimalCard = ({ resident }: AnimalCardProps): JSX.Element => {
   return (
     <div className='container animal-card'>
       <div className='row'>
@@ -24,9 +29,9 @@ const AnimalCard = (): JSX.Element => {
       </div>
       <div className='row'>
         <div className='col-12'>
-          <p className='animal-name mt-2'>Animal name</p>
-          <p className='animal-description mt-1'>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-          <p className='animal-date mt-1'>2023.04.23.</p>
+          <p className='animal-name mt-2'>{resident.name}</p>
+          <p className='animal-description mt-1'>{resident.description}</p>
+          <p className='animal-date mt-1'>{resident.arrivalDate}</p>
         </div>
       </div>
       <div className='row'>
