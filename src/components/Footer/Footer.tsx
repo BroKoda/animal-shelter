@@ -8,13 +8,13 @@ const Footer = ():JSX.Element => {
         <div className='col-12'>
           <div className='container py-5'>
             <div className='row'>
-              <div className='col-5'>
+              <div className='col-4'>
                 <h5>Mancs állatvédő egyesület</h5>
                 <p className='footer-description'>Tevékenységeink és céljaink magába foglalják az egyhagyott, kidobott,
                   megtalált kölyök és felnőtt állatok mentését, gondozását, nevelését és legfőképp gazdához jutását.
                   Hisszuk, hogy minden állatnak van megfelelő gazdája, mi segítünk megtalálni!</p>
               </div>
-              <div className='col-4 useful-links'>
+              <div className='col-4 offset-1 useful-links'>
                 <h5>Hasznos linkek</h5>
                 <Link to={'/'}>
                   Főoldal

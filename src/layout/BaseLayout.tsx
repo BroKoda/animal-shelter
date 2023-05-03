@@ -65,6 +65,14 @@ const BaseLayout = ({ children }: BaseLayoutProps): JSX.Element => {
                   <Link to={'/'}>
                     <div className="menu-item">
                       <div className="menu-item-icon-container">
+                        <i className="fa-solid fa-newspaper"></i>
+                      </div>
+                      <span>Hírek</span>
+                    </div>
+                  </Link>
+                  <Link to={'/'}>
+                    <div className="menu-item">
+                      <div className="menu-item-icon-container">
                         <i className="fa-solid fa-handshake-angle"></i>
                       </div>
                       <span>Önkénteskedés</span>

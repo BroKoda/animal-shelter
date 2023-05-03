@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react'
+import '../../assets/pages/Residents.scss'
 import BaseLayout from '../../layout/BaseLayout'
 import { useAppDispatch, useAppSelector } from '../../app/hooks'
 import { fetchResidents } from './ResidentsSlice'

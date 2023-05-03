@@ -90,6 +90,14 @@ const Contact = (): JSX.Element => {
             </form>
           </div>
         </div>
+        <div className='row'>
+          <div className="col-12">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2768.622606079509!2d20.02662931221931!3d46.058625370969345!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4744971c0b92a935%3A0x94227bbf1d51bedf!2zTWFuY3Mgw4FsbGF0dsOpZMWRIEVneWVzw7xsZXQgTWFneWFya2FuaXpzYQ!5e0!3m2!1sen!2shu!4v1683146272016!5m2!1sen!2shu"
+              height="350" width='100%' style={{ border:0, borderRadius: '25px' }} allowFullScreen={false} loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div>
       </div>
     </BaseLayout>
   )
