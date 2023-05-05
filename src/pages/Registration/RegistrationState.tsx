@@ -5,15 +5,10 @@ export interface RegistrationState {
   status: LoadingStatus
 }
 
-export interface User {
-  username: string
-  firstName: string
-  lastName: string
-  email: string
-  phone: string
-}
-
 export interface UserToCreate {
+  firstName?: string
+  lastName?: string
+  role?: string
   email?: string
   password?: string
   confirmPassword?: string

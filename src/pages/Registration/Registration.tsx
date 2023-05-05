@@ -2,25 +2,46 @@ import React, { ChangeEvent, useCallback, useEffect } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import '../../assets/pages/Login.scss'
 import { useAppDispatch, useAppSelector } from '../../app/hooks'
-import { registerUser, resetRegistration, setConfirmPassword, setEmail, setPassword } from './RegistrationSlice'
+import {
+  registerUser,
+  resetRegistration,
+  setConfirmPassword,
+  setEmail,
+  setFirstName, setLastName,
+  setPassword
+} from './RegistrationSlice'
 import { LoadingStatus } from '../../components/LoadingStatus/LoadingStatus'
 
 const Registration = (): JSX.Element => {
   const navigate = useNavigate()
   const dispatch = useAppDispatch()
   const status = useAppSelector((state) => state.registration.status)
-  const { email, password, confirmPassword } = useAppSelector((state) => state.registration.userToCreate)
+  const { firstName, lastName, email, password, confirmPassword } = useAppSelector((state) => state.registration.userToCreate)
 
   useEffect(() => {
     if (status === LoadingStatus.complete) {
       dispatch(resetRegistration())
-      navigate('/login')
+      navigate('/bejelentkezes')
     }
   }, [dispatch, status])
 
   const handleRegistration = useCallback(() => {
-    void dispatch(registerUser({email, password}))
-  }, [dispatch, email, password])
+    const user = {
+      firstName: firstName,
+      lastName: lastName,
+      email: email,
+      password: password
+    }
+    void dispatch(registerUser(user))
+  }, [dispatch, firstName, lastName, email, password])
+
+  const handleSetFirstName = useCallback((event: ChangeEvent<HTMLInputElement>) => {
+    dispatch(setFirstName(event.target?.value))
+  }, [dispatch, firstName])
+
+  const handleSetLastName = useCallback((event: ChangeEvent<HTMLInputElement>) => {
+    dispatch(setLastName(event.target?.value))
+  }, [dispatch, lastName])
 
   const handleSetEmail = useCallback((event: ChangeEvent<HTMLInputElement>) => {
     dispatch(setEmail(event.target?.value))
@@ -43,31 +64,32 @@ const Registration = (): JSX.Element => {
               <div className="col-12">
                 <h2>Regisztráció</h2>
                 <form className='mt-4 mb-5'>
-                  {/*<div className="form-control-container">*/}
-                  {/*  <div className="form-icon-container">*/}
-                  {/*    <i className="fa-solid fa-user"></i>*/}
-                  {/*  </div>*/}
-                  {/*  <input*/}
-                  {/*    type="text"*/}
-                  {/*    className="form-control"*/}
-                  {/*    placeholder='Vezetéknév'*/}
-                  {/*    id="lastName"*/}
-                  {/*    value={''}*/}
-                  {/*  />*/}
-                  {/*</div>*/}
-                  {/*<div className="form-control-container">*/}
-                  {/*  <div className="form-icon-container">*/}
-                  {/*    <i className="fa-solid fa-user"></i>*/}
-                  {/*  </div>*/}
-                  {/*  <input*/}
-                  {/*    type="text"*/}
-                  {/*    className="form-control"*/}
-                  {/*    placeholder='Keresztnév'*/}
-                  {/*    id="firstName"*/}
-                  {/*    value={firstName ?? ''}*/}
-                  {/*    onChange={setFirstNameAction}*/}
-                  {/*  />*/}
-                  {/*</div>*/}
+                  <div className="form-control-container">
+                    <div className="form-icon-container">
+                      <i className="fa-solid fa-user"></i>
+                    </div>
+                    <input
+                      type="text"
+                      className="form-control"
+                      placeholder='Vezetéknév'
+                      id="lastName"
+                      value={lastName ?? ''}
+                      onChange={handleSetLastName}
+                    />
+                  </div>
+                  <div className="form-control-container">
+                    <div className="form-icon-container">
+                      <i className="fa-solid fa-user"></i>
+                    </div>
+                    <input
+                      type="text"
+                      className="form-control"
+                      placeholder='Keresztnév'
+                      id="firstName"
+                      value={firstName ?? ''}
+                      onChange={handleSetFirstName}
+                    />
+                  </div>
                   <div className="form-control-container">
                     <div className="form-icon-container">
                       <i className="fa-solid fa-at"></i>

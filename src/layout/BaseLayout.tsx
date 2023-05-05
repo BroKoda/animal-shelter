@@ -1,16 +1,25 @@
-import React from 'react'
+import React, { MouseEvent, useCallback } from 'react'
 import '../assets/BaseLayout.scss'
 import '../assets/components/Footer.scss'
 import '../assets/components/CopyrightStrip.scss'
 import { Link } from 'react-router-dom'
 import Footer from '../components/Footer/Footer'
 import CopyrightStrip from '../components/CopyrightStrip/CopyrightStrip'
+import { useAppDispatch, useAppSelector } from '../app/hooks'
+import { signOutUser } from '../pages/Login/LoginSlice'
 
 interface BaseLayoutProps {
   children: JSX.Element
 }
 
 const BaseLayout = ({ children }: BaseLayoutProps): JSX.Element => {
+  const dispatch = useAppDispatch()
+  const user = useAppSelector((state) => state.login.user)
+
+  const handleLogOut = useCallback((e: MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault()
+    dispatch(signOutUser())
+  }, [dispatch])
   return (
     <>
       <div className="container-fluid header-container">
@@ -23,18 +32,28 @@ const BaseLayout = ({ children }: BaseLayoutProps): JSX.Element => {
                     <img src={'./mancs.png'} alt={'Mancs logo'}/>
                   </Link>
                 </div>
-                <div className="col-6 align-self-center text-end">
-                  <Link to={'/regisztracio'}>
-                    <button className="button secondary-button me-2">
-                      Regisztráció
+                {user == null &&
+                  <div className="col-6 align-self-center text-end">
+                    <Link to={'/regisztracio'}>
+                      <button className="button secondary-button me-2">
+                        Regisztráció
+                      </button>
+                    </Link>
+                    <Link to={'/bejelentkezes'}>
+                      <button className="button call-to-action-button">
+                        Bejelentkezés
+                      </button>
+                    </Link>
+                  </div>
+                }
+                {user != null &&
+                  <div className='col-6 align-self-center text-end'>
+                    <span>Helló <strong>{user.firstName}!</strong></span>
+                    <button className="button call-to-action-button ms-2" onClick={handleLogOut}>
+                      Kilépés
                     </button>
-                  </Link>
-                  <Link to={'/bejelentkezes'}>
-                    <button className="button call-to-action-button">
-                      Bejelentkezés
-                    </button>
-                  </Link>
-                </div>
+                  </div>
+                }
               </div>
             </div>
           </div>

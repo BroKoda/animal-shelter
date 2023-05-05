@@ -6,10 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="50dd6d76-2a0c-4d0b-b14d-4ae6daae985d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Footer/Footer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Footer/Footer.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/layout/BaseLayout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/layout/BaseLayout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Contact/Contact.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Contact/Contact.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Residents/Residents.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Residents/Residents.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Login/LoginSlice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Login/LoginSlice.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Login/LoginState.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Login/LoginState.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Registration/Registration.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Registration/Registration.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Registration/RegistrationSlice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Registration/RegistrationSlice.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Registration/RegistrationState.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Registration/RegistrationState.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/router/BaseRouter.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/router/BaseRouter.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,7 +68,7 @@
       <updated>1682103125786</updated>
       <workItem from="1682103130661" duration="970000" />
       <workItem from="1682106565861" duration="121000" />
-      <workItem from="1682106786184" duration="54877000" />
+      <workItem from="1682106786184" duration="63888000" />
     </task>
     <servers />
   </component>
