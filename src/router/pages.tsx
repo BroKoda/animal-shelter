@@ -3,7 +3,7 @@ import Home from '../pages/Home/Home'
 import PageNotFound from '../pages/PageNotFound/PageNotFound'
 import Login from '../pages/Login/Login'
 import Registration from '../pages/Registration/Registration'
-import AnimalPage from '../pages/AnimalPage/AnimalPage'
+import AnimalDetails from '../pages/AnimalDetails/AnimalDetails'
 import Contact from '../pages/Contact/Contact'
 import AddNewAnimal from '../pages/AddNewAnimal/AddNewAnimal'
 import Residents from '../pages/Residents/Residents'
@@ -37,8 +37,8 @@ export const pages: Page[] = [
   },
   {
     title: 'Adatlap',
-    path: '/adatlap',
-    element: <AnimalPage/>
+    path: 'lakoink/adatlap/:animalId',
+    element: <AnimalDetails/>
   },
   {
     title: 'Új lakó hozzáadása',

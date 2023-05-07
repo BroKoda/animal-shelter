@@ -23,11 +23,11 @@ const Residents = (): JSX.Element => {
           </div>
         </div>
         <div className='row'>
-          {residents.map((resident: Resident, index: number) => {
+          {residents != null && residents.map((resident: Resident, index: number) => {
             if (resident.animal != null) {
               return (
                 <div key={index} className='col-4'>
-                  <AnimalCard key={index} resident={resident.animal}/>
+                  <AnimalCard key={index} resident={resident.animal} id={resident.id} />
                 </div>
               )
             } else {

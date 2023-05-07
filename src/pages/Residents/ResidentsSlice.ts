@@ -11,23 +11,17 @@ const initialState: ResidentsState = {
 }
 
 export const fetchResidents = createAsyncThunk('fetchResidents', async () => {
-  const data = await getDocs(collection(db, 'animals'))
-  const list: Resident[] = []
-  data.forEach((doc) => {
-    list.push(doc.data())
-  })
-  return list
-  // onSnapshot(collection(db, 'animals'),
-  //   (snapshot) => {
-  //   const list: Animal[] = []
-  //     snapshot.docs.forEach((doc) => {
-  //       list.push({id: doc.id, ...doc.data()})
-  //     })
-  //     return list
-  //   }, (error) => {
-  //     console.log(error)
-  //   }
-  // )
+  try {
+    const data = await getDocs(collection(db, 'animals'))
+    const list: Resident[] = []
+    data.forEach((doc) => {
+      list.push({id: doc.id, ...doc.data()})
+    })
+    return list
+  } catch (e) {
+    console.log(e)
+    return undefined
+  }
 })
 
 const residentsSlice = createSlice({

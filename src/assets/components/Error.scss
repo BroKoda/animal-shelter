@@ -1,0 +1,36 @@
+@import "../global";
+
+.error-container {
+  position: relative;
+  width: 400px;
+  margin: 0 auto;
+
+  .error-header {
+    height: 180px;
+    position: relative;
+
+    .error-number {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 170px;
+      font-weight: 600;
+      z-index: -1;
+      color: $gray;
+    }
+
+    .error-title {
+      z-index: 1;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 60px;
+    }
+  }
+
+  button {
+    width: auto;
+  }
+}

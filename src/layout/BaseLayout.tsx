@@ -29,7 +29,7 @@ const BaseLayout = ({ children }: BaseLayoutProps): JSX.Element => {
               <div className="row">
                 <div className="col-6 align-self-center">
                   <Link to={'/'}>
-                    <img src={'./mancs.png'} alt={'Mancs logo'}/>
+                    <img src={'http://localhost:3000/mancs.png'} alt={'Mancs logo'}/>
                   </Link>
                 </div>
                 {user == null &&

@@ -5,9 +5,10 @@ import { Animal } from '../../pages/AddNewAnimal/AddNewAnimalState'
 
 interface AnimalCardProps {
   resident: Animal
+  id: string
 }
 
-const AnimalCard = ({ resident }: AnimalCardProps): JSX.Element => {
+const AnimalCard = ({ resident, id }: AnimalCardProps): JSX.Element => {
   return (
     <div className='container animal-card'>
       <div className='row'>
@@ -36,7 +37,7 @@ const AnimalCard = ({ resident }: AnimalCardProps): JSX.Element => {
       </div>
       <div className='row'>
         <div className='col-12'>
-          <Link to={'/'}>
+          <Link to={`/lakoink/adatlap/${id}`}>
             <button className='button call-to-action-button mt-2'>
               Megnézem!
             </button>
