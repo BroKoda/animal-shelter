@@ -7,13 +7,7 @@
     <list default="true" id="50dd6d76-2a0c-4d0b-b14d-4ae6daae985d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/store.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/BaseLayout.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/BaseLayout.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/AnimalCard/AnimalCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AnimalCard/AnimalCard.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/layout/BaseLayout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/layout/BaseLayout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/AnimalPage/AnimalPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/AnimalDetails/AnimalDetails.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Residents/Residents.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Residents/Residents.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Residents/ResidentsSlice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Residents/ResidentsSlice.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Residents/ResidentsState.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Residents/ResidentsState.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/router/pages.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/router/pages.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -43,6 +37,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/Users/koda/Koda/szakdoga/animal-shelter/src/components",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -54,7 +49,12 @@
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/components" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/pages/News/News" />
+      <recent name="$PROJECT_DIR$/src/pages/News/AddNews" />
       <recent name="$PROJECT_DIR$/src/assets/components" />
       <recent name="$PROJECT_DIR$/src/components/Footer" />
       <recent name="$PROJECT_DIR$/src/pages/Home" />
@@ -70,7 +70,7 @@
       <updated>1682103125786</updated>
       <workItem from="1682103130661" duration="970000" />
       <workItem from="1682106565861" duration="121000" />
-      <workItem from="1682106786184" duration="71714000" />
+      <workItem from="1682106786184" duration="80001000" />
     </task>
     <servers />
   </component>

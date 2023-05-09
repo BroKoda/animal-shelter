@@ -81,7 +81,7 @@ const BaseLayout = ({ children }: BaseLayoutProps): JSX.Element => {
                       <span>Lakóink</span>
                     </div>
                   </Link>
-                  <Link to={'/'}>
+                  <Link to={'/hirek'}>
                     <div className="menu-item">
                       <div className="menu-item-icon-container">
                         <i className="fa-solid fa-newspaper"></i>

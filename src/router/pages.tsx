@@ -7,6 +7,8 @@ import AnimalDetails from '../pages/AnimalDetails/AnimalDetails'
 import Contact from '../pages/Contact/Contact'
 import AddNewAnimal from '../pages/AddNewAnimal/AddNewAnimal'
 import Residents from '../pages/Residents/Residents'
+import NewsList from '../pages/News/NewsList/NewsList'
+import AddNews from '../pages/News/AddNews/AddNews'
 
 export interface Page {
   title: string
@@ -49,6 +51,16 @@ export const pages: Page[] = [
     title: 'Lakóoing',
     path: '/lakoink',
     element: <Residents/>
+  },
+  {
+    title: 'Hírek',
+    path: '/hirek',
+    element: <NewsList/>
+  },
+  {
+    title: 'Hír hozzáadása',
+    path: 'hirek/hir-hozzaadasa',
+    element: <AddNews/>
   },
   {
     title: 'Kapcsolat',

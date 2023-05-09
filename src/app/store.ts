@@ -4,6 +4,7 @@ import registrationReducer from '../pages/Registration/RegistrationSlice'
 import addNewAnimalReducer from '../pages/AddNewAnimal/AddNewAnimalSlice'
 import residentsReducer from '../pages/Residents/ResidentsSlice'
 import animalDetailsReducer from '../pages/AnimalDetails/AnimalDetailsSlice'
+import newsReducer from '../pages/News/NewsSlice'
 
 export const store = configureStore({
   reducer: {
@@ -11,7 +12,8 @@ export const store = configureStore({
     registration: registrationReducer,
     newAnimal: addNewAnimalReducer,
     residents: residentsReducer,
-    animalDetails: animalDetailsReducer
+    animalDetails: animalDetailsReducer,
+    news: newsReducer
   }
 })
 
