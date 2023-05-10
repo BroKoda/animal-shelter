@@ -2,14 +2,15 @@ import { LoadingStatus } from '../../components/LoadingStatus/LoadingStatus'
 import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { RootState } from '../../app/store'
 import { News, NewsState, NewsToAdd } from './NewsState'
-import { addDoc, collection, getDocs } from 'firebase/firestore'
+import { addDoc, collection, doc, getDoc, getDocs } from 'firebase/firestore'
 import { db } from '../../firebase'
 
 const initialState: NewsState = {
   news: [],
   newNews: {},
   addNewsStatus: LoadingStatus.initial,
-  fetchNewsStatus: LoadingStatus.initial
+  fetchNewsStatus: LoadingStatus.initial,
+  fetchSingleNewsStatus: LoadingStatus.initial
 }
 
 export const addNews = createAsyncThunk('addNews', async (newsDetails: NewsToAdd) => {
@@ -31,6 +32,16 @@ export const fetchNews = createAsyncThunk('fetchNews', async () => {
       list.push({id: doc.id, ...doc.data()})
     })
     return list
+  } catch (e) {
+    console.log(e)
+    return undefined
+  }
+})
+
+export const fetchSingleNews = createAsyncThunk('fetchSingleNews', async (id: string) => {
+  try {
+    const data = await getDoc(doc(db, 'news', id))
+    return data.data()
   } catch (e) {
     console.log(e)
     return undefined
@@ -71,6 +82,16 @@ const newsSlice = createSlice({
       })
       .addCase(addNews.rejected, (state) => {
         state.addNewsStatus = LoadingStatus.error
+      })
+      .addCase(fetchSingleNews.pending, (state) => {
+        state.fetchSingleNewsStatus = LoadingStatus.loading
+      })
+      .addCase(fetchSingleNews.fulfilled, (state, action) => {
+        state.fetchSingleNewsStatus = LoadingStatus.complete
+        state.singleNews = action.payload
+      })
+      .addCase(fetchSingleNews.rejected, (state) => {
+        state.fetchSingleNewsStatus = LoadingStatus.error
       })
   }
 })
