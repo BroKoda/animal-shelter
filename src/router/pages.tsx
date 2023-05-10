@@ -3,10 +3,10 @@ import Home from '../pages/Home/Home'
 import PageNotFound from '../pages/PageNotFound/PageNotFound'
 import Login from '../pages/Login/Login'
 import Registration from '../pages/Registration/Registration'
-import AnimalDetails from '../pages/AnimalDetails/AnimalDetails'
+import SingleResident from '../pages/Residents/SingleResident/SingleResident'
 import Contact from '../pages/Contact/Contact'
-import AddNewAnimal from '../pages/AddNewAnimal/AddNewAnimal'
-import Residents from '../pages/Residents/Residents'
+import AddResident from '../pages/Residents/AddResident/AddResident'
+import ResidentsList from '../pages/Residents/ResidentsList/ResidentsList'
 import NewsList from '../pages/News/NewsList/NewsList'
 import AddNews from '../pages/News/AddNews/AddNews'
 import SingleNewsPage from '../pages/News/SingleNewsPage/SingleNewsPage'
@@ -40,18 +40,18 @@ export const pages: Page[] = [
   },
   {
     title: 'Adatlap',
-    path: 'lakoink/adatlap/:animalId',
-    element: <AnimalDetails/>
+    path: 'lakok/adatlap/:animalId',
+    element: <SingleResident/>
   },
   {
     title: 'Új lakó hozzáadása',
-    path: '/lako-hozzaadas',
-    element: <AddNewAnimal/>
+    path: '/lakok/hozzaadas',
+    element: <AddResident/>
   },
   {
     title: 'Lakóoing',
-    path: '/lakoink',
-    element: <Residents/>
+    path: '/lakok',
+    element: <ResidentsList/>
   },
   {
     title: 'Hírek',

@@ -1,36 +1,36 @@
 import React, { useEffect } from 'react'
 import { Link, useParams } from 'react-router-dom'
-import '../../assets/pages/AnimalPage.scss'
-import BaseLayout from '../../layout/BaseLayout'
-import { useAppDispatch, useAppSelector } from '../../app/hooks'
-import { fetchAnimalDetails } from './AnimalDetailsSlice'
-import ProgressIndicator from '../../components/ProgressIndicator/ProgressIndicator'
-import { LoadingStatus } from '../../components/LoadingStatus/LoadingStatus'
-import Error from '../../components/Error/Error'
+import '../../../assets/pages/AnimalPage.scss'
+import BaseLayout from '../../../layout/BaseLayout'
+import { useAppDispatch, useAppSelector } from '../../../app/hooks'
+import ProgressIndicator from '../../../components/ProgressIndicator/ProgressIndicator'
+import { LoadingStatus } from '../../../components/LoadingStatus/LoadingStatus'
+import Error from '../../../components/Error/Error'
+import { fetchResidentDetails } from '../ResidentsSlice'
 
-const AnimalDetails = (): JSX.Element => {
+const SingleResident = (): JSX.Element => {
   const dispatch = useAppDispatch()
   const { animalId } = useParams()
-  const { animalDetails, status } = useAppSelector((state) => state.animalDetails)
+  const { residentDetails, fetchResidentDetailsStatus } = useAppSelector((state) => state.residents)
 
   useEffect(() => {
     if (animalId != null) {
-      void dispatch(fetchAnimalDetails(animalId))
+      void dispatch(fetchResidentDetails(animalId))
     }
   }, [dispatch, animalId])
 
   return (
     <BaseLayout>
       <>
-        {status === LoadingStatus.error &&
+        {fetchResidentDetailsStatus === LoadingStatus.error &&
           <Error/>
         }
 
-        {status === LoadingStatus.loading &&
+        {fetchResidentDetailsStatus === LoadingStatus.loading &&
           <ProgressIndicator/>
         }
 
-        {status === LoadingStatus.complete &&
+        {fetchResidentDetailsStatus === LoadingStatus.complete &&
           <div className="container animal-page-container">
             <div className="row">
               <div className="col-12 mb-4">
@@ -39,28 +39,28 @@ const AnimalDetails = (): JSX.Element => {
             </div>
             <div className="row">
               <div className="col-6">
-                <img className="animal-image" src="/dog_placeholder.jpeg" alt="Anton képe"/>
+                <img className="animal-image" src="/public/dog_placeholder.jpeg" alt="Anton képe"/>
               </div>
               <div className="col-6 align-self-center">
                 <p className="animal-name mt-2">
                   <strong>Név: </strong>
-                  {animalDetails?.animal?.name}
+                  {residentDetails?.animal?.name}
                 </p>
                 <p className="animal-color mt-1">
                   <strong>Szín: </strong>
-                  {animalDetails?.animal?.color}
+                  {residentDetails?.animal?.color}
                 </p>
                 <p className="animal-size mt-1">
                   <strong>Méret: </strong>
-                  {animalDetails?.animal?.size}
+                  {residentDetails?.animal?.size}
                 </p>
                 <p className="animal-birth mt-1">
                   <strong>Születési idő: </strong>
-                  {animalDetails?.animal?.birthDate}
+                  {residentDetails?.animal?.birthDate}
                 </p>
                 <p className="animal-arrival mt-1">
                   <strong>Bekerülési idő: </strong>
-                  {animalDetails?.animal?.arrivalDate}
+                  {residentDetails?.animal?.arrivalDate}
                 </p>
               </div>
             </div>
@@ -69,12 +69,12 @@ const AnimalDetails = (): JSX.Element => {
                 <p className="animal-description-title mb-1">
                   <strong>Anton jellemzői:</strong>
                 </p>
-                <p>{animalDetails?.animal?.description}</p>
+                <p>{residentDetails?.animal?.description}</p>
               </div>
             </div>
             <div className="row justify-content-end">
               <div className="col-3 mt-4">
-                <Link to={'/lakoink'}>
+                <Link to={'/lakok'}>
                   <button className="button secondary-button">
                     Vissza
                   </button>
@@ -95,4 +95,4 @@ const AnimalDetails = (): JSX.Element => {
   )
 }
 
-export default AnimalDetails
+export default SingleResident

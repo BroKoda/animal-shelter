@@ -1,18 +1,18 @@
 import React, { ChangeEvent, MouseEvent, useCallback } from 'react'
-import BaseLayout from '../../layout/BaseLayout'
-import { useAppDispatch, useAppSelector } from '../../app/hooks'
+import BaseLayout from '../../../layout/BaseLayout'
+import { useAppDispatch, useAppSelector } from '../../../app/hooks'
 import {
-  addNewAnimal,
+  addNewResident,
   setArrivalDate,
   setBirtDate,
   setColor,
   setDescription,
   setName,
   setSize
-} from './AddNewAnimalSlice'
-import { Animal } from './AddNewAnimalState'
+} from '../ResidentsSlice'
+import { Animal } from '../ResidentsState'
 
-const AddNewAnimal = (): JSX.Element => {
+const AddResident = (): JSX.Element => {
   const dispatch = useAppDispatch()
   const {
     name,
@@ -21,12 +21,12 @@ const AddNewAnimal = (): JSX.Element => {
     birthDate,
     arrivalDate,
     description
-  } = useAppSelector((state) => state.newAnimal.animalToAdd)
+  } = useAppSelector((state) => state.residents.residentToAdd)
 
   const handleAddNewAnimal = useCallback((e: MouseEvent<HTMLButtonElement>) => {
     e.preventDefault()
     const animal: Animal = { name, color, size, birthDate, arrivalDate, description }
-    dispatch(addNewAnimal(animal))
+    dispatch(addNewResident(animal))
   }, [dispatch, name, color, size, birthDate, arrivalDate, description])
 
   const handleSetName = useCallback((event: ChangeEvent<HTMLInputElement>) => {
@@ -167,4 +167,4 @@ const AddNewAnimal = (): JSX.Element => {
   )
 }
 
-export default AddNewAnimal
+export default AddResident

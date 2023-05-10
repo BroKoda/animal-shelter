@@ -1,12 +1,12 @@
 import React, { useEffect } from 'react'
-import '../../assets/pages/Residents.scss'
-import BaseLayout from '../../layout/BaseLayout'
-import { useAppDispatch, useAppSelector } from '../../app/hooks'
-import { fetchResidents } from './ResidentsSlice'
-import AnimalCard from '../../components/AnimalCard/AnimalCard'
-import { Resident } from './ResidentsState'
+import '../../../assets/pages/Residents.scss'
+import BaseLayout from '../../../layout/BaseLayout'
+import { useAppDispatch, useAppSelector } from '../../../app/hooks'
+import { fetchResidents } from '../ResidentsSlice'
+import AnimalCard from '../../../components/AnimalCard/AnimalCard'
+import { Resident } from '../ResidentsState'
 
-const Residents = (): JSX.Element => {
+const ResidentsList = (): JSX.Element => {
   const dispatch = useAppDispatch()
   const residents = useAppSelector((state) => state.residents.residents)
 
@@ -40,4 +40,4 @@ const Residents = (): JSX.Element => {
   )
 }
 
-export default Residents
+export default ResidentsList

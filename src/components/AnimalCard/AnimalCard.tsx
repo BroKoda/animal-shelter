@@ -1,7 +1,7 @@
 import React from 'react'
 import '../../assets/components/AnimalCard.scss'
 import { Link } from 'react-router-dom'
-import { Animal } from '../../pages/AddNewAnimal/AddNewAnimalState'
+import { Animal } from '../../pages/Residents/ResidentsState'
 
 interface AnimalCardProps {
   resident: Animal
@@ -37,7 +37,7 @@ const AnimalCard = ({ resident, id }: AnimalCardProps): JSX.Element => {
       </div>
       <div className='row'>
         <div className='col-12'>
-          <Link to={`/lakoink/adatlap/${id}`}>
+          <Link to={`/lakok/adatlap/${id}`}>
             <button className='button call-to-action-button mt-2'>
               Megnézem!
             </button>
