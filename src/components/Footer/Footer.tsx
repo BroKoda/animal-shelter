@@ -19,16 +19,16 @@ const Footer = ():JSX.Element => {
                 <Link to={'/'}>
                   Főoldal
                 </Link>
-                <Link to={'/'}>
+                <Link to={'/lakok'}>
                   Lakóink
                 </Link>
-                <Link to={'/'}>
-                  Jelentkezz önkéntesnek!
+                <Link to={'/hirek'}>
+                  Hírek
                 </Link>
-                <Link to={'/'}>
-                  Támogass minket!
+                <Link to={'/csatlakozz'}>
+                  Csatlakozz!
                 </Link>
-                <Link to={'/'}>
+                <Link to={'/kapcsolat'}>
                   Kapcsolat
                 </Link>
               </div>

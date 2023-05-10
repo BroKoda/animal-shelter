@@ -10,6 +10,7 @@ import ResidentsList from '../pages/Residents/ResidentsList/ResidentsList'
 import NewsList from '../pages/News/NewsList/NewsList'
 import AddNews from '../pages/News/AddNews/AddNews'
 import SingleNewsPage from '../pages/News/SingleNewsPage/SingleNewsPage'
+import JoinUs from '../pages/JoinUs/JoinUs'
 
 export interface Page {
   title: string
@@ -67,6 +68,11 @@ export const pages: Page[] = [
     title: 'Hír hozzáadása',
     path: 'hirek/hir-hozzaadasa',
     element: <AddNews/>
+  },
+  {
+    title: 'Csatlakozz',
+    path: 'csatlakozz',
+    element: <JoinUs/>
   },
   {
     title: 'Kapcsolat',

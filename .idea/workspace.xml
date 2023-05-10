@@ -6,15 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="50dd6d76-2a0c-4d0b-b14d-4ae6daae985d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/AddNewAnimal/AddNewAnimal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Residents/AddResident/AddResident.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/AddNewAnimal/AddNewAnimalSlice.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/AddNewAnimal/AddNewAnimalState.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/AnimalDetails/AnimalDetails.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Residents/SingleResident/SingleResident.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/AnimalDetails/AnimalDetailsSlice.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/AnimalDetails/AnimalDetailsState.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Residents/Residents.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Residents/ResidentsList/ResidentsList.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Residents/ResidentsSlice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Residents/ResidentsSlice.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Residents/ResidentsState.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Residents/ResidentsState.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Footer/Footer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Footer/Footer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/layout/BaseLayout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/layout/BaseLayout.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/router/pages.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/router/pages.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -77,7 +70,7 @@
       <updated>1682103125786</updated>
       <workItem from="1682103130661" duration="970000" />
       <workItem from="1682106565861" duration="121000" />
-      <workItem from="1682106786184" duration="83570000" />
+      <workItem from="1682106786184" duration="84713000" />
     </task>
     <servers />
   </component>
