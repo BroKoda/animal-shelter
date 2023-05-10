@@ -66,7 +66,7 @@ export const pages: Page[] = [
   },
   {
     title: 'Hír hozzáadása',
-    path: 'hirek/hir-hozzaadasa',
+    path: 'hirek/hozzaadas',
     element: <AddNews/>
   },
   {

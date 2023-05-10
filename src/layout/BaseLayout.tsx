@@ -81,6 +81,16 @@ const BaseLayout = ({ children }: BaseLayoutProps): JSX.Element => {
                       <span>Lakóink</span>
                     </div>
                   </Link>
+                  {user?.role === 'admin' &&
+                    <Link to={'/lakok/hozzaadas'}>
+                      <div className="menu-item">
+                        <div className="menu-item-icon-container">
+                          <i className="fa-solid fa-paw"></i>
+                        </div>
+                        <span>Új Lakó hozzáadása</span>
+                      </div>
+                    </Link>
+                  }
                   <Link to={'/hirek'}>
                     <div className="menu-item">
                       <div className="menu-item-icon-container">
@@ -89,6 +99,16 @@ const BaseLayout = ({ children }: BaseLayoutProps): JSX.Element => {
                       <span>Hírek</span>
                     </div>
                   </Link>
+                  {user?.role === 'admin' &&
+                    <Link to={'/hirek/hozzaadas'}>
+                      <div className="menu-item">
+                        <div className="menu-item-icon-container">
+                          <i className="fa-solid fa-newspaper"></i>
+                        </div>
+                        <span>Új hír hozzáadása</span>
+                      </div>
+                    </Link>
+                  }
                   <Link to={'/csatlakozz'}>
                     <div className="menu-item">
                       <div className="menu-item-icon-container">

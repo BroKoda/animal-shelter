@@ -18,4 +18,5 @@ export interface User {
   email: string | null
   firstName: string
   lastName: string
+  role: string
 }
