@@ -70,7 +70,7 @@ const BaseLayout = ({ children }: BaseLayoutProps): JSX.Element => {
                       <div className="menu-item-icon-container">
                         <i className="fa-solid fa-house"></i>
                       </div>
-                      <span>Home page</span>
+                      <span>Főoldal</span>
                     </div>
                   </Link>
                   <Link to={'/lakok'}>
