@@ -8,13 +8,13 @@ const Footer = ():JSX.Element => {
         <div className='col-12'>
           <div className='container py-5'>
             <div className='row'>
-              <div className='col-4'>
+              <div className='col-12 col-md-5 col-lg-4 mb-4 mb-md-0'>
                 <h5>Mancs állatvédő egyesület</h5>
                 <p className='footer-description'>Tevékenységeink és céljaink magába foglalják az egyhagyott, kidobott,
                   megtalált kölyök és felnőtt állatok mentését, gondozását, nevelését és legfőképp gazdához jutását.
                   Hisszuk, hogy minden állatnak van megfelelő gazdája, mi segítünk megtalálni!</p>
               </div>
-              <div className='col-4 offset-1 useful-links'>
+              <div className='col-6 col-md-4 offset-lg-1 useful-links'>
                 <h5>Hasznos linkek</h5>
                 <Link to={'/'}>
                   Főoldal
@@ -32,7 +32,7 @@ const Footer = ():JSX.Element => {
                   Kapcsolat
                 </Link>
               </div>
-              <div className='col-3 social-links-container'>
+              <div className='col-6 col-md-3 social-links-container'>
                 <h5>Kapcsolat</h5>
                 <p>Beogradska 3-5<br />
                   24420 Magyarkanizsa<br />

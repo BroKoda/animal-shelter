@@ -26,7 +26,7 @@ const ResidentsList = (): JSX.Element => {
           {residents != null && residents.map((resident: Resident, index: number) => {
             if (resident.animal != null) {
               return (
-                <div key={index} className='col-4'>
+                <div key={index} className='col-12 col-md-6 col-lg-4 mb-3'>
                   <AnimalCard key={index} resident={resident.animal} id={resident.id} />
                 </div>
               )

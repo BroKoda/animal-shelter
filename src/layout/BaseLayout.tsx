@@ -1,4 +1,4 @@
-import React, { MouseEvent, useCallback } from 'react'
+import React, { MouseEvent, useCallback, useState } from 'react'
 import '../assets/BaseLayout.scss'
 import '../assets/components/Footer.scss'
 import '../assets/components/CopyrightStrip.scss'
@@ -7,6 +7,7 @@ import Footer from '../components/Footer/Footer'
 import CopyrightStrip from '../components/CopyrightStrip/CopyrightStrip'
 import { useAppDispatch, useAppSelector } from '../app/hooks'
 import { signOutUser } from '../pages/Login/LoginSlice'
+import Navigation from './Navigation'
 
 interface BaseLayoutProps {
   children: JSX.Element
@@ -14,12 +15,14 @@ interface BaseLayoutProps {
 
 const BaseLayout = ({ children }: BaseLayoutProps): JSX.Element => {
   const dispatch = useAppDispatch()
+  const [navigationVisible, setNavigationVisible] = useState(false)
   const user = useAppSelector((state) => state.login.user)
 
   const handleLogOut = useCallback((e: MouseEvent<HTMLButtonElement>) => {
     e.preventDefault()
     dispatch(signOutUser())
   }, [dispatch])
+
   return (
     <>
       <div className="container-fluid header-container">
@@ -27,31 +30,47 @@ const BaseLayout = ({ children }: BaseLayoutProps): JSX.Element => {
           <div className="col-12 align-self-center">
             <div className="container">
               <div className="row">
-                <div className="col-6 align-self-center">
+                <div className='col-4 d-md-none align-self-center'>
+                  <i className="fa-solid fa-bars js-navigation-toggle"
+                     onClick={() => {
+                       setNavigationVisible(!navigationVisible)
+                     }}>
+                  </i>
+                </div>
+                <div className="col-4 col-md-6 align-self-center text-center text-md-start">
                   <Link to={'/'}>
-                    <img src={'http://localhost:3000/mancs.png'} alt={'Mancs logo'}/>
+                    <img className='d-none d-md-block' src={'http://localhost:3000/mancs.png'} alt={'Mancs logo'}/>
+                    <img className='d-block d-md-none mx-auto' src={'http://localhost:3000/mancs_logo_only.png'} alt={'Mancs logo'}/>
                   </Link>
                 </div>
                 {user == null &&
-                  <div className="col-6 align-self-center text-end">
-                    <Link to={'/regisztracio'}>
+                  <div className="col-4 col-md-6 align-self-center text-end">
+                    <Link to={'/regisztracio'} className='d-none d-md-inline-block'>
                       <button className="button secondary-button me-2">
                         Regisztráció
                       </button>
                     </Link>
                     <Link to={'/bejelentkezes'}>
-                      <button className="button call-to-action-button">
-                        Bejelentkezés
+                      <button className="button call-to-action-button login-button">
+                        <span className='d-none d-md-inline'>Bejelentkezés</span>
+                        <span className='d-inline d-md-none'><i className="fa-solid fa-user"></i></span>
                       </button>
                     </Link>
                   </div>
                 }
                 {user != null &&
-                  <div className='col-6 align-self-center text-end'>
-                    <span>Helló <strong>{user.firstName}!</strong></span>
-                    <button className="button call-to-action-button ms-2" onClick={handleLogOut}>
-                      Kilépés
-                    </button>
+                  <div className='col-4 col-md-6 align-self-center text-end'>
+                    <div className='d-flex flex-row logout-container justify-content-end'>
+                      <div className='d-inline-flex align-self-center'>
+                        <span className='greetings'>Helló <strong><br className='d-block d-md-none'/>{user.firstName}!</strong></span>
+                      </div>
+                      <div className='d-inline-flex align-self-center'>
+                        <button className="button call-to-action-button ms-2 login-button" onClick={handleLogOut}>
+                          <span className='d-none d-md-inline'>Kilépés</span>
+                          <span className='d-inline d-md-none'><i className="fa-solid fa-right-from-bracket"></i></span>
+                        </button>
+                      </div>
+                    </div>
                   </div>
                 }
               </div>
@@ -61,75 +80,10 @@ const BaseLayout = ({ children }: BaseLayoutProps): JSX.Element => {
       </div>
       <div className="container body-container mt-3 mb-5">
         <div className="row">
-          <div className="col-3">
-            <div className="container menu-container px-0">
-              <div className="row">
-                <div className="col-12">
-                  <Link to={'/'}>
-                    <div className="menu-item">
-                      <div className="menu-item-icon-container">
-                        <i className="fa-solid fa-house"></i>
-                      </div>
-                      <span>Főoldal</span>
-                    </div>
-                  </Link>
-                  <Link to={'/lakok'}>
-                    <div className="menu-item">
-                      <div className="menu-item-icon-container">
-                        <i className="fa-solid fa-paw"></i>
-                      </div>
-                      <span>Lakóink</span>
-                    </div>
-                  </Link>
-                  {user?.role === 'admin' &&
-                    <Link to={'/lakok/hozzaadas'}>
-                      <div className="menu-item">
-                        <div className="menu-item-icon-container">
-                          <i className="fa-solid fa-paw"></i>
-                        </div>
-                        <span>Új Lakó hozzáadása</span>
-                      </div>
-                    </Link>
-                  }
-                  <Link to={'/hirek'}>
-                    <div className="menu-item">
-                      <div className="menu-item-icon-container">
-                        <i className="fa-solid fa-newspaper"></i>
-                      </div>
-                      <span>Hírek</span>
-                    </div>
-                  </Link>
-                  {user?.role === 'admin' &&
-                    <Link to={'/hirek/hozzaadas'}>
-                      <div className="menu-item">
-                        <div className="menu-item-icon-container">
-                          <i className="fa-solid fa-newspaper"></i>
-                        </div>
-                        <span>Új hír hozzáadása</span>
-                      </div>
-                    </Link>
-                  }
-                  <Link to={'/csatlakozz'}>
-                    <div className="menu-item">
-                      <div className="menu-item-icon-container">
-                        <i className="fa-solid fa-hand-holding-heart"></i>
-                      </div>
-                      <span>Csatlakozz!</span>
-                    </div>
-                  </Link>
-                  <Link to={'/kapcsolat'}>
-                    <div className="menu-item">
-                      <div className="menu-item-icon-container">
-                        <i className="fa-solid fa-location-dot"></i>
-                      </div>
-                      <span>Kapcsolat</span>
-                    </div>
-                  </Link>
-                </div>
-              </div>
-            </div>
+          <div className={`col-12 col-md-4 col-lg-3 navigation-container ${navigationVisible ? 'd-block' : 'd-none'} d-md-block pe-md-0 pe-xl-2`}>
+            <Navigation user={user}/>
           </div>
-          <div className="col-9">
+          <div className="col-12 col-md-8 col-lg-9">
             <div className="container body-container px-0">
               <div className="row">
                 <div className="col-12">

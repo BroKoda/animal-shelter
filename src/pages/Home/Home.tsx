@@ -50,11 +50,11 @@ const Home = (): JSX.Element => {
               az összes hír megtekintéséhez!</p>
           </div>
         </div>
-        <div className='row'>
+        <div className='row justify-content-center'>
           {news != null && news.map((singleNews: News, index: number) => {
             if (singleNews.newsDetails != null) {
               return (
-                <div key={index} className="col-4">
+                <div key={index} className="col-12 col-md-6 col-lg-4 mb-3">
                   <NewsCard key={index} news={singleNews.newsDetails} id={singleNews.id}/>
                 </div>
               )
@@ -75,11 +75,11 @@ const Home = (): JSX.Element => {
               az összes lakónk megtekintéséhez!</p>
           </div>
         </div>
-        <div className='row'>
+        <div className='row justify-content-center'>
           {residents != null && residents.map((resident: Resident, index: number) => {
             if (resident.animal != null) {
               return (
-                <div key={index} className='col-4'>
+                <div key={index} className='col-12 col-md-6 col-lg-4 mb-3'>
                   <AnimalCard key={index} resident={resident.animal} id={resident.id} />
                 </div>
               )
