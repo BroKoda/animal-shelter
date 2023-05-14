@@ -13,7 +13,7 @@ const Contact = (): JSX.Element => {
           </div>
         </div>
         <div className="row mb-5">
-          <div className="col-6 align-self-center">
+          <div className="col-12 col-lg-6 align-self-center mb-4 mb-lg-0">
             <p><strong>Cím: </strong></p>
             <p>
               Beogradska 3-5<br />
@@ -35,7 +35,7 @@ const Contact = (): JSX.Element => {
               </Link>
             </p>
           </div>
-          <div className="col-6">
+          <div className="col-12 col-lg-6">
             <form className="contact-form p-4">
               <h4 className="mb-3">Írj nekünk:</h4>
               <div className="row">

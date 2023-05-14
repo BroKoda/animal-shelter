@@ -85,8 +85,8 @@ const BaseLayout = ({ children }: BaseLayoutProps): JSX.Element => {
           </div>
           <div className="col-12 col-md-8 col-lg-9">
             <div className="container body-container px-0">
-              <div className="row">
-                <div className="col-12">
+              <div className="row justify-content-center">
+                <div className="col-12 col-sm-10 col-md-12">
                   {children}
                 </div>
               </div>

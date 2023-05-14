@@ -18,11 +18,11 @@ const ResidentsList = (): JSX.Element => {
     <BaseLayout>
       <div className='container residents-container'>
         <div className='row'>
-          <div className='col-12'>
+          <div className='col-12 mb-3'>
             <h1>Lakóink</h1>
           </div>
         </div>
-        <div className='row'>
+        <div className='row justify-content-center'>
           {residents != null && residents.map((resident: Resident, index: number) => {
             if (resident.animal != null) {
               return (

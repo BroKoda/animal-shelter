@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { Link, useParams } from 'react-router-dom'
-import '../../../assets/pages/AnimalPage.scss'
+import '../../../assets/pages/SingleResident.scss'
 import BaseLayout from '../../../layout/BaseLayout'
 import { useAppDispatch, useAppSelector } from '../../../app/hooks'
 import ProgressIndicator from '../../../components/ProgressIndicator/ProgressIndicator'
@@ -38,11 +38,11 @@ const SingleResident = (): JSX.Element => {
               </div>
             </div>
             <div className="row">
-              <div className="col-6">
-                <img className="animal-image" src="/public/dog_placeholder.jpeg" alt="Anton képe"/>
+              <div className="col-12 col-md-6 order-2 order-md-1">
+                <img className="animal-image" src="/dog_placeholder.jpeg" alt="Anton képe"/>
               </div>
-              <div className="col-6 align-self-center">
-                <p className="animal-name mt-2">
+              <div className="col-12 col-md-6 order-1 align-self-center mb-4 mb-md-0">
+                <p className="animal-name mt-md-2">
                   <strong>Név: </strong>
                   {residentDetails?.animal?.name}
                 </p>
@@ -73,14 +73,14 @@ const SingleResident = (): JSX.Element => {
               </div>
             </div>
             <div className="row justify-content-end">
-              <div className="col-3 mt-4">
+              <div className="col-6 col-md-5 col-lg-4 col-xl-3 mt-4">
                 <Link to={'/lakok'}>
                   <button className="button secondary-button">
                     Vissza
                   </button>
                 </Link>
               </div>
-              <div className="col-3 mt-4">
+              <div className="col-6 col-md-5 col-lg-4 col-xl-3 mt-4">
                 <Link to={'/kapcsolat'}>
                   <button className="button call-to-action-button">
                     Örökbefogadom!

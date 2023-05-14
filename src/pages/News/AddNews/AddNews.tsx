@@ -47,7 +47,7 @@ const AddNews = (): JSX.Element => {
           <div className='container'>
             <div className='row'>
               <div className='col-12'>
-                <h1>Hír hozzáadása:</h1>
+                <h1 className='mb-3'>Hír hozzáadása:</h1>
                 <form className="mt-4 mb-5">
                   <div className="form-control-container">
                     <div className="form-icon-container">

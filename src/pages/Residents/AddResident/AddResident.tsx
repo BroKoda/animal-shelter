@@ -57,8 +57,8 @@ const AddResident = (): JSX.Element => {
     <BaseLayout>
       <div className="container add-new-animal-container">
         <div className="row">
-          <div className="col-6">
-            <h1>Új lakó hozzáadása:</h1>
+          <div className="col-12 col-md-12 col-lg-8 col-xl-7">
+            <h1 className='mb-3'>Új lakó hozzáadása:</h1>
             <form className="mt-4 mb-5">
               <div className="form-control-container">
                 <div className="form-icon-container">

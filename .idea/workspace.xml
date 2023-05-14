@@ -6,12 +6,20 @@
   <component name="ChangeListManager">
     <list default="true" id="50dd6d76-2a0c-4d0b-b14d-4ae6daae985d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/BaseLayout.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/BaseLayout.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/variables-mixins.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/variables-mixins.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Footer/Footer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Footer/Footer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/components/Error.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/components/Error.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/pages/AnimalPage.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/pages/SingleResident.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/layout/BaseLayout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/layout/BaseLayout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Home/Home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Home/Home.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Contact/Contact.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Contact/Contact.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Home/HomeSlice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Home/HomeSlice.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/JoinUs/JoinUs.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/JoinUs/JoinUs.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Login/Login.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Login/Login.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/News/AddNews/AddNews.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/News/AddNews/AddNews.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/News/NewsList/NewsList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/News/NewsList/NewsList.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/PageNotFound/PageNotFound.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/PageNotFound/PageNotFound.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Registration/Registration.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Registration/Registration.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Residents/AddResident/AddResident.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Residents/AddResident/AddResident.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/Residents/ResidentsList/ResidentsList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Residents/ResidentsList/ResidentsList.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Residents/SingleResident/SingleResident.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Residents/SingleResident/SingleResident.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,22 +43,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/Users/koda/Koda/szakdoga/animal-shelter/src/components",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "terminal",
-    "ts.external.directory.path": "/Users/koda/Koda/szakdoga/animal-shelter/node_modules/typescript/lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/koda/Koda/szakdoga/animal-shelter/src/components&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;terminal&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Users/koda/Koda/szakdoga/animal-shelter/node_modules/typescript/lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/components" />
@@ -73,7 +81,8 @@
       <updated>1682103125786</updated>
       <workItem from="1682103130661" duration="970000" />
       <workItem from="1682106565861" duration="121000" />
-      <workItem from="1682106786184" duration="94169000" />
+      <workItem from="1682106786184" duration="94425000" />
+      <workItem from="1683844494644" duration="4052000" />
     </task>
     <servers />
   </component>

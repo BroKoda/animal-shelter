@@ -17,7 +17,12 @@
   }
 
   .animal-name, .animal-size, .animal-color, .animal-birth, .animal-arrival, .animal-description-title {
-    font-size: $bigger-font-size;
+    @include md {
+      font-size: $smaller-font-size;
+    }
+    @include lg {
+      font-size: $bigger-font-size;
+    }
   }
 
   .button {

@@ -17,20 +17,22 @@ const NewsList = (): JSX.Element => {
     <BaseLayout>
       <div className="container">
         <div className="row">
-          <div className="col-12">
-            <h1>News</h1>
-            {news != null && news.map((singleNews: News, index: number) => {
-              if (singleNews.newsDetails != null) {
-                return (
-                  <div key={index} className="col-4">
-                    <NewsCard key={index} news={singleNews.newsDetails} id={singleNews.id}/>
-                  </div>
-                )
-              } else {
-                return 'Jelenleg nincs elérhető hír!'
-              }
-            })}
+          <div className="col-12 mb-3">
+            <h1>Hírek</h1>
           </div>
+        </div>
+        <div className="row justify-content-center">
+          {news != null && news.map((singleNews: News, index: number) => {
+            if (singleNews.newsDetails != null) {
+              return (
+                <div key={index} className="col-12 col-md-6 col-lg-4 mb-3">
+                  <NewsCard key={index} news={singleNews.newsDetails} id={singleNews.id}/>
+                </div>
+              )
+            } else {
+              return 'Jelenleg nincs elérhető hír!'
+            }
+          })}
         </div>
       </div>
     </BaseLayout>
