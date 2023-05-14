@@ -1,4 +1,4 @@
-import React, { ChangeEvent, MouseEvent, useCallback } from 'react'
+import React, { ChangeEvent, MouseEvent, useCallback, useEffect } from 'react'
 import BaseLayout from '../../../layout/BaseLayout'
 import { useAppDispatch, useAppSelector } from '../../../app/hooks'
 import {
@@ -12,8 +12,11 @@ import {
 } from '../ResidentsSlice'
 import { Animal } from '../ResidentsState'
 import { v4 } from 'uuid'
+import { LoadingStatus } from '../../../components/LoadingStatus/LoadingStatus'
+import { useNavigate } from 'react-router-dom'
 
 const AddResident = (): JSX.Element => {
+  const navigate = useNavigate()
   const dispatch = useAppDispatch()
   const {
     name,
@@ -24,6 +27,13 @@ const AddResident = (): JSX.Element => {
     description,
     image
   } = useAppSelector((state) => state.residents.residentToAdd)
+  const addNewResidentStatus = useAppSelector((state) => state.residents.addNewResidentStatus)
+
+  useEffect(() => {
+    if (addNewResidentStatus === LoadingStatus.complete) {
+      navigate('/lakok')
+    }
+  }, [dispatch, addNewResidentStatus])
 
   const handleAddNewAnimal = useCallback((e: MouseEvent<HTMLButtonElement>) => {
     e.preventDefault()

@@ -42,7 +42,6 @@ export const addNewResident = createAsyncThunk('addNewResident', async (animal: 
       await addDoc(collection(db, 'animals'), {
         animal: animal
       })
-      console.log('Successfully added!')
     } catch (e) {
       console.log(e)
     }
