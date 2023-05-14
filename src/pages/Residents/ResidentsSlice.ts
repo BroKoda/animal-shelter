@@ -3,14 +3,22 @@ import { LoadingStatus } from '../../components/LoadingStatus/LoadingStatus'
 import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { RootState } from '../../app/store'
 import { addDoc, collection, doc, getDoc, getDocs } from 'firebase/firestore'
-import { db } from '../../firebase'
+import { getDownloadURL, ref, uploadBytes } from 'firebase/storage'
+import { db, storage } from '../../firebase'
+
+interface ImageToUpload {
+  image: File,
+  name: string
+}
 
 const initialState: ResidentsState = {
   residents: [],
   residentToAdd: {},
   residentDetails: {},
-  addNewResidentStatus: LoadingStatus.initial,
   fetchResidentsStatus: LoadingStatus.initial,
+  addNewResidentStatus: LoadingStatus.initial,
+  addNewResidentImageStatus: LoadingStatus.initial,
+  fetchResidentImageStatus: LoadingStatus.initial,
   fetchResidentDetailsStatus: LoadingStatus.initial
 }
 
@@ -41,6 +49,20 @@ export const addNewResident = createAsyncThunk('addNewResident', async (animal: 
   }
 })
 
+export const addNewResidentImage = createAsyncThunk('addNewResidentIamage', async ({image, name}: ImageToUpload) => {
+  if (image != null) {
+    try {
+      const imageRef = ref(storage, `resident-images/${name}`)
+      uploadBytes(imageRef, image).then(() => {
+        console.log('Image uploaded')
+      })
+      return name
+    } catch (e) {
+      console.log(e)
+    }
+  }
+})
+
 export const fetchResidentDetails = createAsyncThunk('fetchResidentDetails', async (id: string) => {
   try {
     const data = await getDoc(doc(db, 'animals', id))
@@ -51,11 +73,22 @@ export const fetchResidentDetails = createAsyncThunk('fetchResidentDetails', asy
   }
 })
 
+export const fetchResidentImage = createAsyncThunk('fetchResidentImage', async (image: string) => {
+  try {
+    const pathRef = ref(storage, `resident-images/${image}`)
+    return await getDownloadURL(pathRef)
+  }
+  catch (e) {
+    console.log(e)
+    return undefined
+  }
+})
+
 const residentsSlice = createSlice({
   name: 'residents',
   initialState,
   reducers: {
-    resetAnimalToAdd: () => initialState,
+    resetResidents: () => initialState,
     setName: (state: ResidentsState, action: PayloadAction<string>) => {
       state.residentToAdd.name = action.payload
     },
@@ -73,7 +106,7 @@ const residentsSlice = createSlice({
     },
     setDescription: (state: ResidentsState, action: PayloadAction<string>) => {
       state.residentToAdd.description = action.payload
-    }
+    },
   },
   extraReducers: builder => {
     builder
@@ -106,11 +139,31 @@ const residentsSlice = createSlice({
       .addCase(fetchResidentDetails.rejected, (state) => {
         state.fetchResidentDetailsStatus = LoadingStatus.error
       })
+      .addCase(addNewResidentImage.pending, (state) => {
+        state.addNewResidentImageStatus = LoadingStatus.loading
+      })
+      .addCase(addNewResidentImage.fulfilled, (state, action) => {
+        state.addNewResidentImageStatus = LoadingStatus.complete
+        state.residentToAdd.image = action.payload
+      })
+      .addCase(addNewResidentImage.rejected, (state) => {
+        state.addNewResidentImageStatus = LoadingStatus.error
+      })
+      .addCase(fetchResidentImage.pending, (state) => {
+        state.fetchResidentImageStatus = LoadingStatus.loading
+      })
+      .addCase(fetchResidentImage.fulfilled, (state, action) => {
+        state.fetchResidentImageStatus = LoadingStatus.complete
+        state.residentDetails?.animal != null && (state.residentDetails.animal.imageUrl = action.payload)
+      })
+      .addCase(fetchResidentImage.rejected, (state) => {
+        state.fetchResidentImageStatus = LoadingStatus.error
+      })
   }
 })
 
 export const {
-  resetAnimalToAdd,
+  resetResidents,
   setName,
   setColor,
   setSize,

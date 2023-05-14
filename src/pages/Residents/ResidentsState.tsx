@@ -4,8 +4,10 @@ export interface ResidentsState {
   residentToAdd: Animal
   residentDetails?: ResidentDetails
   residents?: Resident[]
-  addNewResidentStatus: LoadingStatus
   fetchResidentsStatus: LoadingStatus
+  addNewResidentStatus: LoadingStatus
+  addNewResidentImageStatus: LoadingStatus
+  fetchResidentImageStatus: LoadingStatus
   fetchResidentDetailsStatus: LoadingStatus
 }
 
@@ -22,6 +24,8 @@ export interface Animal {
   birthDate?: string
   arrivalDate?: string
   description?: string
+  image?: string
+  imageUrl?: string
 }
 
 export interface ResidentDetails {

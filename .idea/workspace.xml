@@ -6,19 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="50dd6d76-2a0c-4d0b-b14d-4ae6daae985d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/components/Error.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/components/Error.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/pages/AnimalPage.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/pages/SingleResident.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/layout/BaseLayout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/layout/BaseLayout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Contact/Contact.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Contact/Contact.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Home/HomeSlice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Home/HomeSlice.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/JoinUs/JoinUs.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/JoinUs/JoinUs.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Login/Login.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Login/Login.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/News/AddNews/AddNews.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/News/AddNews/AddNews.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/News/NewsList/NewsList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/News/NewsList/NewsList.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/PageNotFound/PageNotFound.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/PageNotFound/PageNotFound.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Registration/Registration.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Registration/Registration.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/Residents/AddResident/AddResident.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Residents/AddResident/AddResident.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Residents/ResidentsList/ResidentsList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Residents/ResidentsList/ResidentsList.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Residents/ResidentsSlice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Residents/ResidentsSlice.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Residents/ResidentsState.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Residents/ResidentsState.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/Residents/SingleResident/SingleResident.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Residents/SingleResident/SingleResident.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -82,7 +74,7 @@
       <workItem from="1682103130661" duration="970000" />
       <workItem from="1682106565861" duration="121000" />
       <workItem from="1682106786184" duration="94425000" />
-      <workItem from="1683844494644" duration="4052000" />
+      <workItem from="1683844494644" duration="10267000" />
     </task>
     <servers />
   </component>

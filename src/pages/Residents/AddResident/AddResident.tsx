@@ -2,7 +2,7 @@ import React, { ChangeEvent, MouseEvent, useCallback } from 'react'
 import BaseLayout from '../../../layout/BaseLayout'
 import { useAppDispatch, useAppSelector } from '../../../app/hooks'
 import {
-  addNewResident,
+  addNewResident, addNewResidentImage,
   setArrivalDate,
   setBirtDate,
   setColor,
@@ -11,6 +11,7 @@ import {
   setSize
 } from '../ResidentsSlice'
 import { Animal } from '../ResidentsState'
+import { v4 } from 'uuid'
 
 const AddResident = (): JSX.Element => {
   const dispatch = useAppDispatch()
@@ -20,14 +21,15 @@ const AddResident = (): JSX.Element => {
     size,
     birthDate,
     arrivalDate,
-    description
+    description,
+    image
   } = useAppSelector((state) => state.residents.residentToAdd)
 
   const handleAddNewAnimal = useCallback((e: MouseEvent<HTMLButtonElement>) => {
     e.preventDefault()
-    const animal: Animal = { name, color, size, birthDate, arrivalDate, description }
+    const animal: Animal = { name, color, size, birthDate, arrivalDate, description, image }
     dispatch(addNewResident(animal))
-  }, [dispatch, name, color, size, birthDate, arrivalDate, description])
+  }, [dispatch, name, color, size, birthDate, arrivalDate, description, image])
 
   const handleSetName = useCallback((event: ChangeEvent<HTMLInputElement>) => {
     dispatch(setName(event.target.value))
@@ -52,6 +54,14 @@ const AddResident = (): JSX.Element => {
   const handleSetDescription = useCallback((event: ChangeEvent<HTMLTextAreaElement>) => {
     dispatch(setDescription(event.target.value))
   }, [dispatch, description])
+
+  const handleSetFile = useCallback((event: ChangeEvent<HTMLInputElement>) => {
+    if (event.target.files != null) {
+      const image = event.target.files[0]
+      const name = `${v4()}`
+      dispatch(addNewResidentImage({ image, name }))
+    }
+  }, [dispatch, image])
 
   return (
     <BaseLayout>
@@ -146,10 +156,11 @@ const AddResident = (): JSX.Element => {
                   type='file'
                   className="form-control file-input"
                   placeholder="Kép kiválasztása"
-                  id="image"
+                  id='resident-image'
+                  name='resident-image'
                   data-button-text='Fájl kiválasztása'
                   // value={description ?? ''}
-                  // onChange={handleSetDescription}
+                  onChange={handleSetFile}
                 />
               </div>
               <div className="row justify-content-end">

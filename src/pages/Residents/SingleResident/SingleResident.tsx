@@ -6,18 +6,29 @@ import { useAppDispatch, useAppSelector } from '../../../app/hooks'
 import ProgressIndicator from '../../../components/ProgressIndicator/ProgressIndicator'
 import { LoadingStatus } from '../../../components/LoadingStatus/LoadingStatus'
 import Error from '../../../components/Error/Error'
-import { fetchResidentDetails } from '../ResidentsSlice'
+import { fetchResidentDetails, fetchResidentImage, resetResidents } from '../ResidentsSlice'
 
 const SingleResident = (): JSX.Element => {
   const dispatch = useAppDispatch()
   const { animalId } = useParams()
-  const { residentDetails, fetchResidentDetailsStatus } = useAppSelector((state) => state.residents)
+  const {
+    residentDetails,
+    fetchResidentDetailsStatus,
+    fetchResidentImageStatus
+  } = useAppSelector((state) => state.residents)
 
   useEffect(() => {
+    resetResidents()
     if (animalId != null) {
       void dispatch(fetchResidentDetails(animalId))
     }
   }, [dispatch, animalId])
+
+  useEffect(() => {
+    if (residentDetails?.animal?.image != null) {
+      void dispatch(fetchResidentImage(residentDetails.animal.image))
+    }
+  }, [dispatch, residentDetails])
 
   return (
     <BaseLayout>
@@ -39,7 +50,12 @@ const SingleResident = (): JSX.Element => {
             </div>
             <div className="row">
               <div className="col-12 col-md-6 order-2 order-md-1">
-                <img className="animal-image" src="/dog_placeholder.jpeg" alt="Anton képe"/>
+                {fetchResidentImageStatus === LoadingStatus.loading &&
+                  <ProgressIndicator/>
+                }
+                {fetchResidentDetailsStatus === LoadingStatus.complete &&
+                  <img className="animal-image" src={residentDetails?.animal?.imageUrl} alt="Anton képe"/>
+                }
               </div>
               <div className="col-12 col-md-6 order-1 align-self-center mb-4 mb-md-0">
                 <p className="animal-name mt-md-2">
