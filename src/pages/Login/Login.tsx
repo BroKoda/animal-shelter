@@ -38,7 +38,7 @@ const Login = (): JSX.Element => {
             <div className="row">
               <div className="col-12">
                 <h2>Belépés</h2>
-                <form className='mt-4 mb-5'>
+                <form className='my-4'>
                   <div className="form-control-container">
                     <div className="form-icon-container">
                       <i className="fa-solid fa-at"></i>
@@ -66,6 +66,13 @@ const Login = (): JSX.Element => {
                     />
                   </div>
                 </form>
+              </div>
+            </div>
+            <div className='row'>
+              <div className='col-12 mb-3 text-end redirect-to-registration'>
+                <Link to={'/regisztracio'}>
+                  <span>Nincs még felhasználód? Regisztrálj!</span>
+                </Link>
               </div>
             </div>
             <div className='row'>

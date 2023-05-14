@@ -1,6 +1,6 @@
 import React, { ChangeEvent, useCallback, useEffect } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import '../../assets/pages/Login.scss'
+import '../../assets/pages/Registration.scss'
 import { useAppDispatch, useAppSelector } from '../../app/hooks'
 import {
   registerUser,
@@ -56,14 +56,14 @@ const Registration = (): JSX.Element => {
   }, [dispatch, confirmPassword])
 
   return (
-    <div className="container login-container">
+    <div className="container registration-container">
       <div className="row justify-content-center h-100">
         <div className="col-12 col-md-8 col-lg-6 col-xl-5 align-self-center">
-          <div className="container login-box py-4 px-4">
+          <div className="container registration-box py-4 px-4">
             <div className="row">
               <div className="col-12">
                 <h2>Regisztráció</h2>
-                <form className='mt-4 mb-5'>
+                <form className='my-4'>
                   <div className="form-control-container">
                     <div className="form-icon-container">
                       <i className="fa-solid fa-user"></i>
@@ -130,6 +130,13 @@ const Registration = (): JSX.Element => {
                     />
                   </div>
                 </form>
+              </div>
+            </div>
+            <div className='row'>
+              <div className='col-12 mb-3 text-end redirect-to-login'>
+                <Link to={'/bejelentkezes'}>
+                  <span>Van már felhasználód? Lépj be!</span>
+                </Link>
               </div>
             </div>
             <div className='row'>
