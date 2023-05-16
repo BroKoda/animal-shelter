@@ -3,12 +3,19 @@ import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { RootState } from '../../app/store'
 import { News, NewsState, NewsToAdd } from './NewsState'
 import { addDoc, collection, doc, getDoc, getDocs } from 'firebase/firestore'
-import { db } from '../../firebase'
+import { db, storage } from '../../firebase'
+import { getDownloadURL, ref, uploadBytes } from 'firebase/storage'
+
+interface ImageToUpload {
+  image: File,
+  name: string
+}
 
 const initialState: NewsState = {
   news: [],
-  newNews: {},
+  newsToAdd: {},
   addNewsStatus: LoadingStatus.initial,
+  addNewsImageStatus: LoadingStatus.initial,
   fetchNewsStatus: LoadingStatus.initial,
   fetchSingleNewsStatus: LoadingStatus.initial
 }
@@ -18,6 +25,20 @@ export const addNews = createAsyncThunk('addNews', async (newsDetails: NewsToAdd
     try {
       await addDoc(collection(db, 'news'), { newsDetails })
       console.log('Successfully added!')
+    } catch (e) {
+      console.log(e)
+    }
+  }
+})
+
+export const addNewsImage = createAsyncThunk('addNewsImage', async ({image, name}: ImageToUpload) => {
+  if (image != null) {
+    try {
+      const imageRef = ref(storage, `news-images/${name}`)
+      uploadBytes(imageRef, image).then(() => {
+        console.log('Image uploaded')
+      })
+      return name
     } catch (e) {
       console.log(e)
     }
@@ -48,18 +69,30 @@ export const fetchSingleNews = createAsyncThunk('fetchSingleNews', async (id: st
   }
 })
 
+export const fetchNewsImage = createAsyncThunk('fetchNewsImage', async (image: string) => {
+  try {
+    const pathRef = ref(storage, `news-images/${image}`)
+    return await getDownloadURL(pathRef)
+  }
+  catch (e) {
+    console.log(e)
+    return undefined
+  }
+})
+
 const newsSlice = createSlice({
   name: 'news',
   initialState,
   reducers: {
+    resetNews: () => initialState,
     setTitle: (state: NewsState, action: PayloadAction<string>) => {
-      state.newNews.title = action.payload
+      state.newsToAdd.title = action.payload
     },
     setIntro: (state: NewsState, action: PayloadAction<string>) => {
-      state.newNews.intro = action.payload
+      state.newsToAdd.intro = action.payload
     },
     setNewsBody: (state: NewsState, action: PayloadAction<string>) => {
-      state.newNews.newsBody = action.payload
+      state.newsToAdd.newsBody = action.payload
     }
   },
   extraReducers: builder => {
@@ -83,6 +116,16 @@ const newsSlice = createSlice({
       .addCase(addNews.rejected, (state) => {
         state.addNewsStatus = LoadingStatus.error
       })
+      .addCase(addNewsImage.pending, (state) => {
+        state.addNewsImageStatus = LoadingStatus.loading
+      })
+      .addCase(addNewsImage.fulfilled, (state, action) => {
+        state.addNewsImageStatus = LoadingStatus.complete
+        state.newsToAdd.image = action.payload
+      })
+      .addCase(addNewsImage.rejected, (state) => {
+        state.addNewsImageStatus = LoadingStatus.error
+      })
       .addCase(fetchSingleNews.pending, (state) => {
         state.fetchSingleNewsStatus = LoadingStatus.loading
       })
@@ -93,9 +136,19 @@ const newsSlice = createSlice({
       .addCase(fetchSingleNews.rejected, (state) => {
         state.fetchSingleNewsStatus = LoadingStatus.error
       })
+      .addCase(fetchNewsImage.pending, (state) => {
+        state.fetchSingleNewsStatus = LoadingStatus.loading
+      })
+      .addCase(fetchNewsImage.fulfilled, (state, action) => {
+        state.fetchSingleNewsStatus = LoadingStatus.complete
+        state.singleNews?.newsDetails != null && (state.singleNews.newsDetails.imageUrl = action.payload)
+      })
+      .addCase(fetchNewsImage.rejected, (state) => {
+        state.fetchSingleNewsStatus = LoadingStatus.error
+      })
   }
 })
 
-export const { setTitle, setIntro, setNewsBody } = newsSlice.actions
+export const { resetNews, setTitle, setIntro, setNewsBody } = newsSlice.actions
 export const selectNews = (state: RootState) => state.news
 export default newsSlice.reducer

@@ -1,7 +1,9 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import '../../assets/components/AnimalCard.scss'
 import { Link } from 'react-router-dom'
 import { NewsDetails } from '../../pages/News/NewsState'
+import { getDownloadURL, ref } from 'firebase/storage'
+import { storage } from '../../firebase'
 
 interface AnimalCardProps {
   news: NewsDetails
@@ -9,6 +11,14 @@ interface AnimalCardProps {
 }
 
 const NewsCard = ({ news, id }: AnimalCardProps): JSX.Element => {
+  const [image, setImage] = useState('')
+
+  useEffect(() => {
+    const pathRef = ref(storage, `news-images/${news.image}`)
+    const fetchImage = async () => await getDownloadURL(pathRef)
+    fetchImage().then(response => setImage(response))
+  }, [news.image])
+
   return (
     <div className='container animal-card'>
       <div className='row'>
@@ -25,7 +35,7 @@ const NewsCard = ({ news, id }: AnimalCardProps): JSX.Element => {
       </div>
       <div className='row'>
         <div className='col-12 mt-2'>
-          <img className='animal-image' src='/dog_placeholder.jpeg' alt='Animal image'/>
+          <img className='animal-image' src={image} alt='News image'/>
         </div>
       </div>
       <div className='row'>

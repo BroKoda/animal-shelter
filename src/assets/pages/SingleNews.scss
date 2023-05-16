@@ -1,0 +1,22 @@
+@import '../variables-mixins';
+
+.single-news-container {
+  position: relative;
+
+  .news-image {
+    width: 100%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    border-radius: 25px;
+    margin-right: 20px;
+
+    @include md {
+      width: 200px;
+      float: left;
+    }
+
+    @include lg {
+      width: 300px;
+    }
+  }
+}

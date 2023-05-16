@@ -3,38 +3,48 @@ import BaseLayout from '../../../layout/BaseLayout'
 import ReactQuill from 'react-quill'
 import 'react-quill/dist/quill.snow.css'
 import { useAppDispatch, useAppSelector } from '../../../app/hooks'
-import { addNews, setIntro, setNewsBody, setTitle } from '../NewsSlice'
+import { addNews, addNewsImage, resetNews, setIntro, setNewsBody, setTitle } from '../NewsSlice'
 import { LoadingStatus } from '../../../components/LoadingStatus/LoadingStatus'
 import ProgressIndicator from '../../../components/ProgressIndicator/ProgressIndicator'
 import { useNavigate } from 'react-router-dom'
+import { v4 } from 'uuid'
 
 const AddNews = (): JSX.Element => {
   const navigate = useNavigate()
   const dispatch = useAppDispatch()
-  const { newNews, addNewsStatus} = useAppSelector((state) => state.news)
+  const { newsToAdd, addNewsStatus} = useAppSelector((state) => state.news)
 
   useEffect(() => {
     if (addNewsStatus === LoadingStatus.complete) {
+      dispatch(resetNews())
       navigate('/hirek')
     }
   }, [addNewsStatus, navigate])
 
   const handleAddNews = useCallback((event: MouseEvent<HTMLButtonElement>) => {
     event.preventDefault()
-    dispatch(addNews(newNews))
-  }, [dispatch, newNews.title, newNews.intro, newNews.newsBody])
+    dispatch(addNews(newsToAdd))
+  }, [dispatch, newsToAdd.title, newsToAdd.intro, newsToAdd.newsBody, newsToAdd.image])
 
   const handleSetTitle = useCallback((event: ChangeEvent<HTMLInputElement>) => {
     dispatch(setTitle(event.target.value))
-  }, [dispatch, newNews.title])
+  }, [dispatch, newsToAdd.title])
 
   const handleSetIntro = useCallback((event: ChangeEvent<HTMLTextAreaElement>) => {
     dispatch(setIntro(event.target.value))
-  }, [dispatch, newNews.intro])
+  }, [dispatch, newsToAdd.intro])
 
   const handleSetNewsBody = useCallback((event: string) => {
     dispatch(setNewsBody(event))
-  }, [dispatch, newNews.newsBody])
+  }, [dispatch, newsToAdd.newsBody])
+
+  const handleSetFile = useCallback((event: ChangeEvent<HTMLInputElement>) => {
+    if (event.target.files != null) {
+      const image = event.target.files[0]
+      const name = `${v4()}`
+      dispatch(addNewsImage({ image, name }))
+    }
+  }, [dispatch, newsToAdd.image])
 
   return (
     <BaseLayout>
@@ -58,7 +68,7 @@ const AddNews = (): JSX.Element => {
                       className="form-control"
                       placeholder="Cím"
                       id="title"
-                      value={newNews.title ?? ''}
+                      value={newsToAdd.title ?? ''}
                       onChange={handleSetTitle}
                     />
                   </div>
@@ -71,7 +81,7 @@ const AddNews = (): JSX.Element => {
                       placeholder="Rövid leírás"
                       id="intro"
                       rows={2}
-                      value={newNews.intro ?? ''}
+                      value={newsToAdd.intro ?? ''}
                       onChange={handleSetIntro}
                     />
                   </div>
@@ -83,7 +93,7 @@ const AddNews = (): JSX.Element => {
                       <ReactQuill
                         theme='snow'
                         className='w-100'
-                        value={newNews.newsBody ?? ''}
+                        value={newsToAdd.newsBody ?? ''}
                         onChange={handleSetNewsBody}
                       ></ReactQuill>
                     </div>
@@ -96,8 +106,10 @@ const AddNews = (): JSX.Element => {
                       type='file'
                       className="form-control file-input"
                       placeholder="Kép kiválasztása"
-                      id="image"
+                      id="news-image"
+                      name='news-image'
                       data-button-text='Fájl kiválasztása'
+                      onChange={handleSetFile}
                     />
                   </div>
                   <div className="row justify-content-end">

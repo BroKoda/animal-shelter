@@ -169,7 +169,6 @@ const AddResident = (): JSX.Element => {
                   id='resident-image'
                   name='resident-image'
                   data-button-text='Fájl kiválasztása'
-                  // value={description ?? ''}
                   onChange={handleSetFile}
                 />
               </div>
