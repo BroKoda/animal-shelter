@@ -31,7 +31,7 @@ const ResidentCard = ({ resident, id }: ResidentCardProps): JSX.Element => {
   }, [resident.image])
 
   return (
-    <div className='container resident-card'>
+    <div className='container listing-card resident-card'>
       <div className='row'>
         <div className='col-12'>
           <div className='card-header'>
@@ -59,7 +59,7 @@ const ResidentCard = ({ resident, id }: ResidentCardProps): JSX.Element => {
       <div className='row'>
         <div className='col-12'>
           <Link to={`/lakok/adatlap/${id}`}>
-            <button className='button call-to-action-button mt-2'>
+            <button className='button call-to-action-button mt-2 w-100'>
               Megnézem!
             </button>
           </Link>

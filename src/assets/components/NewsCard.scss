@@ -1,7 +1,7 @@
 @import '../variables-mixins';
 
-.resident-card {
-  .resident-image {
+.news-card {
+  .news-image {
     display: block;
     width: 100%;
     aspect-ratio: 1/1;
@@ -9,21 +9,16 @@
     object-position: center;
   }
 
-  .resident-name {
+  .news-title {
     font-weight: 500;
   }
 
-  .resident-description {
+  .news-intro {
     font-size: $smaller-font-size;
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
-  }
-
-  .resident-date {
-    font-size: $smaller-font-size;
-    opacity: 0.5;
   }
 }

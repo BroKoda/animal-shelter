@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from 'react'
-import '../../assets/components/ResidentCard.scss'
+import '../../assets/components/NewsCard.scss'
 import { Link } from 'react-router-dom'
 import { NewsDetails } from '../../pages/News/NewsState'
 import { getDownloadURL, ref } from 'firebase/storage'
 import { storage } from '../../firebase'
 
-interface AnimalCardProps {
+interface NewsCardProps {
   news: NewsDetails
   id: string
 }
 
-const NewsCard = ({ news, id }: AnimalCardProps): JSX.Element => {
+const NewsCard = ({ news, id }: NewsCardProps): JSX.Element => {
   const [image, setImage] = useState('')
 
   useEffect(() => {
@@ -20,12 +20,12 @@ const NewsCard = ({ news, id }: AnimalCardProps): JSX.Element => {
   }, [news.image])
 
   return (
-    <div className='container animal-card'>
+    <div className='container listing-card news-card'>
       <div className='row'>
         <div className='col-12'>
           <div className='card-header'>
             <div className='card-header-logo'>
-              <img src='/mancs_logo_white.png' alt='Mancs logo' />
+              <i className="fa-solid fa-newspaper"></i>
             </div>
             <div className='card-header-text'>
               <p>Hír</p>
@@ -35,19 +35,19 @@ const NewsCard = ({ news, id }: AnimalCardProps): JSX.Element => {
       </div>
       <div className='row'>
         <div className='col-12 mt-2'>
-          <img className='animal-image' src={image} alt='News image'/>
+          <img className='news-image' src={image} alt='News image'/>
         </div>
       </div>
       <div className='row'>
         <div className='col-12'>
-          <p className='animal-name mt-2'>{news.title}</p>
-          <p className='animal-description mt-1'>{news.intro}</p>
+          <p className='news-title mt-2'>{news.title}</p>
+          <p className='news-intro mt-1'>{news.intro}</p>
         </div>
       </div>
       <div className='row'>
         <div className='col-12'>
           <Link to={`/hirek/${id}`}>
-            <button className='button call-to-action-button mt-2'>
+            <button className='button call-to-action-button mt-2 w-100'>
               Tovább olvasok!
             </button>
           </Link>
