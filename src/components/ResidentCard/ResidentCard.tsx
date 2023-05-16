@@ -1,17 +1,28 @@
 import React, { useEffect, useState } from 'react'
-import '../../assets/components/AnimalCard.scss'
+import '../../assets/components/ResidentCard.scss'
 import { Link } from 'react-router-dom'
 import { Animal } from '../../pages/Residents/ResidentsState'
 import { getDownloadURL, ref } from 'firebase/storage'
 import { storage } from '../../firebase'
 
-interface AnimalCardProps {
+interface ResidentCardProps {
   resident: Animal
   id: string
 }
 
-const AnimalCard = ({ resident, id }: AnimalCardProps): JSX.Element => {
+function getCardLogo(type: string | undefined): string {
+  if (type === 'kutya') {
+    return 'fa-dog'
+  } else if (type === 'macska') {
+    return 'fa-cat'
+  } else {
+    return 'fa-paw'
+  }
+}
+
+const ResidentCard = ({ resident, id }: ResidentCardProps): JSX.Element => {
   const [image, setImage] = useState('')
+  const cardLogo = getCardLogo(resident.type)
 
   useEffect(() => {
     const pathRef = ref(storage, `resident-images/${resident.image}`)
@@ -20,29 +31,29 @@ const AnimalCard = ({ resident, id }: AnimalCardProps): JSX.Element => {
   }, [resident.image])
 
   return (
-    <div className='container animal-card'>
+    <div className='container resident-card'>
       <div className='row'>
         <div className='col-12'>
           <div className='card-header'>
             <div className='card-header-logo'>
-              <img src='/mancs_logo_white.png' alt='Mancs logo' />
+              <i className={`fa-solid ${cardLogo}`}></i>
             </div>
             <div className='card-header-text'>
-              <p>Doggo</p>
+              <p>{resident.type}</p>
             </div>
           </div>
         </div>
       </div>
       <div className='row'>
         <div className='col-12 mt-2'>
-          <img className='animal-image' src={image} alt='Animal image'/>
+          <img className='resident-image' src={image} alt='resident image'/>
         </div>
       </div>
       <div className='row'>
         <div className='col-12'>
-          <p className='animal-name mt-2'>{resident.name}</p>
-          <p className='animal-description mt-1'>{resident.description}</p>
-          <p className='animal-date mt-1'>{resident.arrivalDate}</p>
+          <p className='resident-name mt-2'>{resident.name}</p>
+          <p className='resident-description mt-1'>{resident.description}</p>
+          <p className='resident-date mt-1'>{resident.arrivalDate}</p>
         </div>
       </div>
       <div className='row'>
@@ -58,4 +69,4 @@ const AnimalCard = ({ resident, id }: AnimalCardProps): JSX.Element => {
   )
 }
 
-export default AnimalCard
+export default ResidentCard

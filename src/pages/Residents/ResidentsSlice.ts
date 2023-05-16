@@ -91,6 +91,9 @@ const residentsSlice = createSlice({
     setName: (state: ResidentsState, action: PayloadAction<string>) => {
       state.residentToAdd.name = action.payload
     },
+    setType: (state: ResidentsState, action: PayloadAction<string>) => {
+      state.residentToAdd.type = action.payload
+    },
     setColor: (state: ResidentsState, action: PayloadAction<string>) => {
       state.residentToAdd.color = action.payload
     },
@@ -164,6 +167,7 @@ const residentsSlice = createSlice({
 export const {
   resetResidents,
   setName,
+  setType,
   setColor,
   setSize,
   setBirtDate,

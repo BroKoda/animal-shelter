@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import '../../assets/components/AnimalCard.scss'
+import '../../assets/components/ResidentCard.scss'
 import { Link } from 'react-router-dom'
 import { NewsDetails } from '../../pages/News/NewsState'
 import { getDownloadURL, ref } from 'firebase/storage'

@@ -6,12 +6,15 @@
   <component name="ChangeListManager">
     <list default="true" id="50dd6d76-2a0c-4d0b-b14d-4ae6daae985d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/components/AnimalCard.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/components/ResidentCard.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/global.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/global.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/AnimalCard/AnimalCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ResidentCard/ResidentCard.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/NewsCard/NewsCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/NewsCard/NewsCard.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/News/AddNews/AddNews.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/News/AddNews/AddNews.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/News/NewsSlice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/News/NewsSlice.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/News/NewsState.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/News/NewsState.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/News/SingleNewsPage/SingleNewsPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/News/SingleNewsPage/SingleNewsPage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Home/Home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Home/Home.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/Residents/AddResident/AddResident.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Residents/AddResident/AddResident.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Residents/ResidentsList/ResidentsList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Residents/ResidentsList/ResidentsList.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Residents/ResidentsSlice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Residents/ResidentsSlice.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Residents/ResidentsState.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Residents/ResidentsState.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,7 +77,7 @@
       <workItem from="1682103130661" duration="970000" />
       <workItem from="1682106565861" duration="121000" />
       <workItem from="1682106786184" duration="94425000" />
-      <workItem from="1683844494644" duration="17208000" />
+      <workItem from="1683844494644" duration="21301000" />
     </task>
     <servers />
   </component>

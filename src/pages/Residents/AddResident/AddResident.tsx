@@ -2,13 +2,14 @@ import React, { ChangeEvent, MouseEvent, useCallback, useEffect } from 'react'
 import BaseLayout from '../../../layout/BaseLayout'
 import { useAppDispatch, useAppSelector } from '../../../app/hooks'
 import {
-  addNewResident, addNewResidentImage,
+  addNewResident,
+  addNewResidentImage, resetResidents,
   setArrivalDate,
   setBirtDate,
   setColor,
   setDescription,
   setName,
-  setSize
+  setSize, setType
 } from '../ResidentsSlice'
 import { Animal } from '../ResidentsState'
 import { v4 } from 'uuid'
@@ -20,6 +21,7 @@ const AddResident = (): JSX.Element => {
   const dispatch = useAppDispatch()
   const {
     name,
+    type,
     color,
     size,
     birthDate,
@@ -31,19 +33,24 @@ const AddResident = (): JSX.Element => {
 
   useEffect(() => {
     if (addNewResidentStatus === LoadingStatus.complete) {
+      dispatch(resetResidents())
       navigate('/lakok')
     }
   }, [dispatch, addNewResidentStatus])
 
   const handleAddNewAnimal = useCallback((e: MouseEvent<HTMLButtonElement>) => {
     e.preventDefault()
-    const animal: Animal = { name, color, size, birthDate, arrivalDate, description, image }
+    const animal: Animal = { name, type, color, size, birthDate, arrivalDate, description, image }
     dispatch(addNewResident(animal))
-  }, [dispatch, name, color, size, birthDate, arrivalDate, description, image])
+  }, [dispatch, name, type, color, size, birthDate, arrivalDate, description, image])
 
   const handleSetName = useCallback((event: ChangeEvent<HTMLInputElement>) => {
     dispatch(setName(event.target.value))
   }, [dispatch, name])
+
+  const handleSetType = useCallback((event: ChangeEvent<HTMLInputElement>) => {
+    dispatch(setType((event.target.value)))
+  }, [dispatch, type])
 
   const handleSetSize = useCallback((event: ChangeEvent<HTMLInputElement>) => {
     dispatch(setSize(event.target.value))
@@ -78,11 +85,11 @@ const AddResident = (): JSX.Element => {
       <div className="container add-new-animal-container">
         <div className="row">
           <div className="col-12 col-md-12 col-lg-8 col-xl-7">
-            <h1 className='mb-3'>Új lakó hozzáadása:</h1>
+            <h1 className="mb-3">Új lakó hozzáadása:</h1>
             <form className="mt-4 mb-5">
               <div className="form-control-container">
                 <div className="form-icon-container">
-                  <i className="fa-solid fa-paw"></i>
+                  <i className="fa-solid fa-signature"></i>
                 </div>
                 <input
                   type="text"
@@ -92,6 +99,31 @@ const AddResident = (): JSX.Element => {
                   value={name ?? ''}
                   onChange={handleSetName}
                 />
+              </div>
+              <div className="form-control-container">
+                <div className="form-icon-container">
+                  <i className="fa-solid fa-paw"></i>
+                </div>
+                <div className="resident-type-select-container d-flex flex-row align-items-center">
+                  <div className='d-inline-flex me-4'>
+                    <label className="radio-container">Kutya
+                      <input type="radio" value={'kutya'} checked={'kutya' === type} onChange={handleSetType} />
+                      <span className="radio-mark"></span>
+                    </label>
+                  </div>
+                  <div className='d-inline-flex me-4'>
+                    <label className="radio-container">Macska
+                      <input type="radio" value={'macska'} checked={'macska' === type} onChange={handleSetType} />
+                      <span className="radio-mark"></span>
+                    </label>
+                  </div>
+                  <div className='d-inline-flex me-4'>
+                    <label className="radio-container">Egyéb
+                      <input type="radio" value={'egyéb'} checked={'egyéb' === type} onChange={handleSetType} />
+                      <span className="radio-mark"></span>
+                    </label>
+                  </div>
+                </div>
               </div>
               <div className="form-control-container">
                 <div className="form-icon-container">
@@ -163,12 +195,12 @@ const AddResident = (): JSX.Element => {
                   <i className="fa-solid fa-image"></i>
                 </div>
                 <input
-                  type='file'
+                  type="file"
                   className="form-control file-input"
                   placeholder="Kép kiválasztása"
-                  id='resident-image'
-                  name='resident-image'
-                  data-button-text='Fájl kiválasztása'
+                  id="resident-image"
+                  name="resident-image"
+                  data-button-text="Fájl kiválasztása"
                   onChange={handleSetFile}
                 />
               </div>

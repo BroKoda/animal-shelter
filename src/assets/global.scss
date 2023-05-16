@@ -80,7 +80,10 @@ body {
         }
       }
 
-      .form-control {
+      .form-control[type='text'],
+      .form-control[type='date'],
+      .form-control[type='file'],
+      textarea {
         display: inline-flex;
         border-bottom: 1px solid $darkPurple;
         background-color: transparent;
@@ -109,6 +112,57 @@ body {
           background-color: transparent;
           outline: none;
           box-shadow: none;
+        }
+      }
+
+      /* Customize the label (the container) */
+      .radio-container {
+        display: block;
+        position: relative;
+        padding-left: 25px;
+        cursor: pointer;
+
+        input {
+          position: absolute;
+          opacity: 0;
+          cursor: pointer;
+          height: 0;
+          width: 0;
+
+          &:checked ~ .radio-mark {
+            background-color: $darkPurple;
+          }
+
+          &:checked ~ .radio-mark:after {
+            display: block;
+          }
+        }
+
+        .radio-mark {
+          position: absolute;
+          top: 2px;
+          left: 0;
+          height: 17px;
+          width: 17px;
+          background-color: $gray;
+          border-radius: 50%;
+
+          &:after {
+            content: "";
+            position: absolute;
+            display: none;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: white;
+          }
+        }
+
+        &:hover input ~ .radio-mark {
+          background-color: $purple;
         }
       }
     }

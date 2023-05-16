@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import BaseLayout from '../../layout/BaseLayout'
 import { Resident } from '../Residents/ResidentsState'
-import AnimalCard from '../../components/AnimalCard/AnimalCard'
+import ResidentCard from '../../components/ResidentCard/ResidentCard'
 import { useAppDispatch, useAppSelector } from '../../app/hooks'
 import { fetchHomeNews, fetchHomeResidents } from './HomeSlice'
 import { News } from '../News/NewsState'
@@ -80,7 +80,7 @@ const Home = (): JSX.Element => {
             if (resident.animal != null) {
               return (
                 <div key={index} className='col-12 col-md-6 col-lg-4 mb-3'>
-                  <AnimalCard key={index} resident={resident.animal} id={resident.id} />
+                  <ResidentCard key={index} resident={resident.animal} id={resident.id} />
                 </div>
               )
             } else {

@@ -19,6 +19,7 @@ export interface Resident {
 export interface Animal {
   id?: string
   name?: string
+  type?: string
   color?: string
   size?: string
   birthDate?: string

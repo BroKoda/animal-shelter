@@ -3,7 +3,7 @@ import '../../../assets/pages/Residents.scss'
 import BaseLayout from '../../../layout/BaseLayout'
 import { useAppDispatch, useAppSelector } from '../../../app/hooks'
 import { fetchResidents } from '../ResidentsSlice'
-import AnimalCard from '../../../components/AnimalCard/AnimalCard'
+import ResidentCard from '../../../components/ResidentCard/ResidentCard'
 import { Resident } from '../ResidentsState'
 
 const ResidentsList = (): JSX.Element => {
@@ -27,7 +27,7 @@ const ResidentsList = (): JSX.Element => {
             if (resident.animal != null) {
               return (
                 <div key={index} className='col-12 col-md-6 col-lg-4 mb-3'>
-                  <AnimalCard key={index} resident={resident.animal} id={resident.id} />
+                  <ResidentCard key={index} resident={resident.animal} id={resident.id} />
                 </div>
               )
             } else {
