@@ -12,6 +12,10 @@ body {
   a {
     text-decoration: none;
     color: $darkPurple;
+
+    &:hover {
+      color: $purple
+    }
   }
 
   p {
@@ -120,6 +124,8 @@ body {
       .form-control[type='text'],
       .form-control[type='date'],
       .form-control[type='file'],
+      .form-control[type='email'],
+      .form-control[type='password'],
       textarea {
         display: inline-flex;
         border-bottom: 1px solid $darkPurple;

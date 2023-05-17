@@ -4,12 +4,14 @@ import loginReducer from '../pages/Login/LoginSlice'
 import registrationReducer from '../pages/Registration/RegistrationSlice'
 import residentsReducer from '../pages/Residents/ResidentsSlice'
 import newsReducer from '../pages/News/NewsSlice'
+import contactReducer from '../pages/Contact/ContactSlice'
 
 export const store = configureStore({
   reducer: {
     home: homeReducer,
     news: newsReducer,
     login: loginReducer,
+    contact: contactReducer,
     residents: residentsReducer,
     registration: registrationReducer,
   }

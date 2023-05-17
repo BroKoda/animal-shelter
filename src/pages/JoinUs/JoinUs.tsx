@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import BaseLayout from '../../layout/BaseLayout'
+import ContactForm from '../Contact/ContactForm/ContactForm'
 
 const JoinUs = (): JSX.Element => {
   return (
@@ -35,58 +36,7 @@ const JoinUs = (): JSX.Element => {
             </p>
           </div>
           <div className="col-12 col-lg-6">
-            <form className="contact-form p-4">
-              <h4 className="mb-3">Adataid:</h4>
-              <div className="row">
-                <div className="col-12">
-                  <div className="form-control-container">
-                    <div className="form-icon-container">
-                      <i className="fa-solid fa-user"></i>
-                    </div>
-                    <input type="text" className="form-control" placeholder="Vezetéknév" id="contactLastName"/>
-                  </div>
-                </div>
-                <div className="col-12">
-                  <div className="form-control-container">
-                    <div className="form-icon-container">
-                      <i className="fa-solid fa-user"></i>
-                    </div>
-                    <input type="text" className="form-control" placeholder="Keresztnév" id="contactFirstName"/>
-                  </div>
-                </div>
-                <div className="col-12">
-                  <div className="form-control-container">
-                    <div className="form-icon-container">
-                      <i className="fa-solid fa-at"></i>
-                    </div>
-                    <input type="email" className="form-control" placeholder="Email" id="contactEmail"/>
-                  </div>
-                </div>
-                <div className="col-12">
-                  <div className="form-control-container">
-                    <div className="form-icon-container">
-                      <i className="fa-solid fa-phone"></i>
-                    </div>
-                    <input type="text" className="form-control" placeholder="Telefonszám" id="contactPhone"/>
-                  </div>
-                </div>
-                <div className="col-12">
-                  <div className="form-control-container">
-                    <div className="form-icon-container">
-                      <i className="fa-solid fa-message"></i>
-                    </div>
-                    <textarea className="form-control" placeholder="Üzenet" id="contactMessage"/>
-                  </div>
-                </div>
-              </div>
-              <div className="row justify-content-end">
-                <div className="col-6 mt-3">
-                  <button className="button call-to-action-button w-100">
-                    Küldés
-                  </button>
-                </div>
-              </div>
-            </form>
+            <ContactForm title='Adataid:'/>
           </div>
         </div>
         <div className='row'>
