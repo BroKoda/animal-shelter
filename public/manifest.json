@@ -8,7 +8,7 @@
       "type": "image/x-icon"
     }
   ],
-  "start_url": ".",
+  "start_url": "https://animal-shelter-f88f2.firebaseapp.com",
   "display": "standalone",
   "background_color": "#ffffff"
 }

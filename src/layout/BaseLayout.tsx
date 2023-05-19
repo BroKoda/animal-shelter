@@ -39,8 +39,8 @@ const BaseLayout = ({ children }: BaseLayoutProps): JSX.Element => {
                 </div>
                 <div className="col-4 col-md-6 align-self-center text-center text-md-start">
                   <Link to={'/'}>
-                    <img className='d-none d-md-block' src={'http://localhost:3000/mancs.png'} alt={'Mancs logo'}/>
-                    <img className='d-block d-md-none mx-auto' src={'http://localhost:3000/mancs_logo_only.png'} alt={'Mancs logo'}/>
+                    <img className='d-none d-md-block' src={'/mancs.png'} alt={'Mancs logo'}/>
+                    <img className='d-block d-md-none mx-auto' src={'/mancs_logo_only.png'} alt={'Mancs logo'}/>
                   </Link>
                 </div>
                 {user == null &&
