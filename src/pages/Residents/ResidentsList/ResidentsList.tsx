@@ -9,6 +9,7 @@ import { Resident } from '../ResidentsState'
 const ResidentsList = (): JSX.Element => {
   const dispatch = useAppDispatch()
   const residents = useAppSelector((state) => state.residents.residents)
+  const user = useAppSelector((state) => state.login.user)
 
   useEffect(() => {
     void dispatch(fetchResidents())
@@ -27,7 +28,7 @@ const ResidentsList = (): JSX.Element => {
             if (resident.animal != null) {
               return (
                 <div key={index} className='col-12 col-md-6 col-lg-4 mb-3'>
-                  <ResidentCard key={index} resident={resident.animal} id={resident.id} />
+                  <ResidentCard key={index} resident={resident.animal} id={resident.id} user={user} />
                 </div>
               )
             } else {

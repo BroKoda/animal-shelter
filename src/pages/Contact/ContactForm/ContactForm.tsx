@@ -19,9 +19,9 @@ const ContactForm = ({ title }: ContactFormProps): JSX.Element => {
       emailjs.sendForm('service_38v7wda', 'template_6mgb108', form.current, '5h6xOpkT8HrAedbJ5')
         .then((result) => {
           dispatch(resetContact())
-          console.log(result.text)
+          return result
         }, (error) => {
-          console.log(error.text)
+          return error
         })
     }
   }, [form, dispatch])

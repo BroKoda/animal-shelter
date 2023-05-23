@@ -105,6 +105,19 @@ const Registration = (): JSX.Element => {
                   </div>
                   <div className="form-control-container">
                     <div className="form-icon-container">
+                      <i className="fa-solid fa-phone"></i>
+                    </div>
+                    <input
+                      type="email"
+                      className="form-control"
+                      placeholder='Telefonszám'
+                      id="email"
+                      // value={email ?? ''}
+                      // onChange={handleSetEmail}
+                    />
+                  </div>
+                  <div className="form-control-container">
+                    <div className="form-icon-container">
                       <i className="fa-solid fa-lock"></i>
                     </div>
                     <input

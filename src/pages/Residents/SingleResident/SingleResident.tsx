@@ -45,7 +45,7 @@ const SingleResident = (): JSX.Element => {
           <div className="container animal-page-container">
             <div className="row">
               <div className="col-12 mb-4">
-                <h1>Anton adatlapja</h1>
+                <h1>{residentDetails?.animal?.name} adatlapja</h1>
               </div>
             </div>
             <div className="row">
@@ -54,7 +54,7 @@ const SingleResident = (): JSX.Element => {
                   <ProgressIndicator/>
                 }
                 {fetchResidentDetailsStatus === LoadingStatus.complete &&
-                  <img className="animal-image" src={residentDetails?.animal?.imageUrl} alt="Anton képe"/>
+                  <img className="animal-image" src={residentDetails?.animal?.imageUrl} alt={`${residentDetails?.animal?.name} képe`}/>
                 }
               </div>
               <div className="col-12 col-md-6 order-1 align-self-center mb-4 mb-md-0">
@@ -83,7 +83,7 @@ const SingleResident = (): JSX.Element => {
             <div className="row">
               <div className="col-12 mt-4">
                 <p className="animal-description-title mb-1">
-                  <strong>Anton jellemzői:</strong>
+                  <strong>{residentDetails?.animal?.name} jellemzői:</strong>
                 </p>
                 <p>{residentDetails?.animal?.description}</p>
               </div>
