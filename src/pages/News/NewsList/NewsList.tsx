@@ -9,6 +9,7 @@ const NewsList = (): JSX.Element => {
   const dispatch = useAppDispatch()
   const { news } = useAppSelector((state) => state.news)
   const user = useAppSelector((state) => state.login.user)
+  const now = new Date().valueOf()
 
   useEffect(() => {
     dispatch(fetchNews())

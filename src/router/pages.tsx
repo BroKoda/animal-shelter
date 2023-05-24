@@ -11,6 +11,7 @@ import NewsList from '../pages/News/NewsList/NewsList'
 import AddNews from '../pages/News/AddNews/AddNews'
 import SingleNewsPage from '../pages/News/SingleNewsPage/SingleNewsPage'
 import JoinUs from '../pages/JoinUs/JoinUs'
+import Dashboard from '../pages/Dashboard/Dashboard'
 
 export interface Page {
   title: string
@@ -28,6 +29,11 @@ export const pages: Page[] = [
     title: 'Főoldal',
     path: '/',
     element: <Home/>
+  },
+  {
+    title: 'Irányítópult',
+    path: '/iranyitopult',
+    element: <Dashboard/>
   },
   {
     title: 'Bejelentkezés',

@@ -12,14 +12,26 @@ const Navigation = ({ user }: NavigationProps): JSX.Element => {
     <div className="container menu-container px-0">
       <div className="row">
         <div className="col-12">
-          <Link to={'/'}>
-            <div className="menu-item">
-              <div className="menu-item-icon-container">
-                <i className="fa-solid fa-house"></i>
+          {user?.role === 'admin' &&
+            <Link to={'/iranyitopult'}>
+              <div className="menu-item">
+                <div className="menu-item-icon-container">
+                  <i className="fa-solid fa-house"></i>
+                </div>
+                <span>Irányítópult</span>
               </div>
-              <span>Főoldal</span>
-            </div>
-          </Link>
+            </Link>
+          }
+          {user?.role !== 'admin' &&
+            <Link to={'/'}>
+              <div className="menu-item">
+                <div className="menu-item-icon-container">
+                  <i className="fa-solid fa-house"></i>
+                </div>
+                <span>Főoldal</span>
+              </div>
+            </Link>
+          }
           <Link to={'/lakok'}>
             <div className="menu-item">
               <div className="menu-item-icon-container">
@@ -46,7 +58,7 @@ const Navigation = ({ user }: NavigationProps): JSX.Element => {
               <span>Hírek</span>
             </div>
           </Link>
-          {user?.role === 'admin' &&
+          {(user?.role === 'admin' || user?.role === 'publicist') &&
             <Link to={'/hirek/hozzaadas'}>
               <div className="menu-item">
                 <div className="menu-item-icon-container">

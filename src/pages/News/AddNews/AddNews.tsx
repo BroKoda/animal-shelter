@@ -45,7 +45,11 @@ const AddNews = (): JSX.Element => {
       }
       dispatch(updateNews(update))
     } else {
-      dispatch(addNews(newsToAdd))
+      const news = {
+        time: new Date().valueOf(),
+        ... newsToAdd
+      }
+      dispatch(addNews(news))
     }
   }, [dispatch, newsToAdd.title, newsToAdd.intro, newsToAdd.newsBody, newsToAdd.image])
 

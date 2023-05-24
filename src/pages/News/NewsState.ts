@@ -19,6 +19,7 @@ export interface NewsToAdd {
   intro?: string
   newsBody?: string
   image?: string
+  time?: number
 }
 
 export interface News {
