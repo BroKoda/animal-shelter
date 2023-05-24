@@ -1,15 +1,18 @@
-import React, { useEffect, useState } from 'react'
+import React, { MouseEvent, useCallback, useEffect, useState } from 'react'
 import '../../assets/components/ResidentCard.scss'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { Animal } from '../../pages/Residents/ResidentsState'
 import { getDownloadURL, ref } from 'firebase/storage'
 import { storage } from '../../firebase'
 import { User } from '../../pages/Login/LoginState'
+import { useAppDispatch } from '../../app/hooks'
+import { setIsUpdate, setIsUpdateId } from '../../pages/Residents/ResidentsSlice'
 
 interface ResidentCardProps {
   resident: Animal
   id: string
   user?: User
+  showDeleteDialog: (id: string) => void
 }
 
 function getCardLogo (type: string | undefined): string {
@@ -22,7 +25,9 @@ function getCardLogo (type: string | undefined): string {
   }
 }
 
-const ResidentCard = ({ resident, id, user }: ResidentCardProps): JSX.Element => {
+const ResidentCard = ({ resident, id, user, showDeleteDialog }: ResidentCardProps): JSX.Element => {
+  const navigate = useNavigate()
+  const dispatch = useAppDispatch()
   const [image, setImage] = useState('')
   const cardLogo = getCardLogo(resident.type)
 
@@ -31,6 +36,18 @@ const ResidentCard = ({ resident, id, user }: ResidentCardProps): JSX.Element =>
     const fetchImage = async () => await getDownloadURL(pathRef)
     fetchImage().then(response => setImage(response))
   }, [resident.image])
+
+  const handleEditButton = useCallback(() => {
+    if (id != null) {
+      dispatch(setIsUpdate(true))
+      dispatch(setIsUpdateId(id))
+    }
+  }, [dispatch, resident, id, navigate])
+
+  const showDeleteDialogAction = useCallback((event: MouseEvent<HTMLButtonElement>) => {
+    event.preventDefault()
+    showDeleteDialog(id)
+  }, [id, showDeleteDialog])
 
   return (
     <div className="container listing-card resident-card">
@@ -71,8 +88,8 @@ const ResidentCard = ({ resident, id, user }: ResidentCardProps): JSX.Element =>
             <div className="container px-0">
               <div className="row g-2">
                 <div className="col-6">
-                  <Link to={`/lakok/adatlap/${id}`}>
-                    <button className='button call-to-action-button mt-2 w-100'>
+                  <Link to='/lakok/hozzaadas'>
+                    <button className='button call-to-action-button mt-2 w-100' onClick={handleEditButton}>
                       <i className="fa-solid fa-pen-to-square"></i>
                     </button>
                   </Link>
@@ -86,7 +103,7 @@ const ResidentCard = ({ resident, id, user }: ResidentCardProps): JSX.Element =>
                 </div>
                 <div className="col-3">
                   <Link to={`/lakok/adatlap/${id}`}>
-                    <button className='button secondary-button mt-2 w-100'>
+                    <button className='button secondary-button mt-2 w-100' onClick={showDeleteDialogAction}>
                       <i className="fa-solid fa-trash"></i>
                     </button>
                   </Link>

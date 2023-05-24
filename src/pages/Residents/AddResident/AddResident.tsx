@@ -3,13 +3,17 @@ import BaseLayout from '../../../layout/BaseLayout'
 import { useAppDispatch, useAppSelector } from '../../../app/hooks'
 import {
   addNewResident,
-  addNewResidentImage, resetResidents,
+  addNewResidentImage,
+  fetchResidentDetails,
+  resetResidents,
   setArrivalDate,
   setBirtDate,
   setColor,
   setDescription,
   setName,
-  setSize, setType
+  setSize,
+  setType,
+  updateResident
 } from '../ResidentsSlice'
 import { Animal } from '../ResidentsState'
 import { v4 } from 'uuid'
@@ -20,57 +24,67 @@ const AddResident = (): JSX.Element => {
   const navigate = useNavigate()
   const dispatch = useAppDispatch()
   const {
-    name,
-    type,
-    color,
-    size,
-    birthDate,
-    arrivalDate,
-    description,
-    image
-  } = useAppSelector((state) => state.residents.residentToAdd)
-  const addNewResidentStatus = useAppSelector((state) => state.residents.addNewResidentStatus)
+    residentToAdd,
+    addNewResidentStatus,
+    isUpdate,
+    isUpdateId,
+    updateResidentStatus
+  } = useAppSelector((state) => state.residents)
 
   useEffect(() => {
-    if (addNewResidentStatus === LoadingStatus.complete) {
+    if (addNewResidentStatus === LoadingStatus.complete || updateResidentStatus === LoadingStatus.complete) {
       dispatch(resetResidents())
       navigate('/lakok')
     }
-  }, [dispatch, addNewResidentStatus])
+  }, [dispatch, addNewResidentStatus, updateResidentStatus])
+
+  useEffect(() => {
+    if (isUpdate && isUpdateId != null) {
+      dispatch(fetchResidentDetails(isUpdateId))
+    }
+  }, [dispatch, isUpdate])
 
   const handleAddNewAnimal = useCallback((e: MouseEvent<HTMLButtonElement>) => {
     e.preventDefault()
-    const animal: Animal = { name, type, color, size, birthDate, arrivalDate, description, image }
-    dispatch(addNewResident(animal))
-  }, [dispatch, name, type, color, size, birthDate, arrivalDate, description, image])
+    const animal: Animal = residentToAdd
+    if (isUpdate && isUpdateId != null) {
+      const update = {
+        animal: animal,
+        id: isUpdateId
+      }
+      dispatch(updateResident(update))
+    } else {
+      dispatch(addNewResident(animal))
+    }
+  }, [dispatch, residentToAdd])
 
   const handleSetName = useCallback((event: ChangeEvent<HTMLInputElement>) => {
     dispatch(setName(event.target.value))
-  }, [dispatch, name])
+  }, [dispatch, residentToAdd.name])
 
   const handleSetType = useCallback((event: ChangeEvent<HTMLInputElement>) => {
     dispatch(setType((event.target.value)))
-  }, [dispatch, type])
+  }, [dispatch, residentToAdd.type])
 
   const handleSetSize = useCallback((event: ChangeEvent<HTMLInputElement>) => {
     dispatch(setSize(event.target.value))
-  }, [dispatch, size])
+  }, [dispatch, residentToAdd.size])
 
   const handleSetColor = useCallback((event: ChangeEvent<HTMLInputElement>) => {
     dispatch(setColor(event.target.value))
-  }, [dispatch, color])
+  }, [dispatch, residentToAdd.color])
 
   const handleSetBirthDate = useCallback((event: ChangeEvent<HTMLInputElement>) => {
     dispatch(setBirtDate(event.target.value))
-  }, [dispatch, birthDate])
+  }, [dispatch, residentToAdd.birthDate])
 
   const handleSetArrivalDate = useCallback((event: ChangeEvent<HTMLInputElement>) => {
     dispatch(setArrivalDate(event.target.value))
-  }, [dispatch, arrivalDate])
+  }, [dispatch, residentToAdd.arrivalDate])
 
   const handleSetDescription = useCallback((event: ChangeEvent<HTMLTextAreaElement>) => {
     dispatch(setDescription(event.target.value))
-  }, [dispatch, description])
+  }, [dispatch, residentToAdd.description])
 
   const handleSetFile = useCallback((event: ChangeEvent<HTMLInputElement>) => {
     if (event.target.files != null) {
@@ -78,7 +92,7 @@ const AddResident = (): JSX.Element => {
       const name = `${v4()}`
       dispatch(addNewResidentImage({ image, name }))
     }
-  }, [dispatch, image])
+  }, [dispatch, residentToAdd.image])
 
   return (
     <BaseLayout>
@@ -96,7 +110,7 @@ const AddResident = (): JSX.Element => {
                   className="form-control"
                   placeholder="Név"
                   id="name"
-                  value={name ?? ''}
+                  value={residentToAdd.name ?? ''}
                   onChange={handleSetName}
                 />
               </div>
@@ -105,21 +119,24 @@ const AddResident = (): JSX.Element => {
                   <i className="fa-solid fa-paw"></i>
                 </div>
                 <div className="resident-type-select-container d-flex flex-row align-items-center">
-                  <div className='d-inline-flex me-4'>
+                  <div className="d-inline-flex me-4">
                     <label className="radio-container">Kutya
-                      <input type="radio" value={'kutya'} checked={'kutya' === type} onChange={handleSetType} />
+                      <input type="radio" value={'kutya'} checked={'kutya' === residentToAdd.type}
+                             onChange={handleSetType}/>
                       <span className="radio-mark"></span>
                     </label>
                   </div>
-                  <div className='d-inline-flex me-4'>
+                  <div className="d-inline-flex me-4">
                     <label className="radio-container">Macska
-                      <input type="radio" value={'macska'} checked={'macska' === type} onChange={handleSetType} />
+                      <input type="radio" value={'macska'} checked={'macska' === residentToAdd.type}
+                             onChange={handleSetType}/>
                       <span className="radio-mark"></span>
                     </label>
                   </div>
-                  <div className='d-inline-flex me-4'>
+                  <div className="d-inline-flex me-4">
                     <label className="radio-container">Egyéb
-                      <input type="radio" value={'egyéb'} checked={'egyéb' === type} onChange={handleSetType} />
+                      <input type="radio" value={'egyéb'} checked={'egyéb' === residentToAdd.type}
+                             onChange={handleSetType}/>
                       <span className="radio-mark"></span>
                     </label>
                   </div>
@@ -134,7 +151,7 @@ const AddResident = (): JSX.Element => {
                   className="form-control"
                   placeholder="Szín"
                   id="color"
-                  value={color ?? ''}
+                  value={residentToAdd.color ?? ''}
                   onChange={handleSetColor}
                 />
               </div>
@@ -147,7 +164,7 @@ const AddResident = (): JSX.Element => {
                   className="form-control"
                   placeholder="Méret"
                   id="size"
-                  value={size ?? ''}
+                  value={residentToAdd.size ?? ''}
                   onChange={handleSetSize}
                 />
               </div>
@@ -160,7 +177,7 @@ const AddResident = (): JSX.Element => {
                   className="form-control"
                   placeholder="Születési idő"
                   id="birth-date"
-                  value={birthDate ?? ''}
+                  value={residentToAdd.birthDate ?? ''}
                   onChange={handleSetBirthDate}
                 />
               </div>
@@ -173,7 +190,7 @@ const AddResident = (): JSX.Element => {
                   className="form-control"
                   placeholder="Bekerülési idő"
                   id="arrival-date"
-                  value={arrivalDate ?? ''}
+                  value={residentToAdd.arrivalDate ?? ''}
                   onChange={handleSetArrivalDate}
                 />
               </div>
@@ -186,11 +203,11 @@ const AddResident = (): JSX.Element => {
                   placeholder="Leírás"
                   id="description"
                   rows={4}
-                  value={description ?? ''}
+                  value={residentToAdd.description ?? ''}
                   onChange={handleSetDescription}
                 />
               </div>
-              <div className="form-control-container">
+              <div className={`form-control-container ${isUpdate ? 'd-none' : ''}`}>
                 <div className="form-icon-container">
                   <i className="fa-solid fa-image"></i>
                 </div>
@@ -207,7 +224,7 @@ const AddResident = (): JSX.Element => {
               <div className="row justify-content-end">
                 <div className="col-6">
                   <button className="button call-to-action-button w-100" onClick={handleAddNewAnimal}>
-                    Lakó hozzáadása
+                    {isUpdate ? 'Lakó módosítása' : 'Lakó hozzáadása'}
                   </button>
                 </div>
               </div>

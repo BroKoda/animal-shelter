@@ -4,8 +4,11 @@ export interface ResidentsState {
   residentToAdd: Animal
   residentDetails?: ResidentDetails
   residents?: Resident[]
+  isUpdate: boolean
+  isUpdateId?: string
   fetchResidentsStatus: LoadingStatus
   addNewResidentStatus: LoadingStatus
+  updateResidentStatus: LoadingStatus
   addNewResidentImageStatus: LoadingStatus
   fetchResidentImageStatus: LoadingStatus
   fetchResidentDetailsStatus: LoadingStatus

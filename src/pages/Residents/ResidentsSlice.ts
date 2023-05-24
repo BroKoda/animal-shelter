@@ -2,7 +2,7 @@ import { Animal, Resident, ResidentsState } from './ResidentsState'
 import { LoadingStatus } from '../../components/LoadingStatus/LoadingStatus'
 import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { RootState } from '../../app/store'
-import { addDoc, collection, doc, getDoc, getDocs } from 'firebase/firestore'
+import { addDoc, collection, doc, getDoc, getDocs, updateDoc, deleteDoc } from 'firebase/firestore'
 import { getDownloadURL, ref, uploadBytes } from 'firebase/storage'
 import { db, storage } from '../../firebase'
 
@@ -11,12 +11,19 @@ interface ImageToUpload {
   name: string
 }
 
+interface ResidentToUpdate {
+  id: string
+  animal: Animal
+}
+
 const initialState: ResidentsState = {
+  isUpdate: false,
   residents: [],
   residentToAdd: {},
   residentDetails: {},
   fetchResidentsStatus: LoadingStatus.initial,
   addNewResidentStatus: LoadingStatus.initial,
+  updateResidentStatus: LoadingStatus.initial,
   addNewResidentImageStatus: LoadingStatus.initial,
   fetchResidentImageStatus: LoadingStatus.initial,
   fetchResidentDetailsStatus: LoadingStatus.initial
@@ -83,11 +90,36 @@ export const fetchResidentImage = createAsyncThunk('fetchResidentImage', async (
   }
 })
 
+export const updateResident = createAsyncThunk('updateResident', async ({ id, animal }: ResidentToUpdate) => {
+  try {
+    const data = await doc(db, 'animals', id)
+    await updateDoc(data, {
+      animal
+    })
+  } catch (e) {
+    console.log(e)
+  }
+})
+
+export const deleteResident = createAsyncThunk('deleteResident', async (id: string) => {
+  try {
+    await deleteDoc(doc(db, 'animals', id))
+  } catch (e) {
+    console.log(e)
+  }
+})
+
 const residentsSlice = createSlice({
   name: 'residents',
   initialState,
   reducers: {
     resetResidents: () => initialState,
+    setIsUpdate: (state: ResidentsState, action: PayloadAction<boolean>) => {
+      state.isUpdate = action.payload
+    },
+    setIsUpdateId: (state: ResidentsState, action: PayloadAction<string>) => {
+      state.isUpdateId = action.payload
+    },
     setName: (state: ResidentsState, action: PayloadAction<string>) => {
       state.residentToAdd.name = action.payload
     },
@@ -137,6 +169,9 @@ const residentsSlice = createSlice({
       .addCase(fetchResidentDetails.fulfilled, (state, action) => {
         state.fetchResidentDetailsStatus = LoadingStatus.complete
         state.residentDetails = action.payload
+        if (state.isUpdate && action.payload != null) {
+          state.residentToAdd = action.payload.animal
+        }
       })
       .addCase(fetchResidentDetails.rejected, (state) => {
         state.fetchResidentDetailsStatus = LoadingStatus.error
@@ -161,11 +196,22 @@ const residentsSlice = createSlice({
       .addCase(fetchResidentImage.rejected, (state) => {
         state.fetchResidentImageStatus = LoadingStatus.error
       })
+      .addCase(updateResident.pending, (state) => {
+        state.updateResidentStatus = LoadingStatus.loading
+      })
+      .addCase(updateResident.fulfilled, (state) => {
+        state.updateResidentStatus = LoadingStatus.complete
+      })
+      .addCase(updateResident.rejected, (state) => {
+        state.updateResidentStatus = LoadingStatus.error
+      })
   }
 })
 
 export const {
   resetResidents,
+  setIsUpdate,
+  setIsUpdateId,
   setName,
   setType,
   setColor,

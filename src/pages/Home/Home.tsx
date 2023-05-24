@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useCallback, useEffect } from 'react'
 import BaseLayout from '../../layout/BaseLayout'
 import { Resident } from '../Residents/ResidentsState'
 import ResidentCard from '../../components/ResidentCard/ResidentCard'
@@ -6,6 +6,7 @@ import { useAppDispatch, useAppSelector } from '../../app/hooks'
 import { fetchHomeNews, fetchHomeResidents } from './HomeSlice'
 import { News } from '../News/NewsState'
 import NewsCard from '../../components/NewsCard/NewsCard'
+import { deleteResident } from '../Residents/ResidentsSlice'
 
 const Home = (): JSX.Element => {
   const dispatch = useAppDispatch()
@@ -17,6 +18,15 @@ const Home = (): JSX.Element => {
 
   useEffect(() => {
     dispatch(fetchHomeNews())
+  }, [dispatch])
+
+  const showDeleteDialogAction = useCallback((id: string) => {
+    const text = 'Biztosan törölni szeretné a lakót?' +
+      '\nEz a folyamat nem visszafordítható, az állat adatai teljesen elvesznek törlés után'
+    if (confirm(text)) {
+      dispatch(deleteResident(id))
+      window.location.reload()
+    }
   }, [dispatch])
 
   return (
@@ -80,7 +90,12 @@ const Home = (): JSX.Element => {
             if (resident.animal != null) {
               return (
                 <div key={index} className='col-12 col-md-6 col-lg-4 mb-3'>
-                  <ResidentCard key={index} resident={resident.animal} id={resident.id} />
+                  <ResidentCard
+                    key={index}
+                    resident={resident.animal}
+                    id={resident.id}
+                    showDeleteDialog={showDeleteDialogAction}
+                  />
                 </div>
               )
             } else {
