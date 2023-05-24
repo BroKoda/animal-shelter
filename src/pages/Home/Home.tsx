@@ -7,6 +7,7 @@ import { fetchHomeNews, fetchHomeResidents } from './HomeSlice'
 import { News } from '../News/NewsState'
 import NewsCard from '../../components/NewsCard/NewsCard'
 import { deleteResident } from '../Residents/ResidentsSlice'
+import { deleteNews } from '../News/NewsSlice'
 
 const Home = (): JSX.Element => {
   const dispatch = useAppDispatch()
@@ -20,11 +21,20 @@ const Home = (): JSX.Element => {
     dispatch(fetchHomeNews())
   }, [dispatch])
 
-  const showDeleteDialogAction = useCallback((id: string) => {
+  const showDeleteActionForResidents = useCallback((id: string) => {
     const text = 'Biztosan törölni szeretné a lakót?' +
       '\nEz a folyamat nem visszafordítható, az állat adatai teljesen elvesznek törlés után'
     if (confirm(text)) {
       dispatch(deleteResident(id))
+      window.location.reload()
+    }
+  }, [dispatch])
+
+  const showDeleteAlertForNews = useCallback((id: string) => {
+    const text = 'Biztosan törölni szeretné ezt a hírt?' +
+      '\nEz a folyamat nem visszafordítható, hír és hozzá tartozó adatok teljesen elvesznek törlés után!'
+    if (confirm(text)) {
+      dispatch(deleteNews(id))
       window.location.reload()
     }
   }, [dispatch])
@@ -65,7 +75,12 @@ const Home = (): JSX.Element => {
             if (singleNews.newsDetails != null) {
               return (
                 <div key={index} className="col-12 col-md-6 col-lg-4 mb-3">
-                  <NewsCard key={index} news={singleNews.newsDetails} id={singleNews.id}/>
+                  <NewsCard
+                    key={index}
+                    news={singleNews.newsDetails}
+                    id={singleNews.id}
+                    showDeleteDialog={showDeleteAlertForNews}
+                  />
                 </div>
               )
             } else {
@@ -94,7 +109,7 @@ const Home = (): JSX.Element => {
                     key={index}
                     resident={resident.animal}
                     id={resident.id}
-                    showDeleteDialog={showDeleteDialogAction}
+                    showDeleteDialog={showDeleteActionForResidents}
                   />
                 </div>
               )

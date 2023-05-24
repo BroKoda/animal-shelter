@@ -1,16 +1,26 @@
-import React, { useEffect } from 'react'
+import React, { useCallback, useEffect } from 'react'
 import BaseLayout from '../../../layout/BaseLayout'
 import { useAppDispatch, useAppSelector } from '../../../app/hooks'
-import { fetchNews } from '../NewsSlice'
+import { deleteNews, fetchNews } from '../NewsSlice'
 import NewsCard from '../../../components/NewsCard/NewsCard'
 import { News } from '../NewsState'
 
 const NewsList = (): JSX.Element => {
   const dispatch = useAppDispatch()
   const { news } = useAppSelector((state) => state.news)
+  const user = useAppSelector((state) => state.login.user)
 
   useEffect(() => {
     dispatch(fetchNews())
+  }, [dispatch])
+
+  const showDeleteDialogAction = useCallback((id: string) => {
+    const text = 'Biztosan törölni szeretné ezt a hírt?' +
+      '\nEz a folyamat nem visszafordítható, hír és hozzá tartozó adatok teljesen elvesznek törlés után!'
+    if (confirm(text)) {
+      dispatch(deleteNews(id))
+      window.location.reload()
+    }
   }, [dispatch])
 
   return (
@@ -26,7 +36,13 @@ const NewsList = (): JSX.Element => {
             if (singleNews.newsDetails != null) {
               return (
                 <div key={index} className="col-12 col-md-6 col-lg-4 mb-3">
-                  <NewsCard key={index} news={singleNews.newsDetails} id={singleNews.id}/>
+                  <NewsCard
+                    key={index}
+                    news={singleNews.newsDetails}
+                    id={singleNews.id}
+                    user={user}
+                    showDeleteDialog={showDeleteDialogAction}
+                  />
                 </div>
               )
             } else {

@@ -1,6 +1,6 @@
 import React, { MouseEvent, useCallback, useEffect, useState } from 'react'
 import '../../assets/components/ResidentCard.scss'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { Animal } from '../../pages/Residents/ResidentsState'
 import { getDownloadURL, ref } from 'firebase/storage'
 import { storage } from '../../firebase'
@@ -26,7 +26,6 @@ function getCardLogo (type: string | undefined): string {
 }
 
 const ResidentCard = ({ resident, id, user, showDeleteDialog }: ResidentCardProps): JSX.Element => {
-  const navigate = useNavigate()
   const dispatch = useAppDispatch()
   const [image, setImage] = useState('')
   const cardLogo = getCardLogo(resident.type)
@@ -42,7 +41,7 @@ const ResidentCard = ({ resident, id, user, showDeleteDialog }: ResidentCardProp
       dispatch(setIsUpdate(true))
       dispatch(setIsUpdateId(id))
     }
-  }, [dispatch, resident, id, navigate])
+  }, [dispatch, resident, id])
 
   const showDeleteDialogAction = useCallback((event: MouseEvent<HTMLButtonElement>) => {
     event.preventDefault()
@@ -102,7 +101,7 @@ const ResidentCard = ({ resident, id, user, showDeleteDialog }: ResidentCardProp
                   </Link>
                 </div>
                 <div className="col-3">
-                  <Link to={`/lakok/adatlap/${id}`}>
+                  <Link to={'/lakok'}>
                     <button className='button secondary-button mt-2 w-100' onClick={showDeleteDialogAction}>
                       <i className="fa-solid fa-trash"></i>
                     </button>

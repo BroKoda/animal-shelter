@@ -9,6 +9,7 @@ export interface ResidentsState {
   fetchResidentsStatus: LoadingStatus
   addNewResidentStatus: LoadingStatus
   updateResidentStatus: LoadingStatus
+  deleteResidentStatus: LoadingStatus
   addNewResidentImageStatus: LoadingStatus
   fetchResidentImageStatus: LoadingStatus
   fetchResidentDetailsStatus: LoadingStatus

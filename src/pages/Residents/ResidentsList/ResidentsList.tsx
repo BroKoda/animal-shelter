@@ -40,7 +40,8 @@ const ResidentsList = (): JSX.Element => {
                   <ResidentCard
                     key={index}
                     resident={resident.animal}
-                    id={resident.id} user={user}
+                    id={resident.id}
+                    user={user}
                     showDeleteDialog={showDeleteDialogAction}/>
                 </div>
               )

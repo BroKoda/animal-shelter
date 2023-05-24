@@ -3,8 +3,12 @@ import { LoadingStatus } from '../../components/LoadingStatus/LoadingStatus'
 export interface NewsState {
   news?: News[]
   newsToAdd: NewsToAdd
+  isUpdate: boolean
+  isUpdateId?: string
   singleNews?: SingleNews
   addNewsStatus: LoadingStatus
+  updateNewsStatus: LoadingStatus
+  deleteNewsStatus: LoadingStatus
   addNewsImageStatus: LoadingStatus
   fetchNewsStatus: LoadingStatus
   fetchSingleNewsStatus: LoadingStatus

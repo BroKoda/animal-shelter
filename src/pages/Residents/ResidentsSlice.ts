@@ -2,7 +2,7 @@ import { Animal, Resident, ResidentsState } from './ResidentsState'
 import { LoadingStatus } from '../../components/LoadingStatus/LoadingStatus'
 import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { RootState } from '../../app/store'
-import { addDoc, collection, doc, getDoc, getDocs, updateDoc, deleteDoc } from 'firebase/firestore'
+import { addDoc, collection, deleteDoc, doc, getDoc, getDocs, updateDoc } from 'firebase/firestore'
 import { getDownloadURL, ref, uploadBytes } from 'firebase/storage'
 import { db, storage } from '../../firebase'
 
@@ -24,6 +24,7 @@ const initialState: ResidentsState = {
   fetchResidentsStatus: LoadingStatus.initial,
   addNewResidentStatus: LoadingStatus.initial,
   updateResidentStatus: LoadingStatus.initial,
+  deleteResidentStatus: LoadingStatus.initial,
   addNewResidentImageStatus: LoadingStatus.initial,
   fetchResidentImageStatus: LoadingStatus.initial,
   fetchResidentDetailsStatus: LoadingStatus.initial
@@ -104,6 +105,7 @@ export const updateResident = createAsyncThunk('updateResident', async ({ id, an
 export const deleteResident = createAsyncThunk('deleteResident', async (id: string) => {
   try {
     await deleteDoc(doc(db, 'animals', id))
+    return true
   } catch (e) {
     console.log(e)
   }
@@ -204,6 +206,15 @@ const residentsSlice = createSlice({
       })
       .addCase(updateResident.rejected, (state) => {
         state.updateResidentStatus = LoadingStatus.error
+      })
+      .addCase(deleteResident.pending, (state) => {
+        state.deleteResidentStatus = LoadingStatus.loading
+      })
+      .addCase(deleteResident.fulfilled, (state) => {
+        state.deleteResidentStatus = LoadingStatus.complete
+      })
+      .addCase(deleteResident.rejected, (state) => {
+        state.deleteResidentStatus = LoadingStatus.error
       })
   }
 })

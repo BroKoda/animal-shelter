@@ -2,7 +2,7 @@ import { LoadingStatus } from '../../components/LoadingStatus/LoadingStatus'
 import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { RootState } from '../../app/store'
 import { News, NewsState, NewsToAdd } from './NewsState'
-import { addDoc, collection, doc, getDoc, getDocs } from 'firebase/firestore'
+import { addDoc, collection, deleteDoc, doc, getDoc, getDocs, updateDoc } from 'firebase/firestore'
 import { db, storage } from '../../firebase'
 import { getDownloadURL, ref, uploadBytes } from 'firebase/storage'
 
@@ -11,9 +11,17 @@ interface ImageToUpload {
   name: string
 }
 
+interface NewsToUpdate {
+  id: string
+  newsDetails: NewsToAdd
+}
+
 const initialState: NewsState = {
   news: [],
   newsToAdd: {},
+  isUpdate: false,
+  deleteNewsStatus: LoadingStatus.initial,
+  updateNewsStatus: LoadingStatus.initial,
   addNewsStatus: LoadingStatus.initial,
   addNewsImageStatus: LoadingStatus.initial,
   fetchNewsStatus: LoadingStatus.initial,
@@ -80,11 +88,37 @@ export const fetchNewsImage = createAsyncThunk('fetchNewsImage', async (image: s
   }
 })
 
+export const updateNews = createAsyncThunk('updateNews', async ({ id, newsDetails }: NewsToUpdate) => {
+  try {
+    const data = await doc(db, 'news', id)
+    await updateDoc(data, {
+      newsDetails
+    })
+  } catch (e) {
+    console.log(e)
+  }
+})
+
+export const deleteNews = createAsyncThunk('deleteNews', async (id: string) => {
+  try {
+    await deleteDoc(doc(db, 'news', id))
+    return true
+  } catch (e) {
+    console.log(e)
+  }
+})
+
 const newsSlice = createSlice({
   name: 'news',
   initialState,
   reducers: {
     resetNews: () => initialState,
+    setIsUpdate: (state: NewsState, action: PayloadAction<boolean>) => {
+      state.isUpdate = action.payload
+    },
+    setIsUpdateId: (state: NewsState, action: PayloadAction<string>) => {
+      state.isUpdateId = action.payload
+    },
     setTitle: (state: NewsState, action: PayloadAction<string>) => {
       state.newsToAdd.title = action.payload
     },
@@ -132,6 +166,9 @@ const newsSlice = createSlice({
       .addCase(fetchSingleNews.fulfilled, (state, action) => {
         state.fetchSingleNewsStatus = LoadingStatus.complete
         state.singleNews = action.payload
+        if (state.isUpdate && action.payload != null) {
+          state.newsToAdd = action.payload.newsDetails
+        }
       })
       .addCase(fetchSingleNews.rejected, (state) => {
         state.fetchSingleNewsStatus = LoadingStatus.error
@@ -146,9 +183,27 @@ const newsSlice = createSlice({
       .addCase(fetchNewsImage.rejected, (state) => {
         state.fetchSingleNewsStatus = LoadingStatus.error
       })
+      .addCase(updateNews.pending, (state) => {
+        state.updateNewsStatus = LoadingStatus.loading
+      })
+      .addCase(updateNews.fulfilled, (state) => {
+        state.updateNewsStatus = LoadingStatus.complete
+      })
+      .addCase(updateNews.rejected, (state) => {
+        state.updateNewsStatus = LoadingStatus.error
+      })
+      .addCase(deleteNews.pending, (state) => {
+        state.deleteNewsStatus = LoadingStatus.loading
+      })
+      .addCase(deleteNews.fulfilled, (state) => {
+        state.deleteNewsStatus = LoadingStatus.complete
+      })
+      .addCase(deleteNews.rejected, (state) => {
+        state.deleteNewsStatus = LoadingStatus.error
+      })
   }
 })
 
-export const { resetNews, setTitle, setIntro, setNewsBody } = newsSlice.actions
+export const { setIsUpdate, setIsUpdateId, resetNews, setTitle, setIntro, setNewsBody } = newsSlice.actions
 export const selectNews = (state: RootState) => state.news
 export default newsSlice.reducer
