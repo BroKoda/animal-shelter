@@ -8,7 +8,7 @@ import { LoadingStatus } from '../../components/LoadingStatus/LoadingStatus'
 const Login = (): JSX.Element => {
   const navigate = useNavigate()
   const dispatch = useAppDispatch()
-  const status = useAppSelector((state) => state.login.status)
+  const { status, error } = useAppSelector((state) => state.login)
   const { email, password } = useAppSelector((state) => state.login.userToLogin)
 
   useEffect(() => {
@@ -38,6 +38,7 @@ const Login = (): JSX.Element => {
             <div className="row">
               <div className="col-12">
                 <h2>Belépés</h2>
+                <p className='login-error'>{error}</p>
                 <form className='my-4'>
                   <div className="form-control-container">
                     <div className="form-icon-container">

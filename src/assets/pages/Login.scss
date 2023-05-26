@@ -9,6 +9,12 @@
     border-radius: 20px;
     height: 100%;
 
+    .login-error {
+      font-size: $smaller-font-size;
+      font-weight: 500;
+      color: red;
+    }
+
     .call-to-action-button {
       width: 100%;
     }

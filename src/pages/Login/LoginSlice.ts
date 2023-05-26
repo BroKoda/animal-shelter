@@ -55,7 +55,7 @@ const loginSlice = createSlice({
       })
       .addCase(logInUser.rejected, (state) => {
         state.status = LoadingStatus.error
-        state.error = 'Nem megfelelő email cím vagy jelszó'
+        state.error = 'Nem megfelelő email cím vagy jelszó!'
       })
       .addCase(getUserDetails.pending, (state) => {
         state.userStatus = LoadingStatus.loading
