@@ -85,8 +85,16 @@ const Dashboard = (): JSX.Element => {
           <div className="col-12">
             <h1>Irányítópult</h1>
           </div>
+          <div className='col-12 mt-4'>
+            <p>Oldalon elérhető hírek száma: <strong>5</strong></p>
+            <p>Hírek ebben a hónapban: <strong>3</strong></p>
+            <p className='mt-3'>Admin felhaszálók: <strong>2</strong></p>
+            <p>Újságíró jogosultságó felhasználók száma: <strong>2</strong></p>
+            <p>Regisztrált felhasználók száma: <strong>5</strong></p>
+            <p></p>
+          </div>
           <div className="col-12 my-4">
-            <Bar options={residentsChartOption} data={residentsChartData}/>
+            <Bar height={100} options={residentsChartOption} data={residentsChartData}/>
           </div>
           <div className="col-12 col-md-6">
             <Link to={'/lakok'}>
