@@ -5,10 +5,13 @@ import { useAppDispatch, useAppSelector } from '../../../app/hooks'
 import { deleteResident, fetchResidents } from '../ResidentsSlice'
 import ResidentCard from '../../../components/ResidentCard/ResidentCard'
 import { Resident } from '../ResidentsState'
+import { LoadingStatus } from '../../../components/LoadingStatus/LoadingStatus'
+import Error from '../../../components/Error/Error'
+import ProgressIndicator from '../../../components/ProgressIndicator/ProgressIndicator'
 
 const ResidentsList = (): JSX.Element => {
   const dispatch = useAppDispatch()
-  const residents = useAppSelector((state) => state.residents.residents)
+  const { residents, fetchResidentsStatus } = useAppSelector((state) => state.residents)
   const user = useAppSelector((state) => state.login.user)
 
   useEffect(() => {
@@ -26,31 +29,43 @@ const ResidentsList = (): JSX.Element => {
 
   return (
     <BaseLayout>
-      <div className="container residents-container">
-        <div className="row">
-          <div className="col-12 mb-3">
-            <h1>Lakóink</h1>
+      <>
+        {fetchResidentsStatus === LoadingStatus.error &&
+          <Error/>
+        }
+
+        {fetchResidentsStatus === LoadingStatus.loading &&
+          <ProgressIndicator/>
+        }
+
+        {fetchResidentsStatus === LoadingStatus.complete &&
+          <div className="container residents-container">
+            <div className="row">
+              <div className="col-12 mb-3">
+                <h1>Lakóink</h1>
+              </div>
+            </div>
+            <div className="row justify-content-center">
+              {residents != null && residents.map((resident: Resident, index: number) => {
+                if (resident.animal != null) {
+                  return (
+                    <div key={index} className="col-12 col-md-6 col-lg-4 mb-3">
+                      <ResidentCard
+                        key={index}
+                        resident={resident.animal}
+                        id={resident.id}
+                        user={user}
+                        showDeleteDialog={showDeleteDialogAction}/>
+                    </div>
+                  )
+                } else {
+                  return 'Jelenleg nincs lakó a menhelyen!'
+                }
+              })}
+            </div>
           </div>
-        </div>
-        <div className="row justify-content-center">
-          {residents != null && residents.map((resident: Resident, index: number) => {
-            if (resident.animal != null) {
-              return (
-                <div key={index} className="col-12 col-md-6 col-lg-4 mb-3">
-                  <ResidentCard
-                    key={index}
-                    resident={resident.animal}
-                    id={resident.id}
-                    user={user}
-                    showDeleteDialog={showDeleteDialogAction}/>
-                </div>
-              )
-            } else {
-              return 'Jelenleg nincs lakó a menhelyen!'
-            }
-          })}
-        </div>
-      </div>
+        }
+      </>
     </BaseLayout>
   )
 }

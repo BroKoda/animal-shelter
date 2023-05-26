@@ -1,0 +1,561 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Contact Page tests Should render contact page 1`] = `
+<div>
+  <div
+    class="container-fluid header-container"
+  >
+    <div
+      class="row h-100"
+    >
+      <div
+        class="col-12 align-self-center"
+      >
+        <div
+          class="container"
+        >
+          <div
+            class="row"
+          >
+            <div
+              class="col-4 d-md-none align-self-center"
+            >
+              <i
+                class="fa-solid fa-bars js-navigation-toggle"
+              />
+            </div>
+            <div
+              class="col-4 col-md-6 align-self-center text-center text-md-start"
+            >
+              <a
+                href="/"
+              >
+                <img
+                  alt="Mancs logo"
+                  class="d-none d-md-block"
+                  src="/mancs.png"
+                />
+                <img
+                  alt="Mancs logo"
+                  class="d-block d-md-none mx-auto"
+                  src="/mancs_logo_only.png"
+                />
+              </a>
+            </div>
+            <div
+              class="col-4 col-md-6 align-self-center text-end"
+            >
+              <a
+                class="d-none d-md-inline-block"
+                href="/regisztracio"
+              >
+                <button
+                  class="button secondary-button me-2"
+                >
+                  Regisztráció
+                </button>
+              </a>
+              <a
+                href="/bejelentkezes"
+              >
+                <button
+                  class="button call-to-action-button login-button"
+                >
+                  <span
+                    class="d-none d-md-inline"
+                  >
+                    Bejelentkezés
+                  </span>
+                  <span
+                    class="d-inline d-md-none"
+                  >
+                    <i
+                      class="fa-solid fa-user"
+                    />
+                  </span>
+                </button>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="container body-container mt-3 mb-5"
+  >
+    <div
+      class="row"
+    >
+      <div
+        class="col-12 col-md-4 col-lg-3 navigation-container d-none d-md-block pe-md-0 pe-xl-2"
+      >
+        <div
+          class="container menu-container px-0"
+        >
+          <div
+            class="row"
+          >
+            <div
+              class="col-12"
+            >
+              <a
+                href="/"
+              >
+                <div
+                  class="menu-item"
+                >
+                  <div
+                    class="menu-item-icon-container"
+                  >
+                    <i
+                      class="fa-solid fa-house"
+                    />
+                  </div>
+                  <span>
+                    Főoldal
+                  </span>
+                </div>
+              </a>
+              <a
+                href="/lakok"
+              >
+                <div
+                  class="menu-item"
+                >
+                  <div
+                    class="menu-item-icon-container"
+                  >
+                    <i
+                      class="fa-solid fa-paw"
+                    />
+                  </div>
+                  <span>
+                    Lakóink
+                  </span>
+                </div>
+              </a>
+              <a
+                href="/hirek"
+              >
+                <div
+                  class="menu-item"
+                >
+                  <div
+                    class="menu-item-icon-container"
+                  >
+                    <i
+                      class="fa-solid fa-newspaper"
+                    />
+                  </div>
+                  <span>
+                    Hírek
+                  </span>
+                </div>
+              </a>
+              <a
+                href="/csatlakozz"
+              >
+                <div
+                  class="menu-item"
+                >
+                  <div
+                    class="menu-item-icon-container"
+                  >
+                    <i
+                      class="fa-solid fa-hand-holding-heart"
+                    />
+                  </div>
+                  <span>
+                    Csatlakozz!
+                  </span>
+                </div>
+              </a>
+              <a
+                href="/kapcsolat"
+              >
+                <div
+                  class="menu-item"
+                >
+                  <div
+                    class="menu-item-icon-container"
+                  >
+                    <i
+                      class="fa-solid fa-location-dot"
+                    />
+                  </div>
+                  <span>
+                    Kapcsolat
+                  </span>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="col-12 col-md-8 col-lg-9"
+      >
+        <div
+          class="container body-container px-0"
+        >
+          <div
+            class="row justify-content-center"
+          >
+            <div
+              class="col-12 col-sm-10 col-md-12"
+            >
+              <div
+                class="container"
+              >
+                <div
+                  class="row"
+                >
+                  <div
+                    class="col-12 mb-4"
+                  >
+                    <h1>
+                      Kapcsolat
+                    </h1>
+                  </div>
+                </div>
+                <div
+                  class="row mb-5"
+                >
+                  <div
+                    class="col-12 col-lg-6 align-self-center mb-4 mb-lg-0"
+                  >
+                    <p>
+                      <strong>
+                        Cím: 
+                      </strong>
+                    </p>
+                    <p>
+                      Beogradska 3-5
+                      <br />
+                      24420 Magyarkanizsa
+                      <br />
+                      Szerbia
+                    </p>
+                    <p
+                      class="mt-3"
+                    >
+                      <strong>
+                        Telefon: 
+                      </strong>
+                    </p>
+                    <p>
+                      +381 00 000 000
+                    </p>
+                    <p
+                      class="mt-3"
+                    >
+                      <strong>
+                        Email: 
+                      </strong>
+                    </p>
+                    <p>
+                      mancsmagyarkanizsa@gmail.com
+                    </p>
+                    <p
+                      class="mt-3"
+                    >
+                      <strong>
+                        Facebook: 
+                      </strong>
+                    </p>
+                    <p>
+                      <a
+                        href="/"
+                      >
+                        Mancs Állatvédő Egyesület
+                      </a>
+                    </p>
+                  </div>
+                  <div
+                    class="col-12 col-lg-6"
+                  >
+                    <form
+                      class="contact-form p-4"
+                    >
+                      <h4
+                        class="mb-3"
+                      >
+                        Írj nekünk:
+                      </h4>
+                      <div
+                        class="row"
+                      >
+                        <div
+                          class="col-12"
+                        >
+                          <div
+                            class="form-control-container"
+                          >
+                            <div
+                              class="form-icon-container"
+                            >
+                              <i
+                                class="fa-solid fa-user"
+                              />
+                            </div>
+                            <input
+                              class="form-control"
+                              id="contactLastName"
+                              name="c_last_name"
+                              placeholder="Vezetéknév"
+                              type="text"
+                              value=""
+                            />
+                          </div>
+                        </div>
+                        <div
+                          class="col-12"
+                        >
+                          <div
+                            class="form-control-container"
+                          >
+                            <div
+                              class="form-icon-container"
+                            >
+                              <i
+                                class="fa-solid fa-user"
+                              />
+                            </div>
+                            <input
+                              class="form-control"
+                              id="contactFirstName"
+                              name="c_first_name"
+                              placeholder="Keresztnév"
+                              type="text"
+                              value=""
+                            />
+                          </div>
+                        </div>
+                        <div
+                          class="col-12"
+                        >
+                          <div
+                            class="form-control-container"
+                          >
+                            <div
+                              class="form-icon-container"
+                            >
+                              <i
+                                class="fa-solid fa-at"
+                              />
+                            </div>
+                            <input
+                              class="form-control"
+                              id="contactEmail"
+                              name="c_email"
+                              placeholder="Email"
+                              type="email"
+                              value=""
+                            />
+                          </div>
+                        </div>
+                        <div
+                          class="col-12"
+                        >
+                          <div
+                            class="form-control-container"
+                          >
+                            <div
+                              class="form-icon-container"
+                            >
+                              <i
+                                class="fa-solid fa-phone"
+                              />
+                            </div>
+                            <input
+                              class="form-control"
+                              id="contactPhone"
+                              name="c_phone"
+                              placeholder="Telefonszám"
+                              type="text"
+                              value=""
+                            />
+                          </div>
+                        </div>
+                        <div
+                          class="col-12"
+                        >
+                          <div
+                            class="form-control-container"
+                          >
+                            <div
+                              class="form-icon-container"
+                            >
+                              <i
+                                class="fa-solid fa-message"
+                              />
+                            </div>
+                            <textarea
+                              class="form-control"
+                              id="contactMessage"
+                              name="c_message"
+                              placeholder="Üzenet"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="row justify-content-end"
+                      >
+                        <div
+                          class="col-6 mt-3"
+                        >
+                          <button
+                            class="button call-to-action-button w-100"
+                          >
+                            Küldés
+                          </button>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+                <div
+                  class="row"
+                >
+                  <div
+                    class="col-12"
+                  >
+                    <iframe
+                      height="350"
+                      loading="lazy"
+                      referrerpolicy="no-referrer-when-downgrade"
+                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2768.622606079509!2d20.02662931221931!3d46.058625370969345!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4744971c0b92a935%3A0x94227bbf1d51bedf!2zTWFuY3Mgw4FsbGF0dsOpZMWRIEVneWVzw7xsZXQgTWFneWFya2FuaXpzYQ!5e0!3m2!1sen!2shu!4v1683146272016!5m2!1sen!2shu"
+                      style="border: 0px; border-radius: 25px;"
+                      width="100%"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="container-fluid footer-container"
+  >
+    <div
+      class="row"
+    >
+      <div
+        class="col-12"
+      >
+        <div
+          class="container py-5"
+        >
+          <div
+            class="row"
+          >
+            <div
+              class="col-12 col-md-5 col-lg-4 mb-4 mb-md-0"
+            >
+              <h5>
+                Mancs állatvédő egyesület
+              </h5>
+              <p
+                class="footer-description"
+              >
+                Tevékenységeink és céljaink magába foglalják az egyhagyott, kidobott, megtalált kölyök és felnőtt állatok mentését, gondozását, nevelését és legfőképp gazdához jutását. Hisszuk, hogy minden állatnak van megfelelő gazdája, mi segítünk megtalálni!
+              </p>
+            </div>
+            <div
+              class="col-6 col-md-4 offset-lg-1 useful-links"
+            >
+              <h5>
+                Hasznos linkek
+              </h5>
+              <a
+                href="/"
+              >
+                Főoldal
+              </a>
+              <a
+                href="/lakok"
+              >
+                Lakóink
+              </a>
+              <a
+                href="/hirek"
+              >
+                Hírek
+              </a>
+              <a
+                href="/csatlakozz"
+              >
+                Csatlakozz!
+              </a>
+              <a
+                href="/kapcsolat"
+              >
+                Kapcsolat
+              </a>
+            </div>
+            <div
+              class="col-6 col-md-3 social-links-container"
+            >
+              <h5>
+                Kapcsolat
+              </h5>
+              <p>
+                Beogradska 3-5
+                <br />
+                24420 Magyarkanizsa
+                <br />
+                Szerbia
+              </p>
+              <h5
+                class="mt-4"
+              >
+                Kövess minket
+              </h5>
+              <a
+                href="/facebook"
+                style="text-decoration: none;"
+              >
+                <i
+                  class="fa-brands fa-facebook"
+                />
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="container-fluid copyright-strip-container"
+  >
+    <div
+      class="row"
+    >
+      <div
+        class="col-12"
+      >
+        <div
+          class="container"
+        >
+          <div
+            class="row"
+          >
+            <div
+              class="col-12 text-center"
+            >
+              <p>
+                © 2023. Minden jog fenntartva. Mancs Állatvédő Egyesület Magyarkanizsa
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

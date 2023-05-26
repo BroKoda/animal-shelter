@@ -38,6 +38,9 @@ const registrationSlice = createSlice({
     setEmail: (state: RegistrationState, action: PayloadAction<string>) => {
       state.userToCreate.email = action.payload
     },
+    setPhone: (state: RegistrationState, action: PayloadAction<string>) => {
+      state.userToCreate.phone = action.payload
+    },
     setPassword: (state: RegistrationState, action: PayloadAction<string>) => {
       state.userToCreate.password = action.payload
     },
@@ -64,6 +67,7 @@ export const {
   setFirstName,
   setLastName,
   setEmail,
+  setPhone,
   setPassword,
   setConfirmPassword
 } = registrationSlice.actions

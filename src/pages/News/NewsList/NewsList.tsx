@@ -4,10 +4,13 @@ import { useAppDispatch, useAppSelector } from '../../../app/hooks'
 import { deleteNews, fetchNews } from '../NewsSlice'
 import NewsCard from '../../../components/NewsCard/NewsCard'
 import { News } from '../NewsState'
+import { LoadingStatus } from '../../../components/LoadingStatus/LoadingStatus'
+import Error from '../../../components/Error/Error'
+import ProgressIndicator from '../../../components/ProgressIndicator/ProgressIndicator'
 
 const NewsList = (): JSX.Element => {
   const dispatch = useAppDispatch()
-  const { news } = useAppSelector((state) => state.news)
+  const { news, fetchNewsStatus } = useAppSelector((state) => state.news)
   const user = useAppSelector((state) => state.login.user)
 
   useEffect(() => {
@@ -25,32 +28,44 @@ const NewsList = (): JSX.Element => {
 
   return (
     <BaseLayout>
-      <div className="container">
-        <div className="row">
-          <div className="col-12 mb-3">
-            <h1>Hírek</h1>
+      <>
+        {fetchNewsStatus === LoadingStatus.error &&
+          <Error/>
+        }
+
+        {fetchNewsStatus === LoadingStatus.loading &&
+          <ProgressIndicator/>
+        }
+
+        {fetchNewsStatus === LoadingStatus.complete &&
+          <div className="container">
+            <div className="row">
+              <div className="col-12 mb-3">
+                <h1>Hírek</h1>
+              </div>
+            </div>
+            <div className="row justify-content-center">
+              {news != null && news.map((singleNews: News, index: number) => {
+                if (singleNews.newsDetails != null) {
+                  return (
+                    <div key={index} className="col-12 col-md-6 col-lg-4 mb-3">
+                      <NewsCard
+                        key={index}
+                        news={singleNews.newsDetails}
+                        id={singleNews.id}
+                        user={user}
+                        showDeleteDialog={showDeleteDialogAction}
+                      />
+                    </div>
+                  )
+                } else {
+                  return 'Jelenleg nincs elérhető hír!'
+                }
+              })}
+            </div>
           </div>
-        </div>
-        <div className="row justify-content-center">
-          {news != null && news.map((singleNews: News, index: number) => {
-            if (singleNews.newsDetails != null) {
-              return (
-                <div key={index} className="col-12 col-md-6 col-lg-4 mb-3">
-                  <NewsCard
-                    key={index}
-                    news={singleNews.newsDetails}
-                    id={singleNews.id}
-                    user={user}
-                    showDeleteDialog={showDeleteDialogAction}
-                  />
-                </div>
-              )
-            } else {
-              return 'Jelenleg nincs elérhető hír!'
-            }
-          })}
-        </div>
-      </div>
+        }
+      </>
     </BaseLayout>
   )
 }

@@ -17,6 +17,7 @@ import { LoadingStatus } from '../../../components/LoadingStatus/LoadingStatus'
 import ProgressIndicator from '../../../components/ProgressIndicator/ProgressIndicator'
 import { useNavigate } from 'react-router-dom'
 import { v4 } from 'uuid'
+import Error from '../../../components/Error/Error'
 
 const AddNews = (): JSX.Element => {
   const navigate = useNavigate()
@@ -76,11 +77,16 @@ const AddNews = (): JSX.Element => {
   return (
     <BaseLayout>
       <>
-        {addNewsStatus === LoadingStatus.loading &&
+        {(addNewsStatus === LoadingStatus.error || updateNewsStatus === LoadingStatus.error) &&
+          <Error/>
+        }
+
+        {(addNewsStatus === LoadingStatus.loading || updateNewsStatus === LoadingStatus.loading) &&
           <ProgressIndicator/>
         }
 
-        {addNewsStatus !== LoadingStatus.loading &&
+        {(addNewsStatus === LoadingStatus.initial || updateNewsStatus === LoadingStatus.initial ||
+            addNewsStatus === LoadingStatus.complete || updateNewsStatus === LoadingStatus.complete) &&
           <div className="container">
             <div className="row">
               <div className="col-12">

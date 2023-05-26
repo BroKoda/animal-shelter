@@ -20,6 +20,8 @@ import { v4 } from 'uuid'
 import { LoadingStatus } from '../../../components/LoadingStatus/LoadingStatus'
 import { useNavigate } from 'react-router-dom'
 import Tooltip from '../../../components/Tooltip/Tooltip'
+import Error from '../../../components/Error/Error'
+import ProgressIndicator from '../../../components/ProgressIndicator/ProgressIndicator'
 
 const AddResident = (): JSX.Element => {
   const navigate = useNavigate()
@@ -97,143 +99,163 @@ const AddResident = (): JSX.Element => {
 
   return (
     <BaseLayout>
-      <div className="container add-new-animal-container">
-        <div className="row">
-          <div className="col-12 col-md-12 col-lg-8 col-xl-7">
-            <h1 className="mb-3">Új lakó hozzáadása:</h1>
-            <form className="mt-4 mb-5">
-              <div className="form-control-container">
-                <div className="form-icon-container">
-                  <i className="fa-solid fa-signature"></i>
-                </div>
-                <input
-                  type="text"
-                  className="form-control"
-                  placeholder="Név"
-                  id="name"
-                  value={residentToAdd.name ?? ''}
-                  onChange={handleSetName}
-                />
-              </div>
-              <div className="form-control-container">
-                <div className="form-icon-container">
-                  <i className="fa-solid fa-paw"></i>
-                </div>
-                <div className="resident-type-select-container d-flex flex-row align-items-center">
-                  <div className="d-inline-flex me-4">
-                    <label className="radio-container">Kutya
-                      <input type="radio" value={'kutya'} checked={'kutya' === residentToAdd.type}
-                             onChange={handleSetType}/>
-                      <span className="radio-mark"></span>
-                    </label>
+      <>
+        {(addNewResidentStatus === LoadingStatus.error || updateResidentStatus === LoadingStatus.error) &&
+          <Error/>
+        }
+
+        {(addNewResidentStatus === LoadingStatus.loading || updateResidentStatus === LoadingStatus.loading) &&
+          <ProgressIndicator/>
+        }
+
+        {(addNewResidentStatus === LoadingStatus.initial || updateResidentStatus === LoadingStatus.initial ||
+            addNewResidentStatus === LoadingStatus.complete || updateResidentStatus === LoadingStatus.complete) &&
+          <div className="container add-new-animal-container">
+            <div className="row">
+              <div className="col-12 col-md-12 col-lg-8 col-xl-7">
+                <h1 className="mb-3">Új lakó hozzáadása:</h1>
+                <form className="mt-4 mb-5">
+                  <div className="form-control-container">
+                    <div className="form-icon-container">
+                      <i className="fa-solid fa-signature"></i>
+                    </div>
+                    <input
+                      type="text"
+                      className="form-control"
+                      placeholder="Név"
+                      id="name"
+                      value={residentToAdd.name ?? ''}
+                      onChange={handleSetName}
+                      required={true}
+                    />
                   </div>
-                  <div className="d-inline-flex me-4">
-                    <label className="radio-container">Macska
-                      <input type="radio" value={'macska'} checked={'macska' === residentToAdd.type}
-                             onChange={handleSetType}/>
-                      <span className="radio-mark"></span>
-                    </label>
+                  <div className="form-control-container">
+                    <div className="form-icon-container">
+                      <i className="fa-solid fa-paw"></i>
+                    </div>
+                    <div className="resident-type-select-container d-flex flex-row align-items-center">
+                      <div className="d-inline-flex me-4">
+                        <label className="radio-container">Kutya
+                          <input type="radio" value={'kutya'} checked={'kutya' === residentToAdd.type}
+                                 onChange={handleSetType}/>
+                          <span className="radio-mark"></span>
+                        </label>
+                      </div>
+                      <div className="d-inline-flex me-4">
+                        <label className="radio-container">Macska
+                          <input type="radio" value={'macska'} checked={'macska' === residentToAdd.type}
+                                 onChange={handleSetType}/>
+                          <span className="radio-mark"></span>
+                        </label>
+                      </div>
+                      <div className="d-inline-flex me-4">
+                        <label className="radio-container">Egyéb
+                          <input type="radio" value={'egyéb'} checked={'egyéb' === residentToAdd.type}
+                                 onChange={handleSetType}/>
+                          <span className="radio-mark"></span>
+                        </label>
+                      </div>
+                    </div>
                   </div>
-                  <div className="d-inline-flex me-4">
-                    <label className="radio-container">Egyéb
-                      <input type="radio" value={'egyéb'} checked={'egyéb' === residentToAdd.type}
-                             onChange={handleSetType}/>
-                      <span className="radio-mark"></span>
-                    </label>
+                  <div className="form-control-container">
+                    <div className="form-icon-container">
+                      <i className="fa-solid fa-palette"></i>
+                    </div>
+                    <input
+                      type="text"
+                      className="form-control"
+                      placeholder="Szín"
+                      id="color"
+                      value={residentToAdd.color ?? ''}
+                      onChange={handleSetColor}
+                      required={true}
+                    />
                   </div>
-                </div>
+                  <div className="form-control-container">
+                    <div className="form-icon-container">
+                      <i className="fa-solid fa-weight-hanging"></i>
+                    </div>
+                    <input
+                      type="text"
+                      className="form-control"
+                      placeholder="Méret"
+                      id="size"
+                      value={residentToAdd.size ?? ''}
+                      onChange={handleSetSize}
+                      required={true}
+                    />
+                  </div>
+                  <div className="form-control-container">
+                    <div className="form-icon-container">
+                      <i className="fa-solid fa-calendar-days"></i>
+                    </div>
+                    <input
+                      type="date"
+                      className="form-control"
+                      placeholder="Születési idő"
+                      id="birth-date"
+                      value={residentToAdd.birthDate ?? ''}
+                      onChange={handleSetBirthDate}
+                      required={true}
+                    />
+                  </div>
+                  <div className="form-control-container">
+                    <div className="form-icon-container">
+                      <i className="fa-solid fa-calendar-days"></i>
+                      <Tooltip text={<p>A lakó bekerülésének dátuma<br/> Mező kitöltése kötelező!</p>}></Tooltip>
+                    </div>
+                    <input
+                      type="date"
+                      className="form-control"
+                      placeholder="Bekerülési idő"
+                      id="arrival-date"
+                      value={residentToAdd.arrivalDate ?? ''}
+                      onChange={handleSetArrivalDate}
+                      required={true}
+                    />
+                  </div>
+                  <div className="form-control-container">
+                    <div className="form-icon-container">
+                      <i className="fa-solid fa-message"></i>
+                    </div>
+                    <textarea
+                      className="form-control"
+                      placeholder="Leírás"
+                      id="description"
+                      rows={4}
+                      value={residentToAdd.description ?? ''}
+                      onChange={handleSetDescription}
+                      required={true}
+                    />
+                  </div>
+                  <div className={`form-control-container ${isUpdate ? 'd-none' : ''}`}>
+                    <div className="form-icon-container">
+                      <i className="fa-solid fa-image"></i>
+                    </div>
+                    <input
+                      type="file"
+                      className="form-control file-input"
+                      placeholder="Kép kiválasztása"
+                      id="resident-image"
+                      name="resident-image"
+                      data-button-text="Fájl kiválasztása"
+                      onChange={handleSetFile}
+                      required={true}
+                    />
+                  </div>
+                  <div className="row justify-content-end">
+                    <div className="col-6">
+                      <button className="button call-to-action-button w-100" onClick={handleAddNewAnimal}>
+                        {isUpdate ? 'Lakó módosítása' : 'Lakó hozzáadása'}
+                      </button>
+                    </div>
+                  </div>
+                </form>
               </div>
-              <div className="form-control-container">
-                <div className="form-icon-container">
-                  <i className="fa-solid fa-palette"></i>
-                </div>
-                <input
-                  type="text"
-                  className="form-control"
-                  placeholder="Szín"
-                  id="color"
-                  value={residentToAdd.color ?? ''}
-                  onChange={handleSetColor}
-                />
-              </div>
-              <div className="form-control-container">
-                <div className="form-icon-container">
-                  <i className="fa-solid fa-weight-hanging"></i>
-                </div>
-                <input
-                  type="text"
-                  className="form-control"
-                  placeholder="Méret"
-                  id="size"
-                  value={residentToAdd.size ?? ''}
-                  onChange={handleSetSize}
-                />
-              </div>
-              <div className="form-control-container">
-                <div className="form-icon-container">
-                  <i className="fa-solid fa-calendar-days"></i>
-                </div>
-                <input
-                  type="date"
-                  className="form-control"
-                  placeholder="Születési idő"
-                  id="birth-date"
-                  value={residentToAdd.birthDate ?? ''}
-                  onChange={handleSetBirthDate}
-                />
-              </div>
-              <div className="form-control-container">
-                <div className="form-icon-container">
-                  <i className="fa-solid fa-calendar-days"></i>
-                  <Tooltip text={<p>A lakó bekerülésének dátuma<br /> Mező kitöltése kötelező!</p>}></Tooltip>
-                </div>
-                <input
-                  type="date"
-                  className="form-control"
-                  placeholder="Bekerülési idő"
-                  id="arrival-date"
-                  value={residentToAdd.arrivalDate ?? ''}
-                  onChange={handleSetArrivalDate}
-                />
-              </div>
-              <div className="form-control-container">
-                <div className="form-icon-container">
-                  <i className="fa-solid fa-message"></i>
-                </div>
-                <textarea
-                  className="form-control"
-                  placeholder="Leírás"
-                  id="description"
-                  rows={4}
-                  value={residentToAdd.description ?? ''}
-                  onChange={handleSetDescription}
-                />
-              </div>
-              <div className={`form-control-container ${isUpdate ? 'd-none' : ''}`}>
-                <div className="form-icon-container">
-                  <i className="fa-solid fa-image"></i>
-                </div>
-                <input
-                  type="file"
-                  className="form-control file-input"
-                  placeholder="Kép kiválasztása"
-                  id="resident-image"
-                  name="resident-image"
-                  data-button-text="Fájl kiválasztása"
-                  onChange={handleSetFile}
-                />
-              </div>
-              <div className="row justify-content-end">
-                <div className="col-6">
-                  <button className="button call-to-action-button w-100" onClick={handleAddNewAnimal}>
-                    {isUpdate ? 'Lakó módosítása' : 'Lakó hozzáadása'}
-                  </button>
-                </div>
-              </div>
-            </form>
+            </div>
           </div>
-        </div>
-      </div>
+        }
+      </>
     </BaseLayout>
   )
 }

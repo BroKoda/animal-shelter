@@ -8,7 +8,7 @@ import {
   setConfirmPassword,
   setEmail,
   setFirstName, setLastName,
-  setPassword
+  setPassword, setPhone
 } from './RegistrationSlice'
 import { LoadingStatus } from '../../components/LoadingStatus/LoadingStatus'
 
@@ -16,7 +16,7 @@ const Registration = (): JSX.Element => {
   const navigate = useNavigate()
   const dispatch = useAppDispatch()
   const status = useAppSelector((state) => state.registration.status)
-  const { firstName, lastName, email, password, confirmPassword } = useAppSelector((state) => state.registration.userToCreate)
+  const { firstName, lastName, email, phone, password, confirmPassword } = useAppSelector((state) => state.registration.userToCreate)
 
   useEffect(() => {
     if (status === LoadingStatus.complete) {
@@ -30,6 +30,7 @@ const Registration = (): JSX.Element => {
       firstName: firstName,
       lastName: lastName,
       email: email,
+      phone: phone,
       password: password
     }
     void dispatch(registerUser(user))
@@ -46,6 +47,10 @@ const Registration = (): JSX.Element => {
   const handleSetEmail = useCallback((event: ChangeEvent<HTMLInputElement>) => {
     dispatch(setEmail(event.target?.value))
   }, [dispatch, email])
+
+  const handleSetPhone = useCallback((event: ChangeEvent<HTMLInputElement>) => {
+    dispatch(setPhone(event.target?.value))
+  }, [dispatch, phone])
 
   const handleSetPassword = useCallback((event: ChangeEvent<HTMLInputElement>) => {
     dispatch(setPassword(event.target?.value))
@@ -75,6 +80,7 @@ const Registration = (): JSX.Element => {
                       id="lastName"
                       value={lastName ?? ''}
                       onChange={handleSetLastName}
+                      required={true}
                     />
                   </div>
                   <div className="form-control-container">
@@ -88,6 +94,7 @@ const Registration = (): JSX.Element => {
                       id="firstName"
                       value={firstName ?? ''}
                       onChange={handleSetFirstName}
+                      required={true}
                     />
                   </div>
                   <div className="form-control-container">
@@ -101,6 +108,7 @@ const Registration = (): JSX.Element => {
                       id="email"
                       value={email ?? ''}
                       onChange={handleSetEmail}
+                      required={true}
                     />
                   </div>
                   <div className="form-control-container">
@@ -112,8 +120,9 @@ const Registration = (): JSX.Element => {
                       className="form-control"
                       placeholder='Telefonszám'
                       id="email"
-                      // value={email ?? ''}
-                      // onChange={handleSetEmail}
+                      value={phone ?? ''}
+                      onChange={handleSetPhone}
+                      required={true}
                     />
                   </div>
                   <div className="form-control-container">
@@ -127,6 +136,7 @@ const Registration = (): JSX.Element => {
                       id="password"
                       value={password ?? ''}
                       onChange={handleSetPassword}
+                      required={true}
                     />
                   </div>
                   <div className="form-control-container">
@@ -140,6 +150,7 @@ const Registration = (): JSX.Element => {
                       id="confirm-password"
                       value={confirmPassword ?? ''}
                       onChange={handleSetConfirmPassword}
+                      required={true}
                     />
                   </div>
                 </form>

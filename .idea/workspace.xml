@@ -6,8 +6,15 @@
   <component name="ChangeListManager">
     <list default="true" id="50dd6d76-2a0c-4d0b-b14d-4ae6daae985d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/global.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/global.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Home/Home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Home/Home.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/News/AddNews/AddNews.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/News/AddNews/AddNews.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/News/NewsList/NewsList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/News/NewsList/NewsList.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/News/SingleNewsPage/SingleNewsPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/News/SingleNewsPage/SingleNewsPage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Registration/Registration.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Registration/Registration.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Registration/RegistrationSlice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Registration/RegistrationSlice.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Registration/RegistrationState.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Registration/RegistrationState.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/Residents/AddResident/AddResident.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Residents/AddResident/AddResident.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Residents/ResidentsList/ResidentsList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Residents/ResidentsList/ResidentsList.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,7 +79,7 @@
       <workItem from="1682106786184" duration="94425000" />
       <workItem from="1683844494644" duration="25150000" />
       <workItem from="1684265724480" duration="4066000" />
-      <workItem from="1684362329954" duration="28714000" />
+      <workItem from="1684362329954" duration="33445000" />
     </task>
     <servers />
   </component>
