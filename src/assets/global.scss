@@ -120,6 +120,14 @@ body {
           color: white;
           font-size: 16px;
         }
+
+        &:hover {
+          .tooltip-container {
+            visibility: visible;
+            z-index: 1;
+            opacity: 1;
+          }
+        }
       }
 
       .form-control[type='text'],

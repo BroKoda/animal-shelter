@@ -19,6 +19,7 @@ import { Animal } from '../ResidentsState'
 import { v4 } from 'uuid'
 import { LoadingStatus } from '../../../components/LoadingStatus/LoadingStatus'
 import { useNavigate } from 'react-router-dom'
+import Tooltip from '../../../components/Tooltip/Tooltip'
 
 const AddResident = (): JSX.Element => {
   const navigate = useNavigate()
@@ -184,6 +185,7 @@ const AddResident = (): JSX.Element => {
               <div className="form-control-container">
                 <div className="form-icon-container">
                   <i className="fa-solid fa-calendar-days"></i>
+                  <Tooltip text={<p>A lakó bekerülésének dátuma<br /> Mező kitöltése kötelező!</p>}></Tooltip>
                 </div>
                 <input
                   type="date"

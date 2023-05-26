@@ -42,14 +42,6 @@ const Dashboard = (): JSX.Element => {
     dispatch(fetchResidents())
   }, [dispatch])
 
-  // const newsChartData = {
-  //   labels: ['random'],
-  //   datasets: [{
-  //     label: 'egyes',
-  //     data: [1,2,3,1,2]
-  //   }]
-  // }
-
   const residentsChartData = {
     labels: ['Több min 1 hónapja lakó', 'Összes lakó'],
     datasets: [{
@@ -86,7 +78,7 @@ const Dashboard = (): JSX.Element => {
             <h1>Irányítópult</h1>
           </div>
           <div className='col-12 mt-4'>
-            <p>Oldalon elérhető hírek száma: <strong>5</strong></p>
+            <p>Oldalon elérhető hírek száma: <strong>{newsCount}</strong></p>
             <p>Hírek ebben a hónapban: <strong>3</strong></p>
             <p className='mt-3'>Admin felhaszálók: <strong>2</strong></p>
             <p>Újságíró jogosultságó felhasználók száma: <strong>2</strong></p>

@@ -6,9 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="50dd6d76-2a0c-4d0b-b14d-4ae6daae985d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/pages/Login.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/pages/Login.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Login/Login.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Login/Login.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Login/LoginSlice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Login/LoginSlice.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/global.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/global.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Residents/AddResident/AddResident.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Residents/AddResident/AddResident.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,7 +72,7 @@
       <workItem from="1682106786184" duration="94425000" />
       <workItem from="1683844494644" duration="25150000" />
       <workItem from="1684265724480" duration="4066000" />
-      <workItem from="1684362329954" duration="27241000" />
+      <workItem from="1684362329954" duration="28714000" />
     </task>
     <servers />
   </component>
