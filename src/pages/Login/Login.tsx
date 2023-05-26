@@ -4,6 +4,7 @@ import '../../assets/pages/Login.scss'
 import { useAppDispatch, useAppSelector } from '../../app/hooks'
 import { logInUser, resetLogin, setLoginEmail, setLoginPassword } from './LoginSlice'
 import { LoadingStatus } from '../../components/LoadingStatus/LoadingStatus'
+import Tooltip from '../../components/Tooltip/Tooltip'
 
 const Login = (): JSX.Element => {
   const navigate = useNavigate()
@@ -43,6 +44,7 @@ const Login = (): JSX.Element => {
                   <div className="form-control-container">
                     <div className="form-icon-container">
                       <i className="fa-solid fa-at"></i>
+                      <Tooltip text={<p>Email<br/> Mező kitöltése kötelező!</p>}></Tooltip>
                     </div>
                     <input
                       type="email"
@@ -51,11 +53,13 @@ const Login = (): JSX.Element => {
                       id="loginEmail"
                       value={email ?? ''}
                       onChange={handleSetLoginEmail}
+                      required={true}
                     />
                   </div>
                   <div className="form-control-container">
                     <div className="form-icon-container">
                       <i className="fa-solid fa-lock"></i>
+                      <Tooltip text={<p>Jelszó<br/> Mező kitöltése kötelező!</p>}></Tooltip>
                     </div>
                     <input
                       type="password"
@@ -64,6 +68,7 @@ const Login = (): JSX.Element => {
                       id="loginPassword"
                       value={password ?? ''}
                       onChange={handleSetLoginPassword}
+                      required={true}
                     />
                   </div>
                 </form>

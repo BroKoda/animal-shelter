@@ -11,6 +11,7 @@ import {
   setPassword, setPhone
 } from './RegistrationSlice'
 import { LoadingStatus } from '../../components/LoadingStatus/LoadingStatus'
+import Tooltip from '../../components/Tooltip/Tooltip'
 
 const Registration = (): JSX.Element => {
   const navigate = useNavigate()
@@ -72,6 +73,7 @@ const Registration = (): JSX.Element => {
                   <div className="form-control-container">
                     <div className="form-icon-container">
                       <i className="fa-solid fa-user"></i>
+                      <Tooltip text={<p>Vezetéknév<br/> Mező kitöltése kötelező!</p>}></Tooltip>
                     </div>
                     <input
                       type="text"
@@ -86,6 +88,7 @@ const Registration = (): JSX.Element => {
                   <div className="form-control-container">
                     <div className="form-icon-container">
                       <i className="fa-solid fa-user"></i>
+                      <Tooltip text={<p>Keresztnév<br/> Mező kitöltése kötelező!</p>}></Tooltip>
                     </div>
                     <input
                       type="text"
@@ -100,6 +103,7 @@ const Registration = (): JSX.Element => {
                   <div className="form-control-container">
                     <div className="form-icon-container">
                       <i className="fa-solid fa-at"></i>
+                      <Tooltip text={<p>Email<br/> Mező kitöltése kötelező!</p>}></Tooltip>
                     </div>
                     <input
                       type="email"
@@ -114,6 +118,7 @@ const Registration = (): JSX.Element => {
                   <div className="form-control-container">
                     <div className="form-icon-container">
                       <i className="fa-solid fa-phone"></i>
+                      <Tooltip text={<p>Telefon<br/> Mező kitöltése kötelező!</p>}></Tooltip>
                     </div>
                     <input
                       type="email"
@@ -128,6 +133,7 @@ const Registration = (): JSX.Element => {
                   <div className="form-control-container">
                     <div className="form-icon-container">
                       <i className="fa-solid fa-lock"></i>
+                      <Tooltip text={<p>Jelszó<br/> Mező kitöltése kötelező!</p>}></Tooltip>
                     </div>
                     <input
                       type="password"
@@ -142,6 +148,7 @@ const Registration = (): JSX.Element => {
                   <div className="form-control-container">
                     <div className="form-icon-container">
                       <i className="fa-solid fa-lock"></i>
+                      <Tooltip text={<p>Jelszó ismét<br/> Mező kitöltése kötelező!</p>}></Tooltip>
                     </div>
                     <input
                       type="password"

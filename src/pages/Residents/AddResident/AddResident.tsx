@@ -118,6 +118,7 @@ const AddResident = (): JSX.Element => {
                   <div className="form-control-container">
                     <div className="form-icon-container">
                       <i className="fa-solid fa-signature"></i>
+                      <Tooltip text={<p>A lakó neve<br/> Mező kitöltése kötelező!</p>}></Tooltip>
                     </div>
                     <input
                       type="text"
@@ -132,6 +133,7 @@ const AddResident = (): JSX.Element => {
                   <div className="form-control-container">
                     <div className="form-icon-container">
                       <i className="fa-solid fa-paw"></i>
+                      <Tooltip text={<p>A lakó fajtája<br/> Mező kitöltése kötelező!</p>}></Tooltip>
                     </div>
                     <div className="resident-type-select-container d-flex flex-row align-items-center">
                       <div className="d-inline-flex me-4">
@@ -160,6 +162,7 @@ const AddResident = (): JSX.Element => {
                   <div className="form-control-container">
                     <div className="form-icon-container">
                       <i className="fa-solid fa-palette"></i>
+                      <Tooltip text={<p>A lakó bundájának színe<br/> Mező kitöltése kötelező!</p>}></Tooltip>
                     </div>
                     <input
                       type="text"
@@ -174,6 +177,7 @@ const AddResident = (): JSX.Element => {
                   <div className="form-control-container">
                     <div className="form-icon-container">
                       <i className="fa-solid fa-weight-hanging"></i>
+                      <Tooltip text={<p>A lakó mérete<br/> Mező kitöltése kötelező!</p>}></Tooltip>
                     </div>
                     <input
                       type="text"
@@ -188,6 +192,7 @@ const AddResident = (): JSX.Element => {
                   <div className="form-control-container">
                     <div className="form-icon-container">
                       <i className="fa-solid fa-calendar-days"></i>
+                      <Tooltip text={<p>A lakó születésének dátuma<br/> Mező kitöltése kötelező!</p>}></Tooltip>
                     </div>
                     <input
                       type="date"
@@ -217,6 +222,7 @@ const AddResident = (): JSX.Element => {
                   <div className="form-control-container">
                     <div className="form-icon-container">
                       <i className="fa-solid fa-message"></i>
+                      <Tooltip text={<p>A lakó jellemének rövid leírása<br/> Mező kitöltése kötelező!</p>}></Tooltip>
                     </div>
                     <textarea
                       className="form-control"
@@ -231,6 +237,7 @@ const AddResident = (): JSX.Element => {
                   <div className={`form-control-container ${isUpdate ? 'd-none' : ''}`}>
                     <div className="form-icon-container">
                       <i className="fa-solid fa-image"></i>
+                      <Tooltip text={<p>A lakó képe<br/> Mező kitöltése kötelező!</p>}></Tooltip>
                     </div>
                     <input
                       type="file"

@@ -2,6 +2,7 @@ import React, { ChangeEvent, MouseEvent, useCallback, useRef } from 'react'
 import { useAppDispatch, useAppSelector } from '../../../app/hooks'
 import emailjs from '@emailjs/browser'
 import { resetContact, setEmail, setFirstName, setLastName, setMessage, setPhone } from '../ContactSlice'
+import Tooltip from '../../../components/Tooltip/Tooltip'
 
 interface ContactFormProps {
   title: string
@@ -50,6 +51,7 @@ const ContactForm = ({ title }: ContactFormProps): JSX.Element => {
           <div className="form-control-container">
             <div className="form-icon-container">
               <i className="fa-solid fa-user"></i>
+              <Tooltip text={<p>Vezetéknév<br/> Mező kitöltése kötelező!</p>}></Tooltip>
             </div>
             <input
               type="text"
@@ -59,6 +61,7 @@ const ContactForm = ({ title }: ContactFormProps): JSX.Element => {
               name="c_last_name"
               value={emailToSend.lastName ?? ''}
               onChange={handleSetLastName}
+              required={true}
             />
           </div>
         </div>
@@ -66,6 +69,7 @@ const ContactForm = ({ title }: ContactFormProps): JSX.Element => {
           <div className="form-control-container">
             <div className="form-icon-container">
               <i className="fa-solid fa-user"></i>
+              <Tooltip text={<p>Keresztnév<br/> Mező kitöltése kötelező!</p>}></Tooltip>
             </div>
             <input
               type="text"
@@ -75,6 +79,7 @@ const ContactForm = ({ title }: ContactFormProps): JSX.Element => {
               name="c_first_name"
               value={emailToSend.firstName ?? ''}
               onChange={handleSetFirstName}
+              required={true}
             />
           </div>
         </div>
@@ -82,6 +87,7 @@ const ContactForm = ({ title }: ContactFormProps): JSX.Element => {
           <div className="form-control-container">
             <div className="form-icon-container">
               <i className="fa-solid fa-at"></i>
+              <Tooltip text={<p>Email<br/> Mező kitöltése kötelező!</p>}></Tooltip>
             </div>
             <input
               type="email"
@@ -91,6 +97,7 @@ const ContactForm = ({ title }: ContactFormProps): JSX.Element => {
               name="c_email"
               value={emailToSend.email ?? ''}
               onChange={handleSetEmail}
+              required={true}
             />
           </div>
         </div>
@@ -98,6 +105,7 @@ const ContactForm = ({ title }: ContactFormProps): JSX.Element => {
           <div className="form-control-container">
             <div className="form-icon-container">
               <i className="fa-solid fa-phone"></i>
+              <Tooltip text={<p>Telefonszám<br/> Mező kitöltése kötelező!</p>}></Tooltip>
             </div>
             <input
               type="text"
@@ -107,6 +115,7 @@ const ContactForm = ({ title }: ContactFormProps): JSX.Element => {
               name="c_phone"
               value={emailToSend.phone ?? ''}
               onChange={handleSetPhone}
+              required={true}
             />
           </div>
         </div>
@@ -114,6 +123,7 @@ const ContactForm = ({ title }: ContactFormProps): JSX.Element => {
           <div className="form-control-container">
             <div className="form-icon-container">
               <i className="fa-solid fa-message"></i>
+              <Tooltip text={<p>Üzenet<br/> Mező kitöltése kötelező!</p>}></Tooltip>
             </div>
             <textarea
               className="form-control"
@@ -122,6 +132,7 @@ const ContactForm = ({ title }: ContactFormProps): JSX.Element => {
               name="c_message"
               value={emailToSend.message ?? ''}
               onChange={handleSetMessage}
+              required={true}
             />
           </div>
         </div>

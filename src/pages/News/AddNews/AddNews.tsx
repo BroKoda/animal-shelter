@@ -18,6 +18,7 @@ import ProgressIndicator from '../../../components/ProgressIndicator/ProgressInd
 import { useNavigate } from 'react-router-dom'
 import { v4 } from 'uuid'
 import Error from '../../../components/Error/Error'
+import Tooltip from '../../../components/Tooltip/Tooltip'
 
 const AddNews = (): JSX.Element => {
   const navigate = useNavigate()
@@ -95,6 +96,7 @@ const AddNews = (): JSX.Element => {
                   <div className="form-control-container">
                     <div className="form-icon-container">
                       <i className="fa-solid fa-heading"></i>
+                      <Tooltip text={<p>A hír címe<br/> Mező kitöltése kötelező!</p>}></Tooltip>
                     </div>
                     <input
                       type="text"
@@ -108,6 +110,7 @@ const AddNews = (): JSX.Element => {
                   <div className="form-control-container">
                     <div className="form-icon-container">
                       <i className="fa-solid fa-quote-right"></i>
+                      <Tooltip text={<p>A hír bevezető szövege<br/> Mező kitöltése kötelező!</p>}></Tooltip>
                     </div>
                     <textarea
                       className="form-control"
@@ -121,6 +124,7 @@ const AddNews = (): JSX.Element => {
                   <div className="form-control-container">
                     <div className="form-icon-container">
                       <i className="fa-solid fa-file-lines"></i>
+                      <Tooltip text={<p>A hír tartalma<br/> Mező kitöltése kötelező!</p>}></Tooltip>
                     </div>
                     <div className="w-100">
                       <ReactQuill
@@ -134,6 +138,7 @@ const AddNews = (): JSX.Element => {
                   <div className={`form-control-container ${isUpdate ? 'd-none' : ''}`}>
                     <div className="form-icon-container">
                       <i className="fa-solid fa-image"></i>
+                      <Tooltip text={<p>A hír képe<br/> Mező kitöltése kötelező!</p>}></Tooltip>
                     </div>
                     <input
                       type="file"
