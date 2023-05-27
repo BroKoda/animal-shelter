@@ -57,7 +57,6 @@ function getAdminRoleCount(users: Users[] | undefined): number {
   let count = 0
   if (users != null) {
     users.forEach((user) => {
-      console.log(user)
       if (user.role === 'admin') {
         count += 1
       }
@@ -70,7 +69,6 @@ function getPublicistCount(users: Users[] | undefined): number {
   let count = 0
   if (users != null) {
     users.forEach((user) => {
-      console.log(user)
       if (user.role === 'publicist') {
         count += 1
       }
