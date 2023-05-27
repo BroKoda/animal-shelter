@@ -1,0 +1,1557 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`News page tests Should render add news page 1`] = `
+<div>
+  <div
+    class="container-fluid header-container"
+  >
+    <div
+      class="row h-100"
+    >
+      <div
+        class="col-12 align-self-center"
+      >
+        <div
+          class="container"
+        >
+          <div
+            class="row"
+          >
+            <div
+              class="col-4 d-md-none align-self-center"
+            >
+              <i
+                class="fa-solid fa-bars js-navigation-toggle"
+              />
+            </div>
+            <div
+              class="col-4 col-md-6 align-self-center text-center text-md-start"
+            >
+              <a
+                href="/"
+              >
+                <img
+                  alt="Mancs logo"
+                  class="d-none d-md-block"
+                  src="/mancs.png"
+                />
+                <img
+                  alt="Mancs logo"
+                  class="d-block d-md-none mx-auto"
+                  src="/mancs_logo_only.png"
+                />
+              </a>
+            </div>
+            <div
+              class="col-4 col-md-6 align-self-center text-end"
+            >
+              <a
+                class="d-none d-md-inline-block"
+                href="/regisztracio"
+              >
+                <button
+                  class="button secondary-button me-2"
+                >
+                  Regisztráció
+                </button>
+              </a>
+              <a
+                href="/bejelentkezes"
+              >
+                <button
+                  class="button call-to-action-button login-button"
+                >
+                  <span
+                    class="d-none d-md-inline"
+                  >
+                    Bejelentkezés
+                  </span>
+                  <span
+                    class="d-inline d-md-none"
+                  >
+                    <i
+                      class="fa-solid fa-user"
+                    />
+                  </span>
+                </button>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="container body-container mt-3 mb-5"
+  >
+    <div
+      class="row"
+    >
+      <div
+        class="col-12 col-md-4 col-lg-3 navigation-container d-none d-md-block pe-md-0 pe-xl-2"
+      >
+        <div
+          class="container menu-container px-0"
+        >
+          <div
+            class="row"
+          >
+            <div
+              class="col-12"
+            >
+              <a
+                href="/"
+              >
+                <div
+                  class="menu-item"
+                >
+                  <div
+                    class="menu-item-icon-container"
+                  >
+                    <i
+                      class="fa-solid fa-house"
+                    />
+                  </div>
+                  <span>
+                    Főoldal
+                  </span>
+                </div>
+              </a>
+              <a
+                href="/lakok"
+              >
+                <div
+                  class="menu-item"
+                >
+                  <div
+                    class="menu-item-icon-container"
+                  >
+                    <i
+                      class="fa-solid fa-paw"
+                    />
+                  </div>
+                  <span>
+                    Lakóink
+                  </span>
+                </div>
+              </a>
+              <a
+                href="/hirek"
+              >
+                <div
+                  class="menu-item"
+                >
+                  <div
+                    class="menu-item-icon-container"
+                  >
+                    <i
+                      class="fa-solid fa-newspaper"
+                    />
+                  </div>
+                  <span>
+                    Hírek
+                  </span>
+                </div>
+              </a>
+              <a
+                href="/csatlakozz"
+              >
+                <div
+                  class="menu-item"
+                >
+                  <div
+                    class="menu-item-icon-container"
+                  >
+                    <i
+                      class="fa-solid fa-hand-holding-heart"
+                    />
+                  </div>
+                  <span>
+                    Csatlakozz!
+                  </span>
+                </div>
+              </a>
+              <a
+                href="/kapcsolat"
+              >
+                <div
+                  class="menu-item"
+                >
+                  <div
+                    class="menu-item-icon-container"
+                  >
+                    <i
+                      class="fa-solid fa-location-dot"
+                    />
+                  </div>
+                  <span>
+                    Kapcsolat
+                  </span>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="col-12 col-md-8 col-lg-9"
+      >
+        <div
+          class="container body-container px-0"
+        >
+          <div
+            class="row justify-content-center"
+          >
+            <div
+              class="col-12 col-sm-10 col-md-12"
+            >
+              <div
+                class="container"
+              >
+                <div
+                  class="row"
+                >
+                  <div
+                    class="col-12"
+                  >
+                    <h1
+                      class="mb-3"
+                    >
+                      Hír hozzáadása:
+                    </h1>
+                    <form
+                      class="mt-4 mb-5"
+                    >
+                      <div
+                        class="form-control-container"
+                      >
+                        <div
+                          class="form-icon-container"
+                        >
+                          <i
+                            class="fa-solid fa-heading"
+                          />
+                          <div
+                            class="tooltip-container"
+                          >
+                            <p>
+                              A hír címe
+                              <br />
+                               Mező kitöltése kötelező!
+                            </p>
+                          </div>
+                        </div>
+                        <input
+                          class="form-control"
+                          id="title"
+                          placeholder="Cím"
+                          type="text"
+                          value=""
+                        />
+                      </div>
+                      <div
+                        class="form-control-container"
+                      >
+                        <div
+                          class="form-icon-container"
+                        >
+                          <i
+                            class="fa-solid fa-quote-right"
+                          />
+                          <div
+                            class="tooltip-container"
+                          >
+                            <p>
+                              A hír bevezető szövege
+                              <br />
+                               Mező kitöltése kötelező!
+                            </p>
+                          </div>
+                        </div>
+                        <textarea
+                          class="form-control"
+                          id="intro"
+                          placeholder="Rövid leírás"
+                          rows="2"
+                        />
+                      </div>
+                      <div
+                        class="form-control-container"
+                      >
+                        <div
+                          class="form-icon-container"
+                        >
+                          <i
+                            class="fa-solid fa-file-lines"
+                          />
+                          <div
+                            class="tooltip-container"
+                          >
+                            <p>
+                              A hír tartalma
+                              <br />
+                               Mező kitöltése kötelező!
+                            </p>
+                          </div>
+                        </div>
+                        <div
+                          class="w-100"
+                        >
+                          <div
+                            class="quill w-100"
+                          >
+                            <div
+                              class="ql-toolbar ql-snow"
+                            >
+                              <span
+                                class="ql-formats"
+                              >
+                                <span
+                                  class="ql-header ql-picker"
+                                >
+                                  <span
+                                    aria-controls="ql-picker-options-0"
+                                    aria-expanded="false"
+                                    class="ql-picker-label"
+                                    role="button"
+                                    tabindex="0"
+                                  >
+                                    <svg
+                                      viewBox="0 0 18 18"
+                                    >
+                                       
+                                      <polygon
+                                        class="ql-stroke"
+                                        points="7 11 9 13 11 11 7 11"
+                                      />
+                                       
+                                      <polygon
+                                        class="ql-stroke"
+                                        points="7 7 9 5 11 7 7 7"
+                                      />
+                                       
+                                    </svg>
+                                  </span>
+                                  <span
+                                    aria-hidden="true"
+                                    class="ql-picker-options"
+                                    id="ql-picker-options-0"
+                                    tabindex="-1"
+                                  >
+                                    <span
+                                      class="ql-picker-item"
+                                      data-value="1"
+                                      role="button"
+                                      tabindex="0"
+                                    />
+                                    <span
+                                      class="ql-picker-item"
+                                      data-value="2"
+                                      role="button"
+                                      tabindex="0"
+                                    />
+                                    <span
+                                      class="ql-picker-item"
+                                      data-value="3"
+                                      role="button"
+                                      tabindex="0"
+                                    />
+                                    <span
+                                      class="ql-picker-item ql-selected"
+                                      role="button"
+                                      tabindex="0"
+                                    />
+                                  </span>
+                                </span>
+                                <select
+                                  class="ql-header"
+                                  style="display: none;"
+                                >
+                                  <option
+                                    value="1"
+                                  />
+                                  <option
+                                    value="2"
+                                  />
+                                  <option
+                                    value="3"
+                                  />
+                                  <option
+                                    selected="selected"
+                                  />
+                                </select>
+                              </span>
+                              <span
+                                class="ql-formats"
+                              >
+                                <button
+                                  class="ql-bold"
+                                  type="button"
+                                >
+                                  <svg
+                                    viewBox="0 0 18 18"
+                                  >
+                                     
+                                    <path
+                                      class="ql-stroke"
+                                      d="M5,4H9.5A2.5,2.5,0,0,1,12,6.5v0A2.5,2.5,0,0,1,9.5,9H5A0,0,0,0,1,5,9V4A0,0,0,0,1,5,4Z"
+                                    />
+                                     
+                                    <path
+                                      class="ql-stroke"
+                                      d="M5,9h5.5A2.5,2.5,0,0,1,13,11.5v0A2.5,2.5,0,0,1,10.5,14H5a0,0,0,0,1,0,0V9A0,0,0,0,1,5,9Z"
+                                    />
+                                     
+                                  </svg>
+                                </button>
+                                <button
+                                  class="ql-italic"
+                                  type="button"
+                                >
+                                  <svg
+                                    viewBox="0 0 18 18"
+                                  >
+                                     
+                                    <line
+                                      class="ql-stroke"
+                                      x1="7"
+                                      x2="13"
+                                      y1="4"
+                                      y2="4"
+                                    />
+                                     
+                                    <line
+                                      class="ql-stroke"
+                                      x1="5"
+                                      x2="11"
+                                      y1="14"
+                                      y2="14"
+                                    />
+                                     
+                                    <line
+                                      class="ql-stroke"
+                                      x1="8"
+                                      x2="10"
+                                      y1="14"
+                                      y2="4"
+                                    />
+                                     
+                                  </svg>
+                                </button>
+                                <button
+                                  class="ql-underline"
+                                  type="button"
+                                >
+                                  <svg
+                                    viewBox="0 0 18 18"
+                                  >
+                                     
+                                    <path
+                                      class="ql-stroke"
+                                      d="M5,3V9a4.012,4.012,0,0,0,4,4H9a4.012,4.012,0,0,0,4-4V3"
+                                    />
+                                     
+                                    <rect
+                                      class="ql-fill"
+                                      height="1"
+                                      rx="0.5"
+                                      ry="0.5"
+                                      width="12"
+                                      x="3"
+                                      y="15"
+                                    />
+                                     
+                                  </svg>
+                                </button>
+                                <button
+                                  class="ql-link"
+                                  type="button"
+                                >
+                                  <svg
+                                    viewBox="0 0 18 18"
+                                  >
+                                     
+                                    <line
+                                      class="ql-stroke"
+                                      x1="7"
+                                      x2="11"
+                                      y1="7"
+                                      y2="11"
+                                    />
+                                     
+                                    <path
+                                      class="ql-even ql-stroke"
+                                      d="M8.9,4.577a3.476,3.476,0,0,1,.36,4.679A3.476,3.476,0,0,1,4.577,8.9C3.185,7.5,2.035,6.4,4.217,4.217S7.5,3.185,8.9,4.577Z"
+                                    />
+                                     
+                                    <path
+                                      class="ql-even ql-stroke"
+                                      d="M13.423,9.1a3.476,3.476,0,0,0-4.679-.36,3.476,3.476,0,0,0,.36,4.679c1.392,1.392,2.5,2.542,4.679.36S14.815,10.5,13.423,9.1Z"
+                                    />
+                                     
+                                  </svg>
+                                </button>
+                              </span>
+                              <span
+                                class="ql-formats"
+                              >
+                                <button
+                                  class="ql-list"
+                                  type="button"
+                                  value="ordered"
+                                >
+                                  <svg
+                                    viewBox="0 0 18 18"
+                                  >
+                                     
+                                    <line
+                                      class="ql-stroke"
+                                      x1="7"
+                                      x2="15"
+                                      y1="4"
+                                      y2="4"
+                                    />
+                                     
+                                    <line
+                                      class="ql-stroke"
+                                      x1="7"
+                                      x2="15"
+                                      y1="9"
+                                      y2="9"
+                                    />
+                                     
+                                    <line
+                                      class="ql-stroke"
+                                      x1="7"
+                                      x2="15"
+                                      y1="14"
+                                      y2="14"
+                                    />
+                                     
+                                    <line
+                                      class="ql-stroke ql-thin"
+                                      x1="2.5"
+                                      x2="4.5"
+                                      y1="5.5"
+                                      y2="5.5"
+                                    />
+                                     
+                                    <path
+                                      class="ql-fill"
+                                      d="M3.5,6A0.5,0.5,0,0,1,3,5.5V3.085l-0.276.138A0.5,0.5,0,0,1,2.053,3c-0.124-.247-0.023-0.324.224-0.447l1-.5A0.5,0.5,0,0,1,4,2.5v3A0.5,0.5,0,0,1,3.5,6Z"
+                                    />
+                                     
+                                    <path
+                                      class="ql-stroke ql-thin"
+                                      d="M4.5,10.5h-2c0-.234,1.85-1.076,1.85-2.234A0.959,0.959,0,0,0,2.5,8.156"
+                                    />
+                                     
+                                    <path
+                                      class="ql-stroke ql-thin"
+                                      d="M2.5,14.846a0.959,0.959,0,0,0,1.85-.109A0.7,0.7,0,0,0,3.75,14a0.688,0.688,0,0,0,.6-0.736,0.959,0.959,0,0,0-1.85-.109"
+                                    />
+                                     
+                                  </svg>
+                                </button>
+                                <button
+                                  class="ql-list"
+                                  type="button"
+                                  value="bullet"
+                                >
+                                  <svg
+                                    viewBox="0 0 18 18"
+                                  >
+                                     
+                                    <line
+                                      class="ql-stroke"
+                                      x1="6"
+                                      x2="15"
+                                      y1="4"
+                                      y2="4"
+                                    />
+                                     
+                                    <line
+                                      class="ql-stroke"
+                                      x1="6"
+                                      x2="15"
+                                      y1="9"
+                                      y2="9"
+                                    />
+                                     
+                                    <line
+                                      class="ql-stroke"
+                                      x1="6"
+                                      x2="15"
+                                      y1="14"
+                                      y2="14"
+                                    />
+                                     
+                                    <line
+                                      class="ql-stroke"
+                                      x1="3"
+                                      x2="3"
+                                      y1="4"
+                                      y2="4"
+                                    />
+                                     
+                                    <line
+                                      class="ql-stroke"
+                                      x1="3"
+                                      x2="3"
+                                      y1="9"
+                                      y2="9"
+                                    />
+                                     
+                                    <line
+                                      class="ql-stroke"
+                                      x1="3"
+                                      x2="3"
+                                      y1="14"
+                                      y2="14"
+                                    />
+                                     
+                                  </svg>
+                                </button>
+                              </span>
+                              <span
+                                class="ql-formats"
+                              >
+                                <button
+                                  class="ql-clean"
+                                  type="button"
+                                >
+                                  <svg
+                                    class=""
+                                    viewBox="0 0 18 18"
+                                  >
+                                     
+                                    <line
+                                      class="ql-stroke"
+                                      x1="5"
+                                      x2="13"
+                                      y1="3"
+                                      y2="3"
+                                    />
+                                     
+                                    <line
+                                      class="ql-stroke"
+                                      x1="6"
+                                      x2="9.35"
+                                      y1="12"
+                                      y2="3"
+                                    />
+                                     
+                                    <line
+                                      class="ql-stroke"
+                                      x1="11"
+                                      x2="15"
+                                      y1="11"
+                                      y2="15"
+                                    />
+                                     
+                                    <line
+                                      class="ql-stroke"
+                                      x1="15"
+                                      x2="11"
+                                      y1="11"
+                                      y2="15"
+                                    />
+                                     
+                                    <rect
+                                      class="ql-fill"
+                                      height="1"
+                                      rx="0.5"
+                                      ry="0.5"
+                                      width="7"
+                                      x="2"
+                                      y="14"
+                                    />
+                                     
+                                  </svg>
+                                </button>
+                              </span>
+                            </div>
+                            <div
+                              class="ql-container ql-snow"
+                            >
+                              <div
+                                class="ql-editor ql-blank"
+                                contenteditable="true"
+                                data-gramm="false"
+                              >
+                                <p>
+                                  <br />
+                                </p>
+                              </div>
+                              <div
+                                class="ql-clipboard"
+                                contenteditable="true"
+                                tabindex="-1"
+                              />
+                              <div
+                                class="ql-tooltip ql-hidden"
+                              >
+                                <a
+                                  class="ql-preview"
+                                  href="about:blank"
+                                  rel="noopener noreferrer"
+                                  target="_blank"
+                                />
+                                <input
+                                  data-formula="e=mc^2"
+                                  data-link="https://quilljs.com"
+                                  data-video="Embed URL"
+                                  type="text"
+                                />
+                                <a
+                                  class="ql-action"
+                                />
+                                <a
+                                  class="ql-remove"
+                                />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="form-control-container "
+                      >
+                        <div
+                          class="form-icon-container"
+                        >
+                          <i
+                            class="fa-solid fa-image"
+                          />
+                          <div
+                            class="tooltip-container"
+                          >
+                            <p>
+                              A hír képe
+                              <br />
+                               Mező kitöltése kötelező!
+                            </p>
+                          </div>
+                        </div>
+                        <input
+                          class="form-control file-input"
+                          data-button-text="Fájl kiválasztása"
+                          id="news-image"
+                          name="news-image"
+                          placeholder="Kép kiválasztása"
+                          type="file"
+                        />
+                      </div>
+                      <div
+                        class="row justify-content-end"
+                      >
+                        <div
+                          class="col-6"
+                        >
+                          <button
+                            class="button call-to-action-button w-100"
+                          >
+                            Hír hozzáadása
+                          </button>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="container-fluid footer-container"
+  >
+    <div
+      class="row"
+    >
+      <div
+        class="col-12"
+      >
+        <div
+          class="container py-5"
+        >
+          <div
+            class="row"
+          >
+            <div
+              class="col-12 col-md-5 col-lg-4 mb-4 mb-md-0"
+            >
+              <h5>
+                Mancs állatvédő egyesület
+              </h5>
+              <p
+                class="footer-description"
+              >
+                Tevékenységeink és céljaink magába foglalják az egyhagyott, kidobott, megtalált kölyök és felnőtt állatok mentését, gondozását, nevelését és legfőképp gazdához jutását. Hisszuk, hogy minden állatnak van megfelelő gazdája, mi segítünk megtalálni!
+              </p>
+            </div>
+            <div
+              class="col-6 col-md-4 offset-lg-1 useful-links"
+            >
+              <h5>
+                Hasznos linkek
+              </h5>
+              <a
+                href="/"
+              >
+                Főoldal
+              </a>
+              <a
+                href="/lakok"
+              >
+                Lakóink
+              </a>
+              <a
+                href="/hirek"
+              >
+                Hírek
+              </a>
+              <a
+                href="/csatlakozz"
+              >
+                Csatlakozz!
+              </a>
+              <a
+                href="/kapcsolat"
+              >
+                Kapcsolat
+              </a>
+            </div>
+            <div
+              class="col-6 col-md-3 social-links-container"
+            >
+              <h5>
+                Kapcsolat
+              </h5>
+              <p>
+                Beogradska 3-5
+                <br />
+                24420 Magyarkanizsa
+                <br />
+                Szerbia
+              </p>
+              <h5
+                class="mt-4"
+              >
+                Kövess minket
+              </h5>
+              <a
+                href="/facebook"
+                style="text-decoration: none;"
+              >
+                <i
+                  class="fa-brands fa-facebook"
+                />
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="container-fluid copyright-strip-container"
+  >
+    <div
+      class="row"
+    >
+      <div
+        class="col-12"
+      >
+        <div
+          class="container"
+        >
+          <div
+            class="row"
+          >
+            <div
+              class="col-12 text-center"
+            >
+              <p>
+                © 2023. Minden jog fenntartva. Mancs Állatvédő Egyesület Magyarkanizsa
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`News page tests Should render news page 1`] = `
+<div>
+  <div
+    class="container-fluid header-container"
+  >
+    <div
+      class="row h-100"
+    >
+      <div
+        class="col-12 align-self-center"
+      >
+        <div
+          class="container"
+        >
+          <div
+            class="row"
+          >
+            <div
+              class="col-4 d-md-none align-self-center"
+            >
+              <i
+                class="fa-solid fa-bars js-navigation-toggle"
+              />
+            </div>
+            <div
+              class="col-4 col-md-6 align-self-center text-center text-md-start"
+            >
+              <a
+                href="/"
+              >
+                <img
+                  alt="Mancs logo"
+                  class="d-none d-md-block"
+                  src="/mancs.png"
+                />
+                <img
+                  alt="Mancs logo"
+                  class="d-block d-md-none mx-auto"
+                  src="/mancs_logo_only.png"
+                />
+              </a>
+            </div>
+            <div
+              class="col-4 col-md-6 align-self-center text-end"
+            >
+              <a
+                class="d-none d-md-inline-block"
+                href="/regisztracio"
+              >
+                <button
+                  class="button secondary-button me-2"
+                >
+                  Regisztráció
+                </button>
+              </a>
+              <a
+                href="/bejelentkezes"
+              >
+                <button
+                  class="button call-to-action-button login-button"
+                >
+                  <span
+                    class="d-none d-md-inline"
+                  >
+                    Bejelentkezés
+                  </span>
+                  <span
+                    class="d-inline d-md-none"
+                  >
+                    <i
+                      class="fa-solid fa-user"
+                    />
+                  </span>
+                </button>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="container body-container mt-3 mb-5"
+  >
+    <div
+      class="row"
+    >
+      <div
+        class="col-12 col-md-4 col-lg-3 navigation-container d-none d-md-block pe-md-0 pe-xl-2"
+      >
+        <div
+          class="container menu-container px-0"
+        >
+          <div
+            class="row"
+          >
+            <div
+              class="col-12"
+            >
+              <a
+                href="/"
+              >
+                <div
+                  class="menu-item"
+                >
+                  <div
+                    class="menu-item-icon-container"
+                  >
+                    <i
+                      class="fa-solid fa-house"
+                    />
+                  </div>
+                  <span>
+                    Főoldal
+                  </span>
+                </div>
+              </a>
+              <a
+                href="/lakok"
+              >
+                <div
+                  class="menu-item"
+                >
+                  <div
+                    class="menu-item-icon-container"
+                  >
+                    <i
+                      class="fa-solid fa-paw"
+                    />
+                  </div>
+                  <span>
+                    Lakóink
+                  </span>
+                </div>
+              </a>
+              <a
+                href="/hirek"
+              >
+                <div
+                  class="menu-item"
+                >
+                  <div
+                    class="menu-item-icon-container"
+                  >
+                    <i
+                      class="fa-solid fa-newspaper"
+                    />
+                  </div>
+                  <span>
+                    Hírek
+                  </span>
+                </div>
+              </a>
+              <a
+                href="/csatlakozz"
+              >
+                <div
+                  class="menu-item"
+                >
+                  <div
+                    class="menu-item-icon-container"
+                  >
+                    <i
+                      class="fa-solid fa-hand-holding-heart"
+                    />
+                  </div>
+                  <span>
+                    Csatlakozz!
+                  </span>
+                </div>
+              </a>
+              <a
+                href="/kapcsolat"
+              >
+                <div
+                  class="menu-item"
+                >
+                  <div
+                    class="menu-item-icon-container"
+                  >
+                    <i
+                      class="fa-solid fa-location-dot"
+                    />
+                  </div>
+                  <span>
+                    Kapcsolat
+                  </span>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="col-12 col-md-8 col-lg-9"
+      >
+        <div
+          class="container body-container px-0"
+        >
+          <div
+            class="row justify-content-center"
+          >
+            <div
+              class="col-12 col-sm-10 col-md-12"
+            >
+              <div
+                class="progress-indicator-container"
+              >
+                <span
+                  class="progress-indicator"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="container-fluid footer-container"
+  >
+    <div
+      class="row"
+    >
+      <div
+        class="col-12"
+      >
+        <div
+          class="container py-5"
+        >
+          <div
+            class="row"
+          >
+            <div
+              class="col-12 col-md-5 col-lg-4 mb-4 mb-md-0"
+            >
+              <h5>
+                Mancs állatvédő egyesület
+              </h5>
+              <p
+                class="footer-description"
+              >
+                Tevékenységeink és céljaink magába foglalják az egyhagyott, kidobott, megtalált kölyök és felnőtt állatok mentését, gondozását, nevelését és legfőképp gazdához jutását. Hisszuk, hogy minden állatnak van megfelelő gazdája, mi segítünk megtalálni!
+              </p>
+            </div>
+            <div
+              class="col-6 col-md-4 offset-lg-1 useful-links"
+            >
+              <h5>
+                Hasznos linkek
+              </h5>
+              <a
+                href="/"
+              >
+                Főoldal
+              </a>
+              <a
+                href="/lakok"
+              >
+                Lakóink
+              </a>
+              <a
+                href="/hirek"
+              >
+                Hírek
+              </a>
+              <a
+                href="/csatlakozz"
+              >
+                Csatlakozz!
+              </a>
+              <a
+                href="/kapcsolat"
+              >
+                Kapcsolat
+              </a>
+            </div>
+            <div
+              class="col-6 col-md-3 social-links-container"
+            >
+              <h5>
+                Kapcsolat
+              </h5>
+              <p>
+                Beogradska 3-5
+                <br />
+                24420 Magyarkanizsa
+                <br />
+                Szerbia
+              </p>
+              <h5
+                class="mt-4"
+              >
+                Kövess minket
+              </h5>
+              <a
+                href="/facebook"
+                style="text-decoration: none;"
+              >
+                <i
+                  class="fa-brands fa-facebook"
+                />
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="container-fluid copyright-strip-container"
+  >
+    <div
+      class="row"
+    >
+      <div
+        class="col-12"
+      >
+        <div
+          class="container"
+        >
+          <div
+            class="row"
+          >
+            <div
+              class="col-12 text-center"
+            >
+              <p>
+                © 2023. Minden jog fenntartva. Mancs Állatvédő Egyesület Magyarkanizsa
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`News page tests Should render single news page 1`] = `
+<div>
+  <div
+    class="container-fluid header-container"
+  >
+    <div
+      class="row h-100"
+    >
+      <div
+        class="col-12 align-self-center"
+      >
+        <div
+          class="container"
+        >
+          <div
+            class="row"
+          >
+            <div
+              class="col-4 d-md-none align-self-center"
+            >
+              <i
+                class="fa-solid fa-bars js-navigation-toggle"
+              />
+            </div>
+            <div
+              class="col-4 col-md-6 align-self-center text-center text-md-start"
+            >
+              <a
+                href="/"
+              >
+                <img
+                  alt="Mancs logo"
+                  class="d-none d-md-block"
+                  src="/mancs.png"
+                />
+                <img
+                  alt="Mancs logo"
+                  class="d-block d-md-none mx-auto"
+                  src="/mancs_logo_only.png"
+                />
+              </a>
+            </div>
+            <div
+              class="col-4 col-md-6 align-self-center text-end"
+            >
+              <a
+                class="d-none d-md-inline-block"
+                href="/regisztracio"
+              >
+                <button
+                  class="button secondary-button me-2"
+                >
+                  Regisztráció
+                </button>
+              </a>
+              <a
+                href="/bejelentkezes"
+              >
+                <button
+                  class="button call-to-action-button login-button"
+                >
+                  <span
+                    class="d-none d-md-inline"
+                  >
+                    Bejelentkezés
+                  </span>
+                  <span
+                    class="d-inline d-md-none"
+                  >
+                    <i
+                      class="fa-solid fa-user"
+                    />
+                  </span>
+                </button>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="container body-container mt-3 mb-5"
+  >
+    <div
+      class="row"
+    >
+      <div
+        class="col-12 col-md-4 col-lg-3 navigation-container d-none d-md-block pe-md-0 pe-xl-2"
+      >
+        <div
+          class="container menu-container px-0"
+        >
+          <div
+            class="row"
+          >
+            <div
+              class="col-12"
+            >
+              <a
+                href="/"
+              >
+                <div
+                  class="menu-item"
+                >
+                  <div
+                    class="menu-item-icon-container"
+                  >
+                    <i
+                      class="fa-solid fa-house"
+                    />
+                  </div>
+                  <span>
+                    Főoldal
+                  </span>
+                </div>
+              </a>
+              <a
+                href="/lakok"
+              >
+                <div
+                  class="menu-item"
+                >
+                  <div
+                    class="menu-item-icon-container"
+                  >
+                    <i
+                      class="fa-solid fa-paw"
+                    />
+                  </div>
+                  <span>
+                    Lakóink
+                  </span>
+                </div>
+              </a>
+              <a
+                href="/hirek"
+              >
+                <div
+                  class="menu-item"
+                >
+                  <div
+                    class="menu-item-icon-container"
+                  >
+                    <i
+                      class="fa-solid fa-newspaper"
+                    />
+                  </div>
+                  <span>
+                    Hírek
+                  </span>
+                </div>
+              </a>
+              <a
+                href="/csatlakozz"
+              >
+                <div
+                  class="menu-item"
+                >
+                  <div
+                    class="menu-item-icon-container"
+                  >
+                    <i
+                      class="fa-solid fa-hand-holding-heart"
+                    />
+                  </div>
+                  <span>
+                    Csatlakozz!
+                  </span>
+                </div>
+              </a>
+              <a
+                href="/kapcsolat"
+              >
+                <div
+                  class="menu-item"
+                >
+                  <div
+                    class="menu-item-icon-container"
+                  >
+                    <i
+                      class="fa-solid fa-location-dot"
+                    />
+                  </div>
+                  <span>
+                    Kapcsolat
+                  </span>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="col-12 col-md-8 col-lg-9"
+      >
+        <div
+          class="container body-container px-0"
+        >
+          <div
+            class="row justify-content-center"
+          >
+            <div
+              class="col-12 col-sm-10 col-md-12"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="container-fluid footer-container"
+  >
+    <div
+      class="row"
+    >
+      <div
+        class="col-12"
+      >
+        <div
+          class="container py-5"
+        >
+          <div
+            class="row"
+          >
+            <div
+              class="col-12 col-md-5 col-lg-4 mb-4 mb-md-0"
+            >
+              <h5>
+                Mancs állatvédő egyesület
+              </h5>
+              <p
+                class="footer-description"
+              >
+                Tevékenységeink és céljaink magába foglalják az egyhagyott, kidobott, megtalált kölyök és felnőtt állatok mentését, gondozását, nevelését és legfőképp gazdához jutását. Hisszuk, hogy minden állatnak van megfelelő gazdája, mi segítünk megtalálni!
+              </p>
+            </div>
+            <div
+              class="col-6 col-md-4 offset-lg-1 useful-links"
+            >
+              <h5>
+                Hasznos linkek
+              </h5>
+              <a
+                href="/"
+              >
+                Főoldal
+              </a>
+              <a
+                href="/lakok"
+              >
+                Lakóink
+              </a>
+              <a
+                href="/hirek"
+              >
+                Hírek
+              </a>
+              <a
+                href="/csatlakozz"
+              >
+                Csatlakozz!
+              </a>
+              <a
+                href="/kapcsolat"
+              >
+                Kapcsolat
+              </a>
+            </div>
+            <div
+              class="col-6 col-md-3 social-links-container"
+            >
+              <h5>
+                Kapcsolat
+              </h5>
+              <p>
+                Beogradska 3-5
+                <br />
+                24420 Magyarkanizsa
+                <br />
+                Szerbia
+              </p>
+              <h5
+                class="mt-4"
+              >
+                Kövess minket
+              </h5>
+              <a
+                href="/facebook"
+                style="text-decoration: none;"
+              >
+                <i
+                  class="fa-brands fa-facebook"
+                />
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="container-fluid copyright-strip-container"
+  >
+    <div
+      class="row"
+    >
+      <div
+        class="col-12"
+      >
+        <div
+          class="container"
+        >
+          <div
+            class="row"
+          >
+            <div
+              class="col-12 text-center"
+            >
+              <p>
+                © 2023. Minden jog fenntartva. Mancs Állatvédő Egyesület Magyarkanizsa
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

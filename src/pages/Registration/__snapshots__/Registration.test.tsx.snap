@@ -1,0 +1,246 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Contact Page tests Should render registration page 1`] = `
+<div>
+  <div
+    class="container registration-container"
+  >
+    <div
+      class="row justify-content-center h-100"
+    >
+      <div
+        class="col-12 col-md-8 col-lg-6 col-xl-5 align-self-center"
+      >
+        <div
+          class="container registration-box py-4 px-4"
+        >
+          <div
+            class="row"
+          >
+            <div
+              class="col-12"
+            >
+              <h2>
+                Regisztráció
+              </h2>
+              <form
+                class="my-4"
+              >
+                <div
+                  class="form-control-container"
+                >
+                  <div
+                    class="form-icon-container"
+                  >
+                    <i
+                      class="fa-solid fa-user"
+                    />
+                    <div
+                      class="tooltip-container"
+                    >
+                      <p>
+                        Vezetéknév
+                        <br />
+                         Mező kitöltése kötelező!
+                      </p>
+                    </div>
+                  </div>
+                  <input
+                    class="form-control"
+                    id="lastName"
+                    placeholder="Vezetéknév"
+                    required=""
+                    type="text"
+                    value=""
+                  />
+                </div>
+                <div
+                  class="form-control-container"
+                >
+                  <div
+                    class="form-icon-container"
+                  >
+                    <i
+                      class="fa-solid fa-user"
+                    />
+                    <div
+                      class="tooltip-container"
+                    >
+                      <p>
+                        Keresztnév
+                        <br />
+                         Mező kitöltése kötelező!
+                      </p>
+                    </div>
+                  </div>
+                  <input
+                    class="form-control"
+                    id="firstName"
+                    placeholder="Keresztnév"
+                    required=""
+                    type="text"
+                    value=""
+                  />
+                </div>
+                <div
+                  class="form-control-container"
+                >
+                  <div
+                    class="form-icon-container"
+                  >
+                    <i
+                      class="fa-solid fa-at"
+                    />
+                    <div
+                      class="tooltip-container"
+                    >
+                      <p>
+                        Email
+                        <br />
+                         Mező kitöltése kötelező!
+                      </p>
+                    </div>
+                  </div>
+                  <input
+                    class="form-control"
+                    id="email"
+                    placeholder="Email"
+                    required=""
+                    type="email"
+                    value=""
+                  />
+                </div>
+                <div
+                  class="form-control-container"
+                >
+                  <div
+                    class="form-icon-container"
+                  >
+                    <i
+                      class="fa-solid fa-phone"
+                    />
+                    <div
+                      class="tooltip-container"
+                    >
+                      <p>
+                        Telefon
+                        <br />
+                         Mező kitöltése kötelező!
+                      </p>
+                    </div>
+                  </div>
+                  <input
+                    class="form-control"
+                    id="email"
+                    placeholder="Telefonszám"
+                    required=""
+                    type="email"
+                    value=""
+                  />
+                </div>
+                <div
+                  class="form-control-container"
+                >
+                  <div
+                    class="form-icon-container"
+                  >
+                    <i
+                      class="fa-solid fa-lock"
+                    />
+                    <div
+                      class="tooltip-container"
+                    >
+                      <p>
+                        Jelszó
+                        <br />
+                         Mező kitöltése kötelező!
+                      </p>
+                    </div>
+                  </div>
+                  <input
+                    class="form-control"
+                    id="password"
+                    placeholder="Jelszó"
+                    required=""
+                    type="password"
+                    value=""
+                  />
+                </div>
+                <div
+                  class="form-control-container"
+                >
+                  <div
+                    class="form-icon-container"
+                  >
+                    <i
+                      class="fa-solid fa-lock"
+                    />
+                    <div
+                      class="tooltip-container"
+                    >
+                      <p>
+                        Jelszó ismét
+                        <br />
+                         Mező kitöltése kötelező!
+                      </p>
+                    </div>
+                  </div>
+                  <input
+                    class="form-control"
+                    id="confirm-password"
+                    placeholder="Jelszó mégegyszer"
+                    required=""
+                    type="password"
+                    value=""
+                  />
+                </div>
+              </form>
+            </div>
+          </div>
+          <div
+            class="row"
+          >
+            <div
+              class="col-12 mb-3 text-end redirect-to-login"
+            >
+              <a
+                href="/bejelentkezes"
+              >
+                <span>
+                  Van már felhasználód? Lépj be!
+                </span>
+              </a>
+            </div>
+          </div>
+          <div
+            class="row"
+          >
+            <div
+              class="col-6"
+            >
+              <a
+                href="/"
+              >
+                <button
+                  class="button secondary-button"
+                >
+                  Vissza
+                </button>
+              </a>
+            </div>
+            <div
+              class="col-6"
+            >
+              <button
+                class="button call-to-action-button"
+              >
+                Regisztráció
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

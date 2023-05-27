@@ -5,12 +5,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="50dd6d76-2a0c-4d0b-b14d-4ae6daae985d" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/pages/Dashboard/Dashboard.test.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/Dashboard/DashboardSlice.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/Dashboard/DashboardState.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/Home/Home.test.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/Home/__snapshots__/Home.test.tsx.snap" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/JoinUs/JoinUs.test.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/JoinUs/__snapshots__/JoinUs.test.tsx.snap" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/News/News.test.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/News/__snapshots__/News.test.tsx.snap" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/PageNotFound/PageNotFound.test.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/PageNotFound/__snapshots__/PageNotFound.test.tsx.snap" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/Registration/Registration.test.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/Registration/__snapshots__/Registration.test.tsx.snap" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/Residents/Residents.test.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/Residents/__snapshots__/Residents.test.tsx.snap" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Contact/ContactForm/ContactForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Contact/ContactForm/ContactForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Login/Login.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Login/Login.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/News/AddNews/AddNews.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/News/AddNews/AddNews.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Registration/Registration.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Registration/Registration.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Residents/AddResident/AddResident.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Residents/AddResident/AddResident.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/store.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Contact/Contact.test.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Contact/Contact.test.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Contact/__snapshots__/Contact.test.tsx.snap" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Contact/__snapshots__/Contact.test.tsx.snap" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Dashboard/Dashboard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Dashboard/Dashboard.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Login/Login.test.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Login/Login.test.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Login/LoginState.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Login/LoginState.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Login/__snapshots__/Login.test.tsx.snap" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Login/__snapshots__/Login.test.tsx.snap" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/News/NewsState.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/News/NewsState.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,7 +93,7 @@
       <workItem from="1682106786184" duration="94425000" />
       <workItem from="1683844494644" duration="25150000" />
       <workItem from="1684265724480" duration="4066000" />
-      <workItem from="1684362329954" duration="34753000" />
+      <workItem from="1684362329954" duration="40505000" />
     </task>
     <servers />
   </component>

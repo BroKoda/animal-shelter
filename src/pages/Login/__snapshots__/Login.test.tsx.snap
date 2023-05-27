@@ -38,11 +38,21 @@ exports[`Login page tests Should render login page 1`] = `
                     <i
                       class="fa-solid fa-at"
                     />
+                    <div
+                      class="tooltip-container"
+                    >
+                      <p>
+                        Email
+                        <br />
+                         Mező kitöltése kötelező!
+                      </p>
+                    </div>
                   </div>
                   <input
                     class="form-control"
                     id="loginEmail"
                     placeholder="Email"
+                    required=""
                     type="email"
                     value=""
                   />
@@ -56,11 +66,21 @@ exports[`Login page tests Should render login page 1`] = `
                     <i
                       class="fa-solid fa-lock"
                     />
+                    <div
+                      class="tooltip-container"
+                    >
+                      <p>
+                        Jelszó
+                        <br />
+                         Mező kitöltése kötelező!
+                      </p>
+                    </div>
                   </div>
                   <input
                     class="form-control"
                     id="loginPassword"
                     placeholder="Jelszó"
+                    required=""
                     type="password"
                     value=""
                   />

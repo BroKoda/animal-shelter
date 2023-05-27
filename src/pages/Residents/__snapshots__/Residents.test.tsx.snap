@@ -1,0 +1,1305 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Residents page tests Should render  add resident page 1`] = `
+<div>
+  <div
+    class="container-fluid header-container"
+  >
+    <div
+      class="row h-100"
+    >
+      <div
+        class="col-12 align-self-center"
+      >
+        <div
+          class="container"
+        >
+          <div
+            class="row"
+          >
+            <div
+              class="col-4 d-md-none align-self-center"
+            >
+              <i
+                class="fa-solid fa-bars js-navigation-toggle"
+              />
+            </div>
+            <div
+              class="col-4 col-md-6 align-self-center text-center text-md-start"
+            >
+              <a
+                href="/"
+              >
+                <img
+                  alt="Mancs logo"
+                  class="d-none d-md-block"
+                  src="/mancs.png"
+                />
+                <img
+                  alt="Mancs logo"
+                  class="d-block d-md-none mx-auto"
+                  src="/mancs_logo_only.png"
+                />
+              </a>
+            </div>
+            <div
+              class="col-4 col-md-6 align-self-center text-end"
+            >
+              <a
+                class="d-none d-md-inline-block"
+                href="/regisztracio"
+              >
+                <button
+                  class="button secondary-button me-2"
+                >
+                  Regisztráció
+                </button>
+              </a>
+              <a
+                href="/bejelentkezes"
+              >
+                <button
+                  class="button call-to-action-button login-button"
+                >
+                  <span
+                    class="d-none d-md-inline"
+                  >
+                    Bejelentkezés
+                  </span>
+                  <span
+                    class="d-inline d-md-none"
+                  >
+                    <i
+                      class="fa-solid fa-user"
+                    />
+                  </span>
+                </button>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="container body-container mt-3 mb-5"
+  >
+    <div
+      class="row"
+    >
+      <div
+        class="col-12 col-md-4 col-lg-3 navigation-container d-none d-md-block pe-md-0 pe-xl-2"
+      >
+        <div
+          class="container menu-container px-0"
+        >
+          <div
+            class="row"
+          >
+            <div
+              class="col-12"
+            >
+              <a
+                href="/"
+              >
+                <div
+                  class="menu-item"
+                >
+                  <div
+                    class="menu-item-icon-container"
+                  >
+                    <i
+                      class="fa-solid fa-house"
+                    />
+                  </div>
+                  <span>
+                    Főoldal
+                  </span>
+                </div>
+              </a>
+              <a
+                href="/lakok"
+              >
+                <div
+                  class="menu-item"
+                >
+                  <div
+                    class="menu-item-icon-container"
+                  >
+                    <i
+                      class="fa-solid fa-paw"
+                    />
+                  </div>
+                  <span>
+                    Lakóink
+                  </span>
+                </div>
+              </a>
+              <a
+                href="/hirek"
+              >
+                <div
+                  class="menu-item"
+                >
+                  <div
+                    class="menu-item-icon-container"
+                  >
+                    <i
+                      class="fa-solid fa-newspaper"
+                    />
+                  </div>
+                  <span>
+                    Hírek
+                  </span>
+                </div>
+              </a>
+              <a
+                href="/csatlakozz"
+              >
+                <div
+                  class="menu-item"
+                >
+                  <div
+                    class="menu-item-icon-container"
+                  >
+                    <i
+                      class="fa-solid fa-hand-holding-heart"
+                    />
+                  </div>
+                  <span>
+                    Csatlakozz!
+                  </span>
+                </div>
+              </a>
+              <a
+                href="/kapcsolat"
+              >
+                <div
+                  class="menu-item"
+                >
+                  <div
+                    class="menu-item-icon-container"
+                  >
+                    <i
+                      class="fa-solid fa-location-dot"
+                    />
+                  </div>
+                  <span>
+                    Kapcsolat
+                  </span>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="col-12 col-md-8 col-lg-9"
+      >
+        <div
+          class="container body-container px-0"
+        >
+          <div
+            class="row justify-content-center"
+          >
+            <div
+              class="col-12 col-sm-10 col-md-12"
+            >
+              <div
+                class="container add-new-animal-container"
+              >
+                <div
+                  class="row"
+                >
+                  <div
+                    class="col-12 col-md-12 col-lg-8 col-xl-7"
+                  >
+                    <h1
+                      class="mb-3"
+                    >
+                      Új lakó hozzáadása:
+                    </h1>
+                    <form
+                      class="mt-4 mb-5"
+                    >
+                      <div
+                        class="form-control-container"
+                      >
+                        <div
+                          class="form-icon-container"
+                        >
+                          <i
+                            class="fa-solid fa-signature"
+                          />
+                          <div
+                            class="tooltip-container"
+                          >
+                            <p>
+                              A lakó neve
+                              <br />
+                               Mező kitöltése kötelező!
+                            </p>
+                          </div>
+                        </div>
+                        <input
+                          class="form-control"
+                          id="name"
+                          placeholder="Név"
+                          required=""
+                          type="text"
+                          value=""
+                        />
+                      </div>
+                      <div
+                        class="form-control-container"
+                      >
+                        <div
+                          class="form-icon-container"
+                        >
+                          <i
+                            class="fa-solid fa-paw"
+                          />
+                          <div
+                            class="tooltip-container"
+                          >
+                            <p>
+                              A lakó fajtája
+                              <br />
+                               Mező kitöltése kötelező!
+                            </p>
+                          </div>
+                        </div>
+                        <div
+                          class="resident-type-select-container d-flex flex-row align-items-center"
+                        >
+                          <div
+                            class="d-inline-flex me-4"
+                          >
+                            <label
+                              class="radio-container"
+                            >
+                              Kutya
+                              <input
+                                type="radio"
+                                value="kutya"
+                              />
+                              <span
+                                class="radio-mark"
+                              />
+                            </label>
+                          </div>
+                          <div
+                            class="d-inline-flex me-4"
+                          >
+                            <label
+                              class="radio-container"
+                            >
+                              Macska
+                              <input
+                                type="radio"
+                                value="macska"
+                              />
+                              <span
+                                class="radio-mark"
+                              />
+                            </label>
+                          </div>
+                          <div
+                            class="d-inline-flex me-4"
+                          >
+                            <label
+                              class="radio-container"
+                            >
+                              Egyéb
+                              <input
+                                type="radio"
+                                value="egyéb"
+                              />
+                              <span
+                                class="radio-mark"
+                              />
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="form-control-container"
+                      >
+                        <div
+                          class="form-icon-container"
+                        >
+                          <i
+                            class="fa-solid fa-palette"
+                          />
+                          <div
+                            class="tooltip-container"
+                          >
+                            <p>
+                              A lakó bundájának színe
+                              <br />
+                               Mező kitöltése kötelező!
+                            </p>
+                          </div>
+                        </div>
+                        <input
+                          class="form-control"
+                          id="color"
+                          placeholder="Szín"
+                          required=""
+                          type="text"
+                          value=""
+                        />
+                      </div>
+                      <div
+                        class="form-control-container"
+                      >
+                        <div
+                          class="form-icon-container"
+                        >
+                          <i
+                            class="fa-solid fa-weight-hanging"
+                          />
+                          <div
+                            class="tooltip-container"
+                          >
+                            <p>
+                              A lakó mérete
+                              <br />
+                               Mező kitöltése kötelező!
+                            </p>
+                          </div>
+                        </div>
+                        <input
+                          class="form-control"
+                          id="size"
+                          placeholder="Méret"
+                          required=""
+                          type="text"
+                          value=""
+                        />
+                      </div>
+                      <div
+                        class="form-control-container"
+                      >
+                        <div
+                          class="form-icon-container"
+                        >
+                          <i
+                            class="fa-solid fa-calendar-days"
+                          />
+                          <div
+                            class="tooltip-container"
+                          >
+                            <p>
+                              A lakó születésének dátuma
+                              <br />
+                               Mező kitöltése kötelező!
+                            </p>
+                          </div>
+                        </div>
+                        <input
+                          class="form-control"
+                          id="birth-date"
+                          placeholder="Születési idő"
+                          required=""
+                          type="date"
+                          value=""
+                        />
+                      </div>
+                      <div
+                        class="form-control-container"
+                      >
+                        <div
+                          class="form-icon-container"
+                        >
+                          <i
+                            class="fa-solid fa-calendar-days"
+                          />
+                          <div
+                            class="tooltip-container"
+                          >
+                            <p>
+                              A lakó bekerülésének dátuma
+                              <br />
+                               Mező kitöltése kötelező!
+                            </p>
+                          </div>
+                        </div>
+                        <input
+                          class="form-control"
+                          id="arrival-date"
+                          placeholder="Bekerülési idő"
+                          required=""
+                          type="date"
+                          value=""
+                        />
+                      </div>
+                      <div
+                        class="form-control-container"
+                      >
+                        <div
+                          class="form-icon-container"
+                        >
+                          <i
+                            class="fa-solid fa-message"
+                          />
+                          <div
+                            class="tooltip-container"
+                          >
+                            <p>
+                              A lakó jellemének rövid leírása
+                              <br />
+                               Mező kitöltése kötelező!
+                            </p>
+                          </div>
+                        </div>
+                        <textarea
+                          class="form-control"
+                          id="description"
+                          placeholder="Leírás"
+                          required=""
+                          rows="4"
+                        />
+                      </div>
+                      <div
+                        class="form-control-container "
+                      >
+                        <div
+                          class="form-icon-container"
+                        >
+                          <i
+                            class="fa-solid fa-image"
+                          />
+                          <div
+                            class="tooltip-container"
+                          >
+                            <p>
+                              A lakó képe
+                              <br />
+                               Mező kitöltése kötelező!
+                            </p>
+                          </div>
+                        </div>
+                        <input
+                          class="form-control file-input"
+                          data-button-text="Fájl kiválasztása"
+                          id="resident-image"
+                          name="resident-image"
+                          placeholder="Kép kiválasztása"
+                          required=""
+                          type="file"
+                        />
+                      </div>
+                      <div
+                        class="row justify-content-end"
+                      >
+                        <div
+                          class="col-6"
+                        >
+                          <button
+                            class="button call-to-action-button w-100"
+                          >
+                            Lakó hozzáadása
+                          </button>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="container-fluid footer-container"
+  >
+    <div
+      class="row"
+    >
+      <div
+        class="col-12"
+      >
+        <div
+          class="container py-5"
+        >
+          <div
+            class="row"
+          >
+            <div
+              class="col-12 col-md-5 col-lg-4 mb-4 mb-md-0"
+            >
+              <h5>
+                Mancs állatvédő egyesület
+              </h5>
+              <p
+                class="footer-description"
+              >
+                Tevékenységeink és céljaink magába foglalják az egyhagyott, kidobott, megtalált kölyök és felnőtt állatok mentését, gondozását, nevelését és legfőképp gazdához jutását. Hisszuk, hogy minden állatnak van megfelelő gazdája, mi segítünk megtalálni!
+              </p>
+            </div>
+            <div
+              class="col-6 col-md-4 offset-lg-1 useful-links"
+            >
+              <h5>
+                Hasznos linkek
+              </h5>
+              <a
+                href="/"
+              >
+                Főoldal
+              </a>
+              <a
+                href="/lakok"
+              >
+                Lakóink
+              </a>
+              <a
+                href="/hirek"
+              >
+                Hírek
+              </a>
+              <a
+                href="/csatlakozz"
+              >
+                Csatlakozz!
+              </a>
+              <a
+                href="/kapcsolat"
+              >
+                Kapcsolat
+              </a>
+            </div>
+            <div
+              class="col-6 col-md-3 social-links-container"
+            >
+              <h5>
+                Kapcsolat
+              </h5>
+              <p>
+                Beogradska 3-5
+                <br />
+                24420 Magyarkanizsa
+                <br />
+                Szerbia
+              </p>
+              <h5
+                class="mt-4"
+              >
+                Kövess minket
+              </h5>
+              <a
+                href="/facebook"
+                style="text-decoration: none;"
+              >
+                <i
+                  class="fa-brands fa-facebook"
+                />
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="container-fluid copyright-strip-container"
+  >
+    <div
+      class="row"
+    >
+      <div
+        class="col-12"
+      >
+        <div
+          class="container"
+        >
+          <div
+            class="row"
+          >
+            <div
+              class="col-12 text-center"
+            >
+              <p>
+                © 2023. Minden jog fenntartva. Mancs Állatvédő Egyesület Magyarkanizsa
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Residents page tests Should render residents page 1`] = `
+<div>
+  <div
+    class="container-fluid header-container"
+  >
+    <div
+      class="row h-100"
+    >
+      <div
+        class="col-12 align-self-center"
+      >
+        <div
+          class="container"
+        >
+          <div
+            class="row"
+          >
+            <div
+              class="col-4 d-md-none align-self-center"
+            >
+              <i
+                class="fa-solid fa-bars js-navigation-toggle"
+              />
+            </div>
+            <div
+              class="col-4 col-md-6 align-self-center text-center text-md-start"
+            >
+              <a
+                href="/"
+              >
+                <img
+                  alt="Mancs logo"
+                  class="d-none d-md-block"
+                  src="/mancs.png"
+                />
+                <img
+                  alt="Mancs logo"
+                  class="d-block d-md-none mx-auto"
+                  src="/mancs_logo_only.png"
+                />
+              </a>
+            </div>
+            <div
+              class="col-4 col-md-6 align-self-center text-end"
+            >
+              <a
+                class="d-none d-md-inline-block"
+                href="/regisztracio"
+              >
+                <button
+                  class="button secondary-button me-2"
+                >
+                  Regisztráció
+                </button>
+              </a>
+              <a
+                href="/bejelentkezes"
+              >
+                <button
+                  class="button call-to-action-button login-button"
+                >
+                  <span
+                    class="d-none d-md-inline"
+                  >
+                    Bejelentkezés
+                  </span>
+                  <span
+                    class="d-inline d-md-none"
+                  >
+                    <i
+                      class="fa-solid fa-user"
+                    />
+                  </span>
+                </button>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="container body-container mt-3 mb-5"
+  >
+    <div
+      class="row"
+    >
+      <div
+        class="col-12 col-md-4 col-lg-3 navigation-container d-none d-md-block pe-md-0 pe-xl-2"
+      >
+        <div
+          class="container menu-container px-0"
+        >
+          <div
+            class="row"
+          >
+            <div
+              class="col-12"
+            >
+              <a
+                href="/"
+              >
+                <div
+                  class="menu-item"
+                >
+                  <div
+                    class="menu-item-icon-container"
+                  >
+                    <i
+                      class="fa-solid fa-house"
+                    />
+                  </div>
+                  <span>
+                    Főoldal
+                  </span>
+                </div>
+              </a>
+              <a
+                href="/lakok"
+              >
+                <div
+                  class="menu-item"
+                >
+                  <div
+                    class="menu-item-icon-container"
+                  >
+                    <i
+                      class="fa-solid fa-paw"
+                    />
+                  </div>
+                  <span>
+                    Lakóink
+                  </span>
+                </div>
+              </a>
+              <a
+                href="/hirek"
+              >
+                <div
+                  class="menu-item"
+                >
+                  <div
+                    class="menu-item-icon-container"
+                  >
+                    <i
+                      class="fa-solid fa-newspaper"
+                    />
+                  </div>
+                  <span>
+                    Hírek
+                  </span>
+                </div>
+              </a>
+              <a
+                href="/csatlakozz"
+              >
+                <div
+                  class="menu-item"
+                >
+                  <div
+                    class="menu-item-icon-container"
+                  >
+                    <i
+                      class="fa-solid fa-hand-holding-heart"
+                    />
+                  </div>
+                  <span>
+                    Csatlakozz!
+                  </span>
+                </div>
+              </a>
+              <a
+                href="/kapcsolat"
+              >
+                <div
+                  class="menu-item"
+                >
+                  <div
+                    class="menu-item-icon-container"
+                  >
+                    <i
+                      class="fa-solid fa-location-dot"
+                    />
+                  </div>
+                  <span>
+                    Kapcsolat
+                  </span>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="col-12 col-md-8 col-lg-9"
+      >
+        <div
+          class="container body-container px-0"
+        >
+          <div
+            class="row justify-content-center"
+          >
+            <div
+              class="col-12 col-sm-10 col-md-12"
+            >
+              <div
+                class="progress-indicator-container"
+              >
+                <span
+                  class="progress-indicator"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="container-fluid footer-container"
+  >
+    <div
+      class="row"
+    >
+      <div
+        class="col-12"
+      >
+        <div
+          class="container py-5"
+        >
+          <div
+            class="row"
+          >
+            <div
+              class="col-12 col-md-5 col-lg-4 mb-4 mb-md-0"
+            >
+              <h5>
+                Mancs állatvédő egyesület
+              </h5>
+              <p
+                class="footer-description"
+              >
+                Tevékenységeink és céljaink magába foglalják az egyhagyott, kidobott, megtalált kölyök és felnőtt állatok mentését, gondozását, nevelését és legfőképp gazdához jutását. Hisszuk, hogy minden állatnak van megfelelő gazdája, mi segítünk megtalálni!
+              </p>
+            </div>
+            <div
+              class="col-6 col-md-4 offset-lg-1 useful-links"
+            >
+              <h5>
+                Hasznos linkek
+              </h5>
+              <a
+                href="/"
+              >
+                Főoldal
+              </a>
+              <a
+                href="/lakok"
+              >
+                Lakóink
+              </a>
+              <a
+                href="/hirek"
+              >
+                Hírek
+              </a>
+              <a
+                href="/csatlakozz"
+              >
+                Csatlakozz!
+              </a>
+              <a
+                href="/kapcsolat"
+              >
+                Kapcsolat
+              </a>
+            </div>
+            <div
+              class="col-6 col-md-3 social-links-container"
+            >
+              <h5>
+                Kapcsolat
+              </h5>
+              <p>
+                Beogradska 3-5
+                <br />
+                24420 Magyarkanizsa
+                <br />
+                Szerbia
+              </p>
+              <h5
+                class="mt-4"
+              >
+                Kövess minket
+              </h5>
+              <a
+                href="/facebook"
+                style="text-decoration: none;"
+              >
+                <i
+                  class="fa-brands fa-facebook"
+                />
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="container-fluid copyright-strip-container"
+  >
+    <div
+      class="row"
+    >
+      <div
+        class="col-12"
+      >
+        <div
+          class="container"
+        >
+          <div
+            class="row"
+          >
+            <div
+              class="col-12 text-center"
+            >
+              <p>
+                © 2023. Minden jog fenntartva. Mancs Állatvédő Egyesület Magyarkanizsa
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Residents page tests Should render single resident page 1`] = `
+<div>
+  <div
+    class="container-fluid header-container"
+  >
+    <div
+      class="row h-100"
+    >
+      <div
+        class="col-12 align-self-center"
+      >
+        <div
+          class="container"
+        >
+          <div
+            class="row"
+          >
+            <div
+              class="col-4 d-md-none align-self-center"
+            >
+              <i
+                class="fa-solid fa-bars js-navigation-toggle"
+              />
+            </div>
+            <div
+              class="col-4 col-md-6 align-self-center text-center text-md-start"
+            >
+              <a
+                href="/"
+              >
+                <img
+                  alt="Mancs logo"
+                  class="d-none d-md-block"
+                  src="/mancs.png"
+                />
+                <img
+                  alt="Mancs logo"
+                  class="d-block d-md-none mx-auto"
+                  src="/mancs_logo_only.png"
+                />
+              </a>
+            </div>
+            <div
+              class="col-4 col-md-6 align-self-center text-end"
+            >
+              <a
+                class="d-none d-md-inline-block"
+                href="/regisztracio"
+              >
+                <button
+                  class="button secondary-button me-2"
+                >
+                  Regisztráció
+                </button>
+              </a>
+              <a
+                href="/bejelentkezes"
+              >
+                <button
+                  class="button call-to-action-button login-button"
+                >
+                  <span
+                    class="d-none d-md-inline"
+                  >
+                    Bejelentkezés
+                  </span>
+                  <span
+                    class="d-inline d-md-none"
+                  >
+                    <i
+                      class="fa-solid fa-user"
+                    />
+                  </span>
+                </button>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="container body-container mt-3 mb-5"
+  >
+    <div
+      class="row"
+    >
+      <div
+        class="col-12 col-md-4 col-lg-3 navigation-container d-none d-md-block pe-md-0 pe-xl-2"
+      >
+        <div
+          class="container menu-container px-0"
+        >
+          <div
+            class="row"
+          >
+            <div
+              class="col-12"
+            >
+              <a
+                href="/"
+              >
+                <div
+                  class="menu-item"
+                >
+                  <div
+                    class="menu-item-icon-container"
+                  >
+                    <i
+                      class="fa-solid fa-house"
+                    />
+                  </div>
+                  <span>
+                    Főoldal
+                  </span>
+                </div>
+              </a>
+              <a
+                href="/lakok"
+              >
+                <div
+                  class="menu-item"
+                >
+                  <div
+                    class="menu-item-icon-container"
+                  >
+                    <i
+                      class="fa-solid fa-paw"
+                    />
+                  </div>
+                  <span>
+                    Lakóink
+                  </span>
+                </div>
+              </a>
+              <a
+                href="/hirek"
+              >
+                <div
+                  class="menu-item"
+                >
+                  <div
+                    class="menu-item-icon-container"
+                  >
+                    <i
+                      class="fa-solid fa-newspaper"
+                    />
+                  </div>
+                  <span>
+                    Hírek
+                  </span>
+                </div>
+              </a>
+              <a
+                href="/csatlakozz"
+              >
+                <div
+                  class="menu-item"
+                >
+                  <div
+                    class="menu-item-icon-container"
+                  >
+                    <i
+                      class="fa-solid fa-hand-holding-heart"
+                    />
+                  </div>
+                  <span>
+                    Csatlakozz!
+                  </span>
+                </div>
+              </a>
+              <a
+                href="/kapcsolat"
+              >
+                <div
+                  class="menu-item"
+                >
+                  <div
+                    class="menu-item-icon-container"
+                  >
+                    <i
+                      class="fa-solid fa-location-dot"
+                    />
+                  </div>
+                  <span>
+                    Kapcsolat
+                  </span>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="col-12 col-md-8 col-lg-9"
+      >
+        <div
+          class="container body-container px-0"
+        >
+          <div
+            class="row justify-content-center"
+          >
+            <div
+              class="col-12 col-sm-10 col-md-12"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="container-fluid footer-container"
+  >
+    <div
+      class="row"
+    >
+      <div
+        class="col-12"
+      >
+        <div
+          class="container py-5"
+        >
+          <div
+            class="row"
+          >
+            <div
+              class="col-12 col-md-5 col-lg-4 mb-4 mb-md-0"
+            >
+              <h5>
+                Mancs állatvédő egyesület
+              </h5>
+              <p
+                class="footer-description"
+              >
+                Tevékenységeink és céljaink magába foglalják az egyhagyott, kidobott, megtalált kölyök és felnőtt állatok mentését, gondozását, nevelését és legfőképp gazdához jutását. Hisszuk, hogy minden állatnak van megfelelő gazdája, mi segítünk megtalálni!
+              </p>
+            </div>
+            <div
+              class="col-6 col-md-4 offset-lg-1 useful-links"
+            >
+              <h5>
+                Hasznos linkek
+              </h5>
+              <a
+                href="/"
+              >
+                Főoldal
+              </a>
+              <a
+                href="/lakok"
+              >
+                Lakóink
+              </a>
+              <a
+                href="/hirek"
+              >
+                Hírek
+              </a>
+              <a
+                href="/csatlakozz"
+              >
+                Csatlakozz!
+              </a>
+              <a
+                href="/kapcsolat"
+              >
+                Kapcsolat
+              </a>
+            </div>
+            <div
+              class="col-6 col-md-3 social-links-container"
+            >
+              <h5>
+                Kapcsolat
+              </h5>
+              <p>
+                Beogradska 3-5
+                <br />
+                24420 Magyarkanizsa
+                <br />
+                Szerbia
+              </p>
+              <h5
+                class="mt-4"
+              >
+                Kövess minket
+              </h5>
+              <a
+                href="/facebook"
+                style="text-decoration: none;"
+              >
+                <i
+                  class="fa-brands fa-facebook"
+                />
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="container-fluid copyright-strip-container"
+  >
+    <div
+      class="row"
+    >
+      <div
+        class="col-12"
+      >
+        <div
+          class="container"
+        >
+          <div
+            class="row"
+          >
+            <div
+              class="col-12 text-center"
+            >
+              <p>
+                © 2023. Minden jog fenntartva. Mancs Állatvédő Egyesület Magyarkanizsa
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

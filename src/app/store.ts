@@ -5,6 +5,7 @@ import registrationReducer from '../pages/Registration/RegistrationSlice'
 import residentsReducer from '../pages/Residents/ResidentsSlice'
 import newsReducer from '../pages/News/NewsSlice'
 import contactReducer from '../pages/Contact/ContactSlice'
+import dashboardReducer from '../pages/Dashboard/DashboardSlice'
 
 export const store = configureStore({
   reducer: {
@@ -12,6 +13,7 @@ export const store = configureStore({
     news: newsReducer,
     login: loginReducer,
     contact: contactReducer,
+    dashboard: dashboardReducer,
     residents: residentsReducer,
     registration: registrationReducer,
   }

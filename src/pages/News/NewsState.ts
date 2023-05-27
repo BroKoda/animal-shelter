@@ -33,6 +33,7 @@ export interface NewsDetails {
   newsBody: string
   image: string
   imageUrl?: string
+  time?: string
 }
 
 export interface SingleNews {
