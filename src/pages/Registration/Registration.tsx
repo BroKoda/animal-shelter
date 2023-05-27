@@ -124,7 +124,7 @@ const Registration = (): JSX.Element => {
                       type="text"
                       className="form-control"
                       placeholder='Telefonszám'
-                      id="email"
+                      id="phone"
                       value={phone ?? ''}
                       onChange={handleSetPhone}
                       required={true}

@@ -12,11 +12,11 @@ const initialState: RegistrationState = {
 }
 
 export const registerUser = createAsyncThunk('registerUser', async (userToCreate: UserToCreate) => {
-  const { firstName, lastName, email, password } = userToCreate
+  const { firstName, lastName, email, phone, password } = userToCreate
   try {
     if (email != null && password != null) {
       const { user } = await createUserWithEmailAndPassword(auth, email, password)
-      await addDoc(collection(db, 'users'), { firstName, lastName, email, role: 'visitor' })
+      await addDoc(collection(db, 'users'), { firstName, lastName, email, phone, role: 'visitor' })
       return user
     }
   } catch (e) {
