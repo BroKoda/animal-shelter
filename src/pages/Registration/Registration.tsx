@@ -35,7 +35,7 @@ const Registration = (): JSX.Element => {
       password: password
     }
     void dispatch(registerUser(user))
-  }, [dispatch, firstName, lastName, email, password])
+  }, [dispatch, firstName, lastName, email, password, phone])
 
   const handleSetFirstName = useCallback((event: ChangeEvent<HTMLInputElement>) => {
     dispatch(setFirstName(event.target?.value))
@@ -121,7 +121,7 @@ const Registration = (): JSX.Element => {
                       <Tooltip text={<p>Telefon<br/> Mező kitöltése kötelező!</p>}></Tooltip>
                     </div>
                     <input
-                      type="email"
+                      type="text"
                       className="form-control"
                       placeholder='Telefonszám'
                       id="email"
