@@ -26,6 +26,7 @@ import ProgressIndicator from '../../../components/ProgressIndicator/ProgressInd
 const AddResident = (): JSX.Element => {
   const navigate = useNavigate()
   const dispatch = useAppDispatch()
+  const user = useAppSelector((state) => state.login.user)
   const {
     residentToAdd,
     addNewResidentStatus,
@@ -33,6 +34,12 @@ const AddResident = (): JSX.Element => {
     isUpdateId,
     updateResidentStatus
   } = useAppSelector((state) => state.residents)
+
+  useEffect(() => {
+    if (user == null || (user.role !== 'admin')) {
+      navigate('/')
+    }
+  })
 
   useEffect(() => {
     if (addNewResidentStatus === LoadingStatus.complete || updateResidentStatus === LoadingStatus.complete) {

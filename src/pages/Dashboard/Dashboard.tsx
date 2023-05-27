@@ -6,7 +6,7 @@ import { useAppDispatch, useAppSelector } from '../../app/hooks'
 import { fetchResidents } from '../Residents/ResidentsSlice'
 import { Resident } from '../Residents/ResidentsState'
 import { fetchNews } from '../News/NewsSlice'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { fetchUsers } from './DashboardSlice'
 import { Users } from './DashboardState'
 import { News } from '../News/NewsState'
@@ -80,8 +80,9 @@ function getPublicistCount(users: Users[] | undefined): number {
 }
 
 const Dashboard = (): JSX.Element => {
+  const navigate = useNavigate()
   const dispatch = useAppDispatch()
-  const { residents, news, dashboard } = useAppSelector((state) => state)
+  const { residents, news, dashboard, login } = useAppSelector((state) => state)
   const residentOlder = getResidentOlderThan(residents?.residents)
   const newsOlder = getNewsOlderThan(news?.news)
   const residentCount = residents.residents?.length
@@ -89,6 +90,12 @@ const Dashboard = (): JSX.Element => {
   const registeredUsers = dashboard?.users?.length
   const adminCount = getAdminRoleCount(dashboard?.users)
   const publicistCount = getPublicistCount(dashboard?.users)
+
+  useEffect(() => {
+    if (login.user == null || (login.user.role !== 'admin')) {
+      navigate('/')
+    }
+  })
 
   useEffect(() => {
     dispatch(fetchNews())

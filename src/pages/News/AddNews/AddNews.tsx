@@ -23,7 +23,14 @@ import Tooltip from '../../../components/Tooltip/Tooltip'
 const AddNews = (): JSX.Element => {
   const navigate = useNavigate()
   const dispatch = useAppDispatch()
+  const user = useAppSelector((state) => state.login.user)
   const { newsToAdd, addNewsStatus, isUpdate, isUpdateId, updateNewsStatus } = useAppSelector((state) => state.news)
+
+  useEffect(() => {
+    if (user == null || (user.role !== 'admin' && user.role !== 'publicist')) {
+      navigate('/')
+    }
+  })
 
   useEffect(() => {
     if (addNewsStatus === LoadingStatus.complete || updateNewsStatus == LoadingStatus.complete) {
